@@ -605,4 +605,18 @@ const data = {
 
 // To print all keys
 // console.log(data.products[0]);
-console.log(data.products.at(4).reviews[2]);
+// const ratings = data.products.at(4).reviews[2];
+
+// Destructuring an object
+const rating = {
+  rating: 4,
+  comment: "Highly recommended!",
+  date: "2024-05-23T08:56:21.619Z",
+  reviewerName: "Evelyn Sanchez",
+  reviewerEmail: "evelyn.sanchez@x.dummyjson.com",
+};
+const formattedRatings = {
+  date: rating.date,
+  comment: rating.comment,
+};
+console.log(formattedRatings);
