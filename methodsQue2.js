@@ -14,7 +14,10 @@ const users = [
 // { name: "Boa", marks: 20 },
 // ]
 // }
-const filterMarks = users.filter((item) => item.age < 18);
+const filterMarks = users
+  .filter((item) => item.age < 18)
+  .map((e) => ({ name: e.name, marks: e.marks }));
+
 // console.log(filterMarks);
 
 const total = filterMarks.reduce((acc, currVal) => {
