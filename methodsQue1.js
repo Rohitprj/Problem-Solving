@@ -5,8 +5,10 @@ const users = [
   { name: "Bob", age: 17 },
   { name: "Charlie", age: 30 },
 ];
-const newArr = users.map((items) => {
-  const newAge = users.filter((item) => item.age <= 18);
-  return { name: items.name, age: newAge };
-});
+
+const newArr = users
+  .filter((item) => item.age < 18)
+  .map((data) => {
+    return data.name;
+  });
 console.log(newArr);
