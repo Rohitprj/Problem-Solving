@@ -1,8 +1,9 @@
 function outer() {
-  let name = "Rohit";
+  const name = "Rohit";
   function inner() {
-    let newName = "Rohit Kumar";
+    console.log(name);
   }
-  inner();
-  console.log(newName);
+  return inner;
 }
+const funCall = outer();
+funCall();
