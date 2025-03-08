@@ -1,8 +1,18 @@
+// let i = 1;
+// const interval = setInterval(() => {
+//   console.log(i);
+//   i++;
+//   if (i > 10) {
+//     clearInterval(interval);
+//   }
+// }, 1000);
+
 let i = 1;
-const interval = setInterval(() => {
+const interval = () => {
   console.log(i);
   i++;
   if (i > 10) {
-    clearInterval(interval);
+    clearInterval(stop);
   }
-}, 1000);
+};
+const stop = setInterval(interval, 1000);
