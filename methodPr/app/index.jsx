@@ -20,7 +20,14 @@ export default function index() {
   };
   console.log(value);
   return (
-    <View style={{ alignItems: "center", gap: 10 }}>
+    <View
+      style={{
+        height: "100%",
+        alignItems: "center",
+        gap: 10,
+        justifyContent: "center",
+      }}
+    >
       <Text>count {value}</Text>
       <Pressable
         style={{ backgroundColor: "skyblue", padding: 10 }}
