@@ -1,6 +1,6 @@
 function table(t, r) {
   for (let i = 1; i <= r; i++) {
-    console.log(i * t);
+    console.log(`${t} X ${i} = ${i * t}`);
   }
 }
 table(3, 10);
