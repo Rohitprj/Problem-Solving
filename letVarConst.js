@@ -1,5 +1,15 @@
-function practice() {
-  var a = 10;
-  return a;
-}
-console.log(practice());
+// function practice() {
+//   let a = 10;
+//   return a;
+// }
+// console.log(practice());
+
+// practice();
+// function practice() {
+//   let a = 10;
+// }
+
+practice();
+var practice = () => {
+  let a = 10;
+};
