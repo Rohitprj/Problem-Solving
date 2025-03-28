@@ -9,7 +9,7 @@
 //   let a = 10;
 // }
 
-practice();
-var practice = () => {
-  let a = 10;
-};
+// practice();
+// var practice = () => {
+//   let a = 10;
+// };
