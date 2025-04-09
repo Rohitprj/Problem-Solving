@@ -4,8 +4,7 @@ class AccessClass{
         System.out.println("Extended class");
     }
 }
-
-public class NewClass{
+ class NewClass{
     public static void main(String[] args) {
         AccessClass ac = new  AccessClass();
         ac.myFunction();
