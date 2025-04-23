@@ -14,7 +14,7 @@ const products = [
 
 // 2
 const data = products.filter((item) => item.stock != 0);
-console.log(data);
+console.log("1", data);
 
 const rem = data.map((prod) => {
   return {
@@ -22,8 +22,8 @@ const rem = data.map((prod) => {
     price: prod.price,
   };
 });
-console.log(rem);
+console.log("2", rem);
 
 // 3
 const total = rem.reduce((total, item) => total + item.price, 0);
-console.log(total);
+console.log("3", total);
