@@ -14,8 +14,8 @@ export default function index() {
       const time = setInterval(() => {
         setTimeStart((prev) => prev - 1);
       }, 1000);
-      //   return () => clearInterval(time);
-    }, []);
+      return () => clearInterval(time);
+    }, [timeStart]);
   }
   timer();
   return (
