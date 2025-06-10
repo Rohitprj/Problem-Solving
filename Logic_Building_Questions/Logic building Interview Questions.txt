@@ -4,7 +4,15 @@
    ***
    **
    *
+
 2) print this 2d array in spirl form 
+   2,3,4,5
+   6,7,8,9
+   0,1,2,3
+   output:2,3,4,5,9,3,2,1,0,6,7,8
+
 3) take a list of element as an input and give 2nd smallest element of that list 
+
 4) WAP to check what is correct [{}] [{)] [()] 
+
 5) WAP to give output:7 from this arr[2,5,6,9]
