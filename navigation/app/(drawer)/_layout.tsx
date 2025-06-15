@@ -51,7 +51,7 @@ function CustomDrawerContent() {
         <Text style={{ fontSize: 18 }}>🏠 Home</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => router.push("/(drawer)/(tabs)/about")}
+        onPress={() => router.push("/(drawer)/(tabs)/explore")}
         style={{ marginBottom: 20 }}
       >
         <Text style={{ fontSize: 18 }}>ℹ️ About</Text>
@@ -66,8 +66,8 @@ export default function DrawerLayout() {
   let headerTitle = "App";
   if (pathname === "/(drawer)/(tabs)") {
     headerTitle = "Home";
-  } else if (pathname === "/(drawer)/(tabs)/about") {
-    headerTitle = "About";
+  } else if (pathname === "/(drawer)/(tabs)/explore") {
+    headerTitle = "Explore";
   }
 
   return (
