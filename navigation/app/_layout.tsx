@@ -22,13 +22,13 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index.tsx" options={{ headerShown: false }} />
-        <Stack.Screen name="(tabs)" options={{ headerShown: true }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    // <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index.tsx" options={{ headerShown: false }} />
+      <Stack.Screen name="(tabs)" options={{ headerShown: true }} />
+      <Stack.Screen name="+not-found" />
+    </Stack>
+    // <StatusBar style="auto" />
+    // {/* </ThemeProvider> */}
   );
 }
