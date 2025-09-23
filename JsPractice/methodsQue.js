@@ -13,17 +13,28 @@ const products = [
 // console.log(data);
 
 // 2
-const data = products.filter((item) => item.stock != 0);
-console.log("1", data);
+// const data = products.filter((item) => item.stock != 0);
+// console.log("1", data);
 
-const rem = data.map((prod) => {
-  return {
-    name: prod.name,
-    price: prod.price,
-  };
+// const rem = data.map((prod) => {
+//   return {
+//     name: prod.name,
+//     price: prod.price,
+//   };
+// });
+// console.log("2", rem);
+
+// // 3
+// const total = rem.reduce((total, item) => total + item.price, 0);
+// console.log("3", total);
+
+// basics
+
+const a = products.filter((item) => item.stock === 0);
+// console.log(a);
+
+const b = a.map((data) => {
+  return { name: data.name, price: data.price };
 });
-console.log("2", rem);
 
-// 3
-const total = rem.reduce((total, item) => total + item.price, 0);
-console.log("3", total);
+console.log(b);
