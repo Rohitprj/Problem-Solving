@@ -1,0 +1,104 @@
+flowchart TD
+
+%% ============================
+%% START & END
+%% ============================
+START([Start])
+END([End])
+
+%% ============================
+%% USER ENTRY
+%% ============================
+START --> U1[User Opens Website]
+
+U1 --> DEC1{Is User Registered?}
+
+DEC1 -->|No| REG[User Registers]
+REG --> SAVE_USER[Save User in DB]
+SAVE_USER --> LOGIN
+
+DEC1 -->|Yes| LOGIN[User Logs In]
+LOGIN --> AUTH[Verify Credentials]
+AUTH -->|Valid| HOME[Show Dashboard]
+AUTH -->|Invalid| LOGIN
+
+%% ============================
+%% USER ACTION FLOW
+%% ============================
+
+HOME --> DEC2{What Does User Do?}
+
+DEC2 -->|Ask Question / Voice Query| Q1[Send Query to Chatbot]
+DEC2 -->|Click Buttons| CL1[Send Click Event]
+DEC2 -->|Give Feedback| FB1[Submit Feedback]
+DEC2 -->|View Chat History| H1[Fetch Chat History]
+DEC2 -->|Logout| END
+
+%% ============================
+%% CHATBOT FLOW
+%% ============================
+
+Q1 --> NLP[Process Query with NLP Model]
+NLP --> KNOW[Retrieve Content from Books DB]
+KNOW --> RESP[Generate Chatbot Response]
+RESP --> SHOW_RESP[Display Answer to User]
+
+RESP --> STORE_CHAT[Store Chat Message]
+STORE_CHAT --> CHAT_DB[(Chat History DB)]
+
+KNOW --> SRC_SAVE[Store Sources Used]
+SRC_SAVE --> CHAT_DB
+
+%% ============================
+%% CLICK TRACKING FLOW
+%% ============================
+
+CL1 --> UPDATE_CLICK[Update Click Counters]
+UPDATE_CLICK --> CLICK_DB[(Click DB)]
+CLICK_DB --> CL_DONE[Click Tracking Completed]
+CL_DONE --> HOME
+
+%% ============================
+%% FEEDBACK FLOW
+%% ============================
+
+FB1 --> SAVE_FB[Store Feedback]
+SAVE_FB --> FEED_DB[(Feedback DB)]
+FEED_DB --> FB_DONE[Feedback Saved]
+FB_DONE --> HOME
+
+%% ============================
+%% CHAT HISTORY FLOW
+%% ============================
+
+H1 --> CHAT_DB
+CHAT_DB --> SHOW_HIST[Display Chat History]
+SHOW_HIST --> HOME
+
+%% ============================
+%% ADMIN PANEL FLOW
+%% ============================
+
+START --> A1[Admin Login]
+A1 --> A_AUTH[Verify Admin Credentials]
+A_AUTH -->|Invalid| A1
+A_AUTH -->|Valid| ADMIN_HOME[Show Admin Dashboard]
+
+ADMIN_HOME --> A_DEC{What Admin Does?}
+
+A_DEC -->|View Registered Users| A_USERS[Fetch Users]
+A_USERS --> USER_DB[(User DB)]
+USER_DB --> SHOW_USERS[Display User List]
+SHOW_USERS --> ADMIN_HOME
+
+A_DEC -->|View Click Analytics| A_CLICKS[Fetch Click Data]
+A_CLICKS --> CLICK_DB
+CLICK_DB --> SHOW_ANALYTICS[Display Click Analytics]
+SHOW_ANALYTICS --> ADMIN_HOME
+
+A_DEC -->|View User Chats| A_CHATS[Fetch User Chat History]
+A_CHATS --> CHAT_DB
+CHAT_DB --> SHOW_CHAT_ADMIN[Display User Chats]
+SHOW_CHAT_ADMIN --> ADMIN_HOME
+
+A_DEC -->|Logout| END

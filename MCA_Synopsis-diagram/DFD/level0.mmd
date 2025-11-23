@@ -1,0 +1,15 @@
+flowchart TD
+
+    %% External Entities
+    User([User])
+    Admin([Admin])
+
+    %% Central System
+    System([Chatbot Platform System])
+
+    %% Data Flows
+    User -->|Registration, Login, Chat, Clicks| System
+    System -->|Responses, Chat History, Recommendations| User
+
+    Admin -->|Admin Login, View Users, Analytics| System
+    System -->|User Data, Click Reports, Chat Logs| Admin

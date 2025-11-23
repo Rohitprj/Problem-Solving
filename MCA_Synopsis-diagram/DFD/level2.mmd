@@ -1,0 +1,136 @@
+flowchart TD
+
+%% ============================
+%% EXTERNAL ENTITIES
+%% ============================
+U([User])
+A([Admin])
+
+%% ============================
+%% MAIN PROCESSES (FROM LEVEL 1)
+%% ============================
+subgraph P1[1.0 User Management]
+    P1_1([1.1 Register User])
+    P1_2([1.2 Login User])
+    P1_3([1.3 Validate Token])
+    P1_4([1.4 Manage Profile])
+end
+
+subgraph P2[2.0 Chatbot Engine]
+    P2_1([2.1 Receive Query])
+    P2_2([2.2 Process NLP])
+    P2_3([2.3 Retrieve Knowledge])
+    P2_4([2.4 Generate Response])
+end
+
+subgraph P3[3.0 Click Tracking]
+    P3_1([3.1 Receive Click Event])
+    P3_2([3.2 Update User Click Count])
+    P3_3([3.3 Provide Analytics])
+end
+
+subgraph P4[4.0 Chat & Source Storage]
+    P4_1([4.1 Log Chat Message])
+    P4_2([4.2 Save Sources])
+    P4_3([4.3 Store Feedback])
+    P4_4([4.4 Retrieve Chat History])
+end
+
+subgraph P5[5.0 Admin Monitoring]
+    P5_1([5.1 Admin Login])
+    P5_2([5.2 View Users])
+    P5_3([5.3 View Click Analytics])
+    P5_4([5.4 View User Chats])
+    P5_5([5.5 Write Audit Log])
+end
+
+%% ============================
+%% DATA STORES
+%% ============================
+DS1[(User DB)]
+DS2[(Chat History DB)]
+DS3[(Click DB)]
+DS4[(Books DB)]
+DS5[(Audit Log DB)]
+DS6[(Feedback DB)]
+
+%% ============================
+%% USER → USER MANAGEMENT FLOWS
+%% ============================
+U -->|Register| P1_1
+P1_1 -->|Create User| DS1
+DS1 -->|User Exists Data| P1_2
+
+U -->|Login Credentials| P1_2
+P1_2 -->|Validate| DS1
+P1_2 -->|Send Token| U
+
+U -->|Access with Token| P1_3
+P1_3 -->|Token Validated| DS1
+P1_3 -->|Access Granted| U
+
+U -->|Update Profile| P1_4
+P1_4 -->|Save Changes| DS1
+
+%% ============================
+%% CHATBOT ENGINE FLOWS
+%% ============================
+U -->|Ask Question or Voice Input| P2_1
+P2_1 -->|Send for Processing| P2_2
+
+P2_2 -->|Need Knowledge| P2_3
+P2_3 -->|Fetch Books/Data| DS4
+P2_3 -->|Relevant Content| P2_2
+
+P2_2 -->|Generate Output| P2_4
+P2_4 -->|Chat Response| U
+
+%% STORE CHAT & SOURCES
+P2_4 -->|Save Chat| P4_1
+P4_1 -->|Insert Chat| DS2
+
+P4_1 -->|Extract Sources| P4_2
+P4_2 -->|Save Sources| DS2
+
+%% USER FEEDBACK
+U -->|Feedback| P4_3
+P4_3 -->|Save Feedback| DS6
+
+%% VIEW CHAT HISTORY
+U -->|View Chat History| P4_4
+P4_4 -->|Fetch Chats| DS2
+P4_4 -->|Chat Results| U
+
+%% ============================
+%% CLICK TRACKING FLOWS
+%% ============================
+U -->|Click: Meet / Books / Follow / Shop| P3_1
+P3_1 -->|Update Counters| P3_2
+P3_2 -->|Store Clicks| DS3
+
+P3_3 -->|Fetch Click Stats| DS3
+A -->|Request Click Analytics| P3_3
+P3_3 -->|Analytics Data| A
+
+%% ============================
+%% ADMIN MONITORING FLOWS
+%% ============================
+A -->|Login| P5_1
+P5_1 -->|Admin Verification| DS1
+P5_1 -->|Login Response| A
+
+A -->|View Registered Users| P5_2
+P5_2 -->|Fetch Users| DS1
+P5_2 -->|User List| A
+
+A -->|View Click Reports| P5_3
+P5_3 -->|Fetch Clicks| DS3
+P5_3 -->|Click Dashboard| A
+
+A -->|View User Chats| P5_4
+P5_4 -->|Fetch Chats| DS2
+P5_4 -->|Chat Details| A
+
+%% AUDIT LOG
+P5_5 -->|Store Admin Action| DS5
+A -->|Perform Action| P5_5
