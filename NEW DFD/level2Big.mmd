@@ -1,0 +1,101 @@
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#ffffff",
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#000000",
+    "primaryTextColor": "#000000",
+    "secondaryColor": "#ffffff",
+    "secondaryBorderColor": "#000000",
+    "secondaryTextColor": "#000000",
+    "tertiaryColor": "#ffffff",
+    "tertiaryBorderColor": "#000000",
+    "tertiaryTextColor": "#000000",
+    "lineColor": "#000000",
+    "fontFamily": "Arial",
+    "fontSize": "26px"
+  }
+}}%%
+
+flowchart TD
+
+ENTITY_USER[User]
+ENTITY_ADMIN[Admin]
+
+subgraph P1[1.0 User Management]
+    P1_1((1.1 Authenticate & Authorize))
+    P1_2((1.2 Manage User Profile))
+end
+
+subgraph P2[2.0 Chatbot Engine]
+    P2_1((2.1 Process Query & NLP))
+    P2_2((2.2 Knowledge Retrieval & Response Generation))
+end
+
+subgraph P3[3.0 Click Tracking]
+    P3_1((3.1 Record Click Events))
+    P3_2((3.2 Generate Click Analytics))
+end
+
+subgraph P4[4.0 Chat & Source Storage]
+    P4_1((4.1 Log Communication Data))
+    P4_2((4.2 Handle User Feedback))
+end
+
+subgraph P5[5.0 Admin Monitoring]
+    P5_1((5.1 Admin Access & Logging))
+    P5_2((5.2 Report Generation))
+end
+
+DS1[(User DB)]
+DS2[(Chat History DB)]
+DS3[(Click DB)]
+DS4[(Books DB)]
+DS5[(Audit Log DB)]
+DS6[(Feedback DB)]
+
+ENTITY_USER -->|Credentials / Token| P1_1
+P1_1 <--> DS1
+P1_1 -->|Auth Response| ENTITY_USER
+
+ENTITY_USER -->|Profile Data| P1_2
+P1_2 <--> DS1
+P1_2 -->|Confirmation| ENTITY_USER
+
+ENTITY_USER -->|Query| P2_1
+P2_1 --> P2_2
+P2_2 -->|Fetch Content| DS4
+DS4 -->|Knowledge| P2_2
+P2_2 -->|Response| ENTITY_USER
+
+ENTITY_USER -->|Click Event| P3_1
+P3_1 --> DS3
+
+ENTITY_ADMIN -->|Request Analytics| P3_2
+P3_2 <--> DS3
+P3_2 -->|Report| ENTITY_ADMIN
+
+P2_2 -->|Chat Data| P4_1
+P4_1 --> DS2
+
+ENTITY_USER -->|Feedback| P4_2
+P4_2 --> DS6
+
+ENTITY_USER -->|Request History| P4_1
+P4_1 <--> DS2
+P4_1 -->|History| ENTITY_USER
+
+ENTITY_ADMIN -->|Login| P5_1
+P5_1 <--> DS1
+P5_1 -->|Login Status| ENTITY_ADMIN
+
+ENTITY_ADMIN -->|Action| P5_1
+P5_1 -->|Write Log| DS5
+
+P5_2 -->|Request Data| DS1
+P5_2 -->|Request Data| DS2
+P5_2 -->|Request Data| DS3
+DS1 -->|User Data| P5_2
+DS2 -->|Chat Data| P5_2
+DS3 -->|Click Data| P5_2
+P5_2 -->|Dashboard| ENTITY_ADMIN
