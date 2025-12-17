@@ -1,0 +1,151 @@
+%% erDiagram
+
+%%     USER ||--|| CHAT_HISTORY : has
+%%     CHAT_HISTORY ||--o{ CHAT_MESSAGE : contains
+%%     CHAT_MESSAGE ||--o{ SOURCE : references
+%%     USER ||--o{ SESSION : creates
+
+%%     USER {
+%%         ObjectId _id PK
+%%         String username
+%%         String email
+%%         String phone
+%%         String gender
+%%         String DOB
+%%         Boolean verified
+%%         String role
+%%         Timestamp createdAt
+%%         Timestamp updatedAt
+%%     }
+
+%%     CHAT_HISTORY {
+%%         ObjectId _id PK
+%%         ObjectId userId FK
+%%         Timestamp createdAt
+%%         Timestamp updatedAt
+%%     }
+
+%%     CHAT_MESSAGE {
+%%         ObjectId messageId PK
+%%         Date timestamp
+%%         String question
+%%         String answer
+%%     }
+
+%%     SOURCE {
+%%         String sourceUrl
+%%         String contentPreview
+%%     }
+
+%%     SESSION {
+%%         ObjectId _id PK
+%%         ObjectId userId FK
+%%         Date loginTime
+%%         Date logoutTime
+%%         String ipAddress
+%%     }
+
+%%{init: {
+  "theme": "base",
+  "flowchart": {
+    "nodeSpacing": 35,
+    "rankSpacing": 40
+  },
+  "themeVariables": {
+    "background": "#ffffff",
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#000000",
+    "primaryTextColor": "#000000",
+    "lineColor": "#000000",
+    "fontFamily": "Arial",
+    "fontSize": "16px"
+  }
+}}%%
+
+flowchart TB
+
+%% =========================
+%% ENTITIES (RECTANGLE)
+%% =========================
+USER[USER]
+CHAT_HISTORY[CHAT_HISTORY]
+CHAT_MESSAGE[CHAT_MESSAGE]
+SESSION[SESSION]
+SOURCE[SOURCE]
+
+%% =========================
+%% RELATIONSHIPS (DIAMOND)
+%% =========================
+HAS{HAS}
+CONTAINS{CONTAINS}
+CREATES{CREATES}
+REFERENCES{REFERENCES}
+
+%% =========================
+%% USER ATTRIBUTES (OVAL)
+%% =========================
+U_ID((User_ID))
+U_NAME((Username))
+U_EMAIL((Email))
+U_PHONE((Phone))
+U_ROLE((Role))
+U_BOOKS((Books_Read))
+
+U_ID --- USER
+U_NAME --- USER
+U_EMAIL --- USER
+U_PHONE --- USER
+U_ROLE --- USER
+U_BOOKS --- USER
+
+%% =========================
+%% CHAT HISTORY ATTRIBUTES
+%% =========================
+CH_ID((History_ID))
+CH_DATE((Created_At))
+
+CH_ID --- CHAT_HISTORY
+CH_DATE --- CHAT_HISTORY
+
+%% =========================
+%% CHAT MESSAGE ATTRIBUTES
+%% =========================
+CM_ID((Message_ID))
+CM_Q((Question))
+CM_A((Answer))
+CM_TIME((Timestamp))
+
+CM_ID --- CHAT_MESSAGE
+CM_Q --- CHAT_MESSAGE
+CM_A --- CHAT_MESSAGE
+CM_TIME --- CHAT_MESSAGE
+
+%% =========================
+%% SESSION ATTRIBUTES
+%% =========================
+SE_ID((Session_ID))
+SE_LOGIN((Login_Time))
+SE_LOGOUT((Logout_Time))
+SE_IP((IP_Address))
+
+SE_ID --- SESSION
+SE_LOGIN --- SESSION
+SE_LOGOUT --- SESSION
+SE_IP --- SESSION
+
+%% =========================
+%% SOURCE ATTRIBUTES
+%% =========================
+S_URL((Source_URL))
+S_TEXT((Content_Preview))
+
+S_URL --- SOURCE
+S_TEXT --- SOURCE
+
+%% =========================
+%% STRUCTURAL CONNECTIONS
+%% =========================
+USER --- HAS --- CHAT_HISTORY
+CHAT_HISTORY --- CONTAINS --- CHAT_MESSAGE
+USER --- CREATES --- SESSION
+CHAT_MESSAGE --- REFERENCES --- SOURCE

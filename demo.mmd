@@ -1,54 +1,137 @@
+%% flowchart TD
+
+%%     %% External Entities (Terminators - Rectangles)
+%%     U[User]
+%%     A[Admin]
+
+%%     %% Processes (Bubbles - Round Edges)
+%%     P1((1.0 User Management))
+%%     P2((2.0 Chatbot Engine))
+%%     P3((3.0 Click Tracking))
+%%     P4((4.0 Chat and Source Storage))
+%%     P5((5.0 Admin Monitoring))
+
+%%     %% Data Stores (Cylinders - Use the default ID with a visual cue if needed, or simply the ID)
+%%     DS1[/User DB/]
+%%     DS2[/Chat History DB/]
+%%     DS3[/Click DB/]
+%%     DS4[/Books DB/]
+%%     DS5[/Audit Log DB/]
+%%     DS6[/Feedback DB/]
+
+%%     %% USER OPERATIONS (Input/Output)
+%%     U -->|Signup or Login| P1
+%%     P1 -->|Store or Fetch User Data| DS1
+%%     DS1 -->|User Data| P1
+%%     P1 -->|Auth Response| U
+
+%%     U -->|Ask Question or Voice Query| P2
+%%     P2 -->|Fetch Book or Content| DS4
+%%     DS4 -->|Book/Content Data| P2
+%%     P2 -->|Send Chat Response| U
+%%     P2 -->|Send Chat Data| P4
+
+%%     U -->|Click Events: Meet Shop Books Follow| P3
+%%     P3 -->|Update Click Counters| DS3
+
+%%     U -->|Submit Feedback| P4
+%%     P4 -->|Store Feedback| DS6
+
+%%     %% CHAT STORE
+%%     P4 -->|Store Chat Messages| DS2
+
+%%     %% ADMIN OPERATIONS
+%%     A -->|Login| P5
+%%     P5 -->|Verify Admin Role| DS1
+%%     DS1 -->|Admin Role Status| P5
+%%     P5 -->|View All Users| DS1
+%%     DS1 -->|User List| P5
+%%     P5 -->|View User Chats| DS2
+%%     DS2 -->|Chat Logs| P5
+%%     P5 -->|View Click Analytics| DS3
+%%     DS3 -->|Analytics Data| P5
+%%     P5 -->|Write Logs| DS5
+%%     P5 -->|Dashboard Data| A
+
+%%{init: {
+  "theme": "base",
+  "flowchart": {
+    "nodeSpacing": 90,
+    "rankSpacing": 110,
+    "padding": 22
+  },
+  "themeVariables": {
+    "background": "#ffffff",
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#000000",
+    "primaryTextColor": "#000000",
+    "secondaryColor": "#ffffff",
+    "secondaryBorderColor": "#000000",
+    "secondaryTextColor": "#000000",
+    "tertiaryColor": "#ffffff",
+    "tertiaryBorderColor": "#000000",
+    "tertiaryTextColor": "#000000",
+    "lineColor": "#000000",
+    "fontFamily": "Arial",
+    "fontSize": "30px"
+  }
+}}%%
+
 flowchart TD
 
-    %% External Entities (Terminators - Rectangles)
-    U[User]
-    A[Admin]
+%% External Entities
+U[User]
+A[Admin]
 
-    %% Processes (Bubbles - Round Edges)
-    P1((1.0 User Management))
-    P2((2.0 Chatbot Engine))
-    P3((3.0 Click Tracking))
-    P4((4.0 Chat and Source Storage))
-    P5((5.0 Admin Monitoring))
+%% Processes
+P1((1.0 User Management))
+P2((2.0 Chatbot Engine))
+P3((3.0 Click Tracking))
+P4((4.0 Chat and Source Storage))
+P5((5.0 Admin Monitoring))
 
-    %% Data Stores (Cylinders - Use the default ID with a visual cue if needed, or simply the ID)
-    DS1[/User DB/]
-    DS2[/Chat History DB/]
-    DS3[/Click DB/]
-    DS4[/Books DB/]
-    DS5[/Audit Log DB/]
-    DS6[/Feedback DB/]
+%% Data Stores
+DS1[/User DB/]
+DS2[/Chat History DB/]
+DS3[/Click DB/]
+DS4[/Books DB/]
+DS5[/Audit Log DB/]
+DS6[/Feedback DB/]
 
-    %% USER OPERATIONS (Input/Output)
-    U -->|Signup or Login| P1
-    P1 -->|Store or Fetch User Data| DS1
-    DS1 -->|User Data| P1
-    P1 -->|Auth Response| U
+%% USER OPERATIONS
+U -->|Signup or Login| P1
+P1 -->|Store or Fetch User Data| DS1
+DS1 -->|User Data| P1
+P1 -->|Auth Response| U
 
-    U -->|Ask Question or Voice Query| P2
-    P2 -->|Fetch Book or Content| DS4
-    DS4 -->|Book/Content Data| P2
-    P2 -->|Send Chat Response| U
-    P2 -->|Send Chat Data| P4
+U -->|Ask Question or Voice Query| P2
+P2 -->|Fetch Book or Content| DS4
+DS4 -->|Book / Content Data| P2
+P2 -->|Send Chat Response| U
+P2 -->|Send Chat Data| P4
 
-    U -->|Click Events: Meet Shop Books Follow| P3
-    P3 -->|Update Click Counters| DS3
+U -->|Click Events: Meet, Shop, Books, Follow| P3
+P3 -->|Update Click Counters| DS3
 
-    U -->|Submit Feedback| P4
-    P4 -->|Store Feedback| DS6
+U -->|Submit Feedback| P4
+P4 -->|Store Feedback| DS6
 
-    %% CHAT STORE
-    P4 -->|Store Chat Messages| DS2
+%% CHAT STORAGE
+P4 -->|Store Chat Messages| DS2
 
-    %% ADMIN OPERATIONS
-    A -->|Login| P5
-    P5 -->|Verify Admin Role| DS1
-    DS1 -->|Admin Role Status| P5
-    P5 -->|View All Users| DS1
-    DS1 -->|User List| P5
-    P5 -->|View User Chats| DS2
-    DS2 -->|Chat Logs| P5
-    P5 -->|View Click Analytics| DS3
-    DS3 -->|Analytics Data| P5
-    P5 -->|Write Logs| DS5
-    P5 -->|Dashboard Data| A
+%% ADMIN OPERATIONS
+A -->|Login| P5
+P5 -->|Verify Admin Role| DS1
+DS1 -->|Admin Role Status| P5
+
+P5 -->|View All Users| DS1
+DS1 -->|User List| P5
+
+P5 -->|View User Chats| DS2
+DS2 -->|Chat Logs| P5
+
+P5 -->|View Click Analytics| DS3
+DS3 -->|Analytics Data| P5
+
+P5 -->|Write Logs| DS5
+P5 -->|Dashboard Data| A
