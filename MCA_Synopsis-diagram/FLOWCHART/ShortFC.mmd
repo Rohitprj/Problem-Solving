@@ -1,0 +1,58 @@
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#ffffff",
+    "primaryColor": "#ffffff",
+    "primaryTextColor": "#000000",
+    "primaryBorderColor": "#000000",
+    "lineColor": "#000000",
+    "fontSize": "48px"
+  },
+  "flowchart": {
+    "nodeSpacing": 70,
+    "rankSpacing": 90,
+    "curve": "linear"
+  }
+}}%%
+
+flowchart TD
+
+START([Start])
+END([End])
+
+%% ====================
+%% USER FLOW
+%% ====================
+START --> U[User Opens Website]
+U --> AUTH{Registered?}
+
+AUTH -->|No| REG[Register User]
+REG --> LOGIN[Login]
+
+AUTH -->|Yes| LOGIN
+LOGIN --> HOME[User Dashboard]
+
+HOME --> ACTION{User Action}
+
+ACTION -->|Ask Question| CHAT[Chatbot Processing]
+CHAT --> RESP[Show Response]
+RESP --> STORE[(Chat History DB)]
+STORE --> HOME
+
+ACTION -->|View History| STORE --> HOME
+ACTION -->|Logout| END
+
+%% ====================
+%% ADMIN FLOW
+%% ====================
+START --> ADMIN[Admin Login]
+ADMIN --> A_AUTH{Valid Admin?}
+
+A_AUTH -->|No| ADMIN
+A_AUTH -->|Yes| DASH[Admin Dashboard]
+
+DASH --> A_ACT{Admin Action}
+
+A_ACT -->|View Users| USERDB[(User DB)] --> DASH
+A_ACT -->|View Chats| STORE --> DASH
+A_ACT -->|Logout| END

@@ -1,105 +1,120 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.7">
-  <diagram name="Chen ERD" id="0">
-    <mxGraphModel dx="106039" dy="67903" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="USER" parent="1" style="shape=rectangle;strokeColor=#000000;fillColor=#ffffff;fontSize=18;" value="USER" vertex="1">
-          <mxGeometry height="50" width="140" x="550" y="60" as="geometry" />
-        </mxCell>
-        <mxCell id="CHAT_HISTORY" parent="1" style="shape=rectangle;strokeColor=#000000;fillColor=#ffffff;fontSize=18;" value="CHAT_HISTORY" vertex="1">
-          <mxGeometry height="50" width="180" x="540" y="240" as="geometry" />
-        </mxCell>
-        <mxCell id="CHAT_MESSAGE" parent="1" style="shape=rectangle;strokeColor=#000000;fillColor=#ffffff;fontSize=18;" value="CHAT_MESSAGE" vertex="1">
-          <mxGeometry height="50" width="180" x="540" y="420" as="geometry" />
-        </mxCell>
-        <mxCell id="SESSION" parent="1" style="shape=rectangle;strokeColor=#000000;fillColor=#ffffff;fontSize=18;" value="SESSION" vertex="1">
-          <mxGeometry height="50" width="140" x="250" y="420" as="geometry" />
-        </mxCell>
-        <mxCell id="SOURCE" parent="1" style="shape=rectangle;strokeColor=#000000;fillColor=#ffffff;fontSize=18;" value="SOURCE" vertex="1">
-          <mxGeometry height="50" width="130" x="930" y="420" as="geometry" />
-        </mxCell>
-        <mxCell id="HAS" parent="1" style="shape=rhombus;strokeColor=#000000;fillColor=#ffffff;" value="HAS" vertex="1">
-          <mxGeometry height="50" width="80" x="580" y="150" as="geometry" />
-        </mxCell>
-        <mxCell id="CONTAINS" parent="1" style="shape=rhombus;strokeColor=#000000;fillColor=#ffffff;" value="CONTAINS" vertex="1">
-          <mxGeometry height="50" width="110" x="570" y="322" as="geometry" />
-        </mxCell>
-        <mxCell id="CREATES" parent="1" style="shape=rhombus;strokeColor=#000000;fillColor=#ffffff;" value="CREATES" vertex="1">
-          <mxGeometry height="50" width="110" x="380" y="320" as="geometry" />
-        </mxCell>
-        <mxCell id="REFERENCES" parent="1" style="shape=rhombus;strokeColor=#000000;fillColor=#ffffff;" value="REFERENCES" vertex="1">
-          <mxGeometry height="50" width="130" x="760" y="420" as="geometry" />
-        </mxCell>
-        <mxCell id="U_ID" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="User_ID" vertex="1">
-          <mxGeometry height="40" width="120" x="425" y="-10" as="geometry" />
-        </mxCell>
-        <mxCell id="U_NAME" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Username" vertex="1">
-          <mxGeometry height="40" width="120" x="570" y="-10" as="geometry" />
-        </mxCell>
-        <mxCell id="U_EMAIL" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Email" vertex="1">
-          <mxGeometry height="40" width="120" x="380" y="50" as="geometry" />
-        </mxCell>
-        <mxCell id="U_PHONE" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Phone" vertex="1">
-          <mxGeometry height="40" width="120" x="735" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="U_ROLE" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Role" vertex="1">
-          <mxGeometry height="40" width="100" x="750" y="80" as="geometry" />
-        </mxCell>
-        <mxCell id="U_BOOKS" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;strokeWidth=2;" value="Books_Read" vertex="1">
-          <mxGeometry height="40" width="140" x="415" y="120" as="geometry" />
-        </mxCell>
-        <mxCell id="CH_ID" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="History_ID" vertex="1">
-          <mxGeometry height="40" width="120" x="370" y="240" as="geometry" />
-        </mxCell>
-        <mxCell id="CH_DATE" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Created_At" vertex="1">
-          <mxGeometry height="40" width="140" x="740" y="150" as="geometry" />
-        </mxCell>
-        <mxCell id="CM_ID" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Message_ID" vertex="1">
-          <mxGeometry height="40" width="130" x="460" y="372" as="geometry" />
-        </mxCell>
-        <mxCell id="CM_Q" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Question" vertex="1">
-          <mxGeometry height="40" width="120" x="710" y="360" as="geometry" />
-        </mxCell>
-        <mxCell id="CM_A" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Answer" vertex="1">
-          <mxGeometry height="40" width="120" x="510" y="500" as="geometry" />
-        </mxCell>
-        <mxCell id="CM_TIME" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Timestamp" vertex="1">
-          <mxGeometry height="40" width="130" x="680" y="510" as="geometry" />
-        </mxCell>
-        <mxCell id="SE_ID" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Session_ID" vertex="1">
-          <mxGeometry height="40" width="130" x="210" y="360" as="geometry" />
-        </mxCell>
-        <mxCell id="SE_LOGIN" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Login_Time" vertex="1">
-          <mxGeometry height="40" width="140" x="80" y="400" as="geometry" />
-        </mxCell>
-        <mxCell id="SE_LOGOUT" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Logout_Time" vertex="1">
-          <mxGeometry height="40" width="140" x="250" y="500" as="geometry" />
-        </mxCell>
-        <mxCell id="SE_IP" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="IP_Address" vertex="1">
-          <mxGeometry height="40" width="140" x="90" y="470" as="geometry" />
-        </mxCell>
-        <mxCell id="S_URL" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Source_URL" vertex="1">
-          <mxGeometry height="40" width="140" x="1010" y="350" as="geometry" />
-        </mxCell>
-        <mxCell id="S_TEXT" parent="1" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" value="Content_Preview" vertex="1">
-          <mxGeometry height="40" width="170" x="995" y="510" as="geometry" />
-        </mxCell>
-        <mxCell id="2" edge="1" parent="1" source="U_ID" style="endArrow=none" target="USER" />
-        <mxCell id="3" edge="1" parent="1" source="U_NAME" style="endArrow=none" target="USER" />
-        <mxCell id="4" edge="1" parent="1" source="U_EMAIL" style="endArrow=none" target="USER" />
-        <mxCell id="5" edge="1" parent="1" source="U_PHONE" style="endArrow=none" target="USER" />
-        <mxCell id="6" edge="1" parent="1" source="U_ROLE" style="endArrow=none" target="USER" />
-        <mxCell id="7" edge="1" parent="1" source="U_BOOKS" style="endArrow=none" target="USER" />
-        <mxCell id="8" edge="1" parent="1" source="USER" style="endArrow=none" target="HAS" />
-        <mxCell id="9" edge="1" parent="1" source="HAS" style="endArrow=none" target="CHAT_HISTORY" />
-        <mxCell id="10" edge="1" parent="1" source="CHAT_HISTORY" style="endArrow=none" target="CONTAINS" />
-        <mxCell id="11" edge="1" parent="1" source="CONTAINS" style="endArrow=none" target="CHAT_MESSAGE" />
-        <mxCell id="12" edge="1" parent="1" source="USER" style="endArrow=none" target="CREATES" />
-        <mxCell id="13" edge="1" parent="1" source="CREATES" style="endArrow=none" target="SESSION" />
-        <mxCell id="14" edge="1" parent="1" source="CHAT_MESSAGE" style="endArrow=none" target="REFERENCES" />
-        <mxCell id="15" edge="1" parent="1" source="REFERENCES" style="endArrow=none" target="SOURCE" />
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e">
+    <diagram name="Chen ERD" id="0">
+        <mxGraphModel dx="54423" dy="44938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="USER" value="USER" style="shape=rectangle;strokeColor=#000000;fillColor=#ffffff;fontSize=18;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="60" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHAT_HISTORY" target="CONTAINS">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CHAT_HISTORY" value="CHAT_HISTORY" style="shape=rectangle;strokeColor=#000000;fillColor=#ffffff;fontSize=18;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="240" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHAT_MESSAGE" target="REFERENCES">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CHAT_MESSAGE" value="CHAT_MESSAGE" style="shape=rectangle;strokeColor=#000000;fillColor=#ffffff;fontSize=18;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="420" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="SESSION" value="SESSION" style="shape=rectangle;strokeColor=#000000;fillColor=#ffffff;fontSize=18;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="420" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="SOURCE" value="SOURCE" style="shape=rectangle;strokeColor=#000000;fillColor=#ffffff;fontSize=18;" parent="1" vertex="1">
+                    <mxGeometry x="930" y="420" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="HAS" value="HAS" style="shape=rhombus;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="580" y="150" width="80" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CONTAINS" target="CHAT_MESSAGE">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CONTAINS" value="CONTAINS" style="shape=rhombus;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="575" y="326" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CREATES" target="CONTAINS">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CREATES" value="CREATES" style="shape=rhombus;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="320" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="REFERENCES" target="SOURCE">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="REFERENCES" value="REFERENCES" style="shape=rhombus;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="420" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="U_ID" value="User_ID" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="425" y="-10" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="U_NAME" value="Username" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="570" y="-10" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="U_EMAIL" value="Email" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="50" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="U_PHONE" value="Phone" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="735" y="10" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="U_ROLE" value="Role" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="80" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="U_BOOKS" value="Books_Read" style="ellipse;strokeColor=#000000;fillColor=#ffffff;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="415" y="120" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="CH_ID" value="History_ID" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="370" y="240" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="CH_DATE" value="Created_At" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="245" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="CM_ID" value="Message_ID" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="372" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="CM_Q" value="Question" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="360" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="CM_A" value="Answer" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="500" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="CM_TIME" value="Timestamp" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="510" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="SE_ID" value="Session_ID" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="360" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="SE_LOGIN" value="Login_Time" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="400" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="SE_LOGOUT" value="Logout_Time" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="500" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="SE_IP" value="IP_Address" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="470" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="S_URL" value="Source_URL" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="1010" y="350" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="S_TEXT" value="Content_Preview" style="ellipse;strokeColor=#000000;fillColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="995" y="510" width="170" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" style="endArrow=none" parent="1" source="U_ID" target="USER" edge="1"/>
+                <mxCell id="3" style="endArrow=none" parent="1" source="U_NAME" target="USER" edge="1"/>
+                <mxCell id="4" style="endArrow=none" parent="1" source="U_EMAIL" target="USER" edge="1"/>
+                <mxCell id="5" style="endArrow=none" parent="1" source="U_PHONE" target="USER" edge="1"/>
+                <mxCell id="6" style="endArrow=none" parent="1" source="U_ROLE" target="USER" edge="1"/>
+                <mxCell id="7" style="endArrow=none" parent="1" source="U_BOOKS" target="USER" edge="1"/>
+                <mxCell id="8" style="endArrow=none" parent="1" source="USER" target="HAS" edge="1"/>
+                <mxCell id="9" style="endArrow=none" parent="1" source="HAS" target="CHAT_HISTORY" edge="1"/>
+                <mxCell id="10" style="endArrow=none" parent="1" source="CHAT_HISTORY" target="CONTAINS" edge="1"/>
+                <mxCell id="11" style="endArrow=none" parent="1" source="CONTAINS" target="CHAT_MESSAGE" edge="1"/>
+                <mxCell id="12" style="endArrow=none" parent="1" source="USER" target="CREATES" edge="1"/>
+                <mxCell id="13" style="endArrow=none" parent="1" source="CREATES" target="SESSION" edge="1"/>
+                <mxCell id="14" style="endArrow=none" parent="1" source="CHAT_MESSAGE" target="REFERENCES" edge="1"/>
+                <mxCell id="15" style="endArrow=none" parent="1" source="REFERENCES" target="SOURCE" edge="1"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>
