@@ -1,0 +1,70 @@
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#ffffff",
+    "primaryColor": "#ffffff",
+    "primaryTextColor": "#000000",
+    "primaryBorderColor": "#000000",
+    "lineColor": "#000000",
+    "fontFamily": "Arial",
+    "fontSize": "16px"
+  }
+}}%%
+
+classDiagram
+
+%% =========================
+%% CLASSES
+%% =========================
+
+class User {
+  +ObjectId id
+  +String username
+  +String email
+  +String phone
+  +String role
+  +Boolean verified
+  +String gender
+  +String dob
+}
+
+class Session {
+  +ObjectId sessionId
+  +Date loginTime
+  +Date logoutTime
+  +String ipAddress
+}
+
+class ChatHistory {
+  +ObjectId historyId
+  +Date createdAt
+}
+
+class ChatMessage {
+  +ObjectId messageId
+  +String question
+  +String answer
+  +Date timestamp
+}
+
+class Source {
+  +String sourceUrl
+  +String contentPreview
+}
+
+class UserClicks {
+  +int meet
+  +int books
+  +int shop
+  +int follow
+}
+
+%% =========================
+%% RELATIONSHIPS
+%% =========================
+
+User "1" --> "0..*" Session : has
+User "1" --> "1" ChatHistory : owns
+ChatHistory "1" --> "0..*" ChatMessage : contains
+ChatMessage "1" --> "0..*" Source : references
+User "1" --> "1" UserClicks : generates

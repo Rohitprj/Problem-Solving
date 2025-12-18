@@ -1,0 +1,60 @@
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#ffffff",
+    "primaryColor": "#ffffff",
+    "primaryTextColor": "#000000",
+    "primaryBorderColor": "#000000",
+    "lineColor": "#000000",
+    "fontFamily": "Arial",
+    "fontSize": "16px"
+  }
+}}%%
+
+classDiagram
+
+%% =========================
+%% OBJECT INSTANCES
+%% =========================
+
+class user1 {
+  username = "Rohit"
+  role = "user"
+  verified = true
+}
+
+class session1 {
+  loginTime = "10:30 AM"
+  ipAddress = "192.168.1.10"
+}
+
+class chatHistory1 {
+  createdAt = "2025-01-10"
+}
+
+class chatMessage1 {
+  question = "What is inner peace?"
+  answer = "Inner peace comes from self-awareness."
+}
+
+class source1 {
+  sourceUrl = "Spiritual Book PDF"
+  contentPreview = "Chapter on Meditation"
+}
+
+class userClicks1 {
+  meet = 3
+  books = 5
+  shop = 1
+  follow = 2
+}
+
+%% =========================
+%% OBJECT RELATIONSHIPS
+%% =========================
+
+user1 --> session1 : has
+user1 --> chatHistory1 : owns
+chatHistory1 --> chatMessage1 : contains
+chatMessage1 --> source1 : references
+user1 --> userClicks1 : generates

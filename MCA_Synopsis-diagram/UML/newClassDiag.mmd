@@ -1,0 +1,88 @@
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#ffffff",
+    "primaryColor": "#ffffff",
+    "primaryTextColor": "#000000",
+    "primaryBorderColor": "#000000",
+    "lineColor": "#000000",
+    "fontFamily": "Arial",
+    "fontSize": "16px"
+  }
+}}%%
+
+classDiagram
+
+%% =========================
+%% BASE USER STRUCTURE
+%% =========================
+
+class User {
+  +ObjectId userId
+  +String username
+  +String email
+  +String phone
+  +Boolean verified
+  +login()
+  +logout()
+}
+
+class Admin {
+  +viewUsers()
+  +viewAnalytics()
+  +viewChats()
+}
+
+User <|-- Admin
+
+%% =========================
+%% SESSION MANAGEMENT
+%% =========================
+
+class Session {
+  +ObjectId sessionId
+  +Date loginTime
+  +Date logoutTime
+  +String ipAddress
+}
+
+User "1" o-- "0..*" Session : manages
+
+%% =========================
+%% CHAT MODULE
+%% =========================
+
+class ChatHistory {
+  +ObjectId historyId
+  +Date createdAt
+}
+
+class ChatMessage {
+  +ObjectId messageId
+  +String question
+  +String answer
+  +Date timestamp
+}
+
+class Source {
+  +String sourceUrl
+  +String contentPreview
+}
+
+User "1" *-- "1" ChatHistory : owns
+ChatHistory "1" *-- "0..*" ChatMessage : composed of
+ChatMessage "1" o-- "0..*" Source : supported by
+
+%% =========================
+%% USER INTERACTION TRACKING
+%% =========================
+
+class ClickTracker {
+  +int meetClicks
+  +int bookClicks
+  +int shopClicks
+  +int followClicks
+  +recordClick()
+}
+
+User "1" --> "1" ClickTracker : interacts with
