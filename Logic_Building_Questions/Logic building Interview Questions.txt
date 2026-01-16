@@ -1,3 +1,5 @@
+Asked in companies by me
+
 1) make pattern 
    *****
    ****
@@ -16,3 +18,23 @@
 4) WAP to check what is correct [{}] [{)] [()] 
 
 5) WAP to give output:7 from this arr[2,5,6,9]
+
+----------------------------------------------------------------------------------------------------
+
+1) callback
+2) callbackhell
+3) recursion 
+4) print 1 to 50 without loop
+5) swap 2 numbers 
+6) hoisting
+7) about let, var and const difference between them 
+8) how child send any value to parent 
+9) diff b/w props and arguments
+
+
+function Greet(prop){
+   return <Text>Hello{prop}</Text>
+}
+
+<Greet name={"Rohit"}/>
+
