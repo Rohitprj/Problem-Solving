@@ -3,7 +3,7 @@
 
 // Global :- var let const all are used for global scope
 var name = "Rohit";
-let age = 24;
+let age = 1;
 const add = "Delhi";
 // These values we can use from every where we want in this file
 console.log(name, age, add);
@@ -22,7 +22,7 @@ print();
 
 function funScope(params) {
   var name = "Rohit";
-  let age = 24;
+  let age = 1;
   const add = "Delhi";
   console.log(name, age, add);
 }
@@ -32,7 +32,7 @@ console.log(name, age, add);
 // Block scope :- In this let and const are block scope (cannot access outside block) and var can be access outside the block.
 {
   var name = "Rohit";
-  let age = 24;
+  let age = 1;
   const add = "Delhi";
   console.log(name, age, add);
 }
