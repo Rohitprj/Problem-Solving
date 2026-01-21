@@ -1,7 +1,7 @@
 // Variables = Data Containers
 // JavaScript variables are containers for data.
 
-// JavaScript variables can be declared in 4 ways:
+// JavaScript variables can be declared in 3 ways:
 
 // Modern JavaScript          Older JavaScript
 // Using let                  Using var (Not Recommended)
@@ -11,6 +11,14 @@
 // The let keyword was introduced in ES6 (2015)
 
 // Variables declared with let have Block Scope
+{
+  let a = 10;
+  console.log(a);
+}
+
+{
+  const name = "web development";
+}
 
 // Variables declared with let must be Declared before use
 
