@@ -80,3 +80,64 @@ Given that x = 5, the table below explains the comparison operators:
 
 
 */
+
+/*
+ ---------------------------Ternary Operator---------------------------------
+
+The ternary operator is the only JavaScript operator that takes three operands.
+
+The syntax is as follows:   condition ? expressionIfTrue : expressionIfFalse;
+
+The condition is evaluated once. If the condition is true, the expressionIfTrue is evaluated; otherwise, the expressionIfFalse is evaluated.
+
+let x = 9;
+let y = 8;
+let z = x > y ? x : y;
+console.log(z);
+
+*/
+
+/*
+ ---------------------------Nullish Coalescing Operator---------------------------------    
+
+The nullish coalescing operator (??) returns its right operand when its left operand is null or undefined; otherwise, it returns its left operand.
+
+*/
+
+// let x = null;
+// let y = 8;
+// let z = x ?? y;
+// console.log(z);
+
+// function greet(name) {
+//   const finalName = name ?? "Guest";
+//   console.log(`Hello, ${finalName}`);
+// }
+
+// greet("Ajay");
+// greet();
+
+/*
+ ---------------------------Optional Chaining---------------------------------
+
+Optional chaining is a feature of JavaScript that allows you to access nested properties of an object without needing to check if the object exists.
+
+*/
+
+// let user = { name: "John", address: { street: "123 Main St" } };
+// console.log(user?.address?.street);  // Output: 123 Main St
+
+//==============================================================================================================================
+
+/* 
+    CONDITIONAL STATEMENTS
+
+    Types of Conditional Statements
+    
+    1. if Statement
+    2. if-else Statement
+    3. else if Statement
+    4. Using Switch Statement
+    5. Nested if...else
+
+*/
