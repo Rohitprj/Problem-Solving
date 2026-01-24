@@ -169,3 +169,43 @@ It is also known as derived data types or reference data types.
 
 // console.log(result1);
 // console.log(result2);
+
+// let students = {
+//   name: "Shivu",
+//   course: "BCA",
+//   enroll: 1234,
+//   isCompleted: false,
+//   books: ["web", "backend"],
+//   nest: {
+//     title: "1",
+//     song: "Bollywood",
+//   },
+// };
+
+// console.log("Whole Object", students);
+// console.log("Object keys", Object.values(students));
+
+// const arr = [1, 2, 3, 4, 5, 6];
+
+// console.log(arr);
+
+// let a2 = [1, "two", { name: "Object" }, [3, 4, 5], true];
+
+// console.log(a2);
+
+// function abc() {
+//   console.log("Hello I am function !");
+// }
+
+// abc();
+
+// function sum(a, b) {
+//   return a + b;
+// }
+// const a = sum(2, 2);
+// console.log(a);
+
+function sum(a, b) {
+  console.log(a + b);
+}
+sum(5, 6);
