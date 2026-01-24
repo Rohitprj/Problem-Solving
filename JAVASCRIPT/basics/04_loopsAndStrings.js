@@ -33,3 +33,16 @@ do {
 } while (i < 3);
 
 */
+
+// console.time();
+// for (let i = 1; i <= 100; i++) {
+//   console.log(i);
+// }
+// console.timeEnd();
+
+// let i = 0;
+// do {
+//   console.log("Number:", i);
+//   i++; // increment
+//   console.log(i);
+// } while (i < 3);
