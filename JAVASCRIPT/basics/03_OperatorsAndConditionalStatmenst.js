@@ -130,6 +130,35 @@ Optional chaining is a feature of JavaScript that allows you to access nested pr
 
 //==============================================================================================================================
 
+/*
+
+Falsy values in JS
+
+   false
+   0
+   -0
+   0n        // BigInt zero
+   ""        // empty string
+   null
+   undefined
+   NaN
+
+Truthy values
+
+   true
+   "0"
+   "false"
+   []
+   {}
+   function () {}
+   42
+   -1
+   Infinity
+
+*/
+
+//==============================================================================================================================
+
 /* 
     CONDITIONAL STATEMENTS
 
