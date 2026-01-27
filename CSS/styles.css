@@ -1,0 +1,19 @@
+/* *{
+    background-color: aqua;
+} */
+
+body{
+    background-color: pink;
+}
+
+#parent{
+    background-color: aqua;
+}
+
+#parent .second{
+    color:greenyellow;
+}
+
+.first{
+    color: blue;
+}
