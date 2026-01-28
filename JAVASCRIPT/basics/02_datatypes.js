@@ -209,3 +209,24 @@ function sum(a, b) {
   console.log(a + b);
 }
 sum(5, 6);
+
+/*
+
+Object :-
+  Create an object called person with properties name, age, and city. Print the object.
+  WAP to print keys of last created object.
+  Create an object car with properties brand and model. Access and print the brand.
+  Write a program that prints all values of an object using console.log().
+
+Array :-
+  Create an array of 5 numbers and print it.
+  Print the first and last element of an array.  
+  Find the length of an array.
+
+Function :-
+  Write a function that prints “Hello World”.
+  Write a function that takes two numbers and prints their sum.
+  Write a function that returns the square of a number.  
+  Write a function that takes a name as a parameter and prints a welcome message.
+  
+*/

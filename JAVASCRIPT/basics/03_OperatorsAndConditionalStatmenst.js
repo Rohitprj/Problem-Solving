@@ -220,3 +220,17 @@ if (weather === "sunny") {
 
 
 */
+
+/*
+
+Operators :-  
+  Write a program to add, subtract, multiply, and divide two numbers.
+  Write a program to check whether two numbers are equal or not.
+  Use logical operators to check if a number is between 10 and 20.
+
+Conditional Statements :-
+  Write a program to check whether a person is eligible to vote.
+  Write a program to find the greatest of two numbers using if...else.  
+
+
+*/
