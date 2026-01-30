@@ -57,6 +57,43 @@
       <input type="radio" id="female" name="gender" value="female" />
       <label for="others">others</label>
       <input type="radio" id="male" name="gender" value="other" /><br /><br />
+
+      <label>Favorite color:</label>
+      <input type="color" name="color" /><br /><br />
+      <p>Skills:</p>
+
+      <label for="skills">HTML</label>
+      <input type="checkbox" name="skills" value="html" />
+      <label for="skills">CSS</label>
+      <input type="checkbox" name="skills" value="css" />
+      <label for="skills">JavaScript</label>
+      <input type="checkbox" name="skills" value="js" /><br /><br />
+
+      <label for="message">Message:</label><br />
+
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        cols="40"
+        placeholder="Write your message here..."
+      ></textarea
+      ><br /><br />
+
+      <label for="country">Country:</label>
+
+      <select name="country" id="country" required>
+        <!-- <optgroup label="Asia"> -->
+        <option value="india">India</option>
+        <option value="japan">Japan</option>
+        <!-- </optgroup> -->
+
+        <!-- <optgroup label="Europe"> -->
+        <option value="france">France</option>
+        <option value="germany">Germany</option>
+        <!-- </optgroup> --></select
+      ><br /><br />
+
       <button type="submit">Log In</button>
     </form>
 
