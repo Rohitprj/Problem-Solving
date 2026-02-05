@@ -1,9 +1,9 @@
 // Datatypes in Javascript
 
 // Primitive Datatypes
-// 1. String
-// 2. Number
-// 3. Boolean
+// 1. String  "This is a string"
+// 2. Number   1234
+// 3. Boolean  true or flase
 // 4. Null
 // 5. Undefined
 // 6. Symbol

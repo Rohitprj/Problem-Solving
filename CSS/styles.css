@@ -1,17 +1,24 @@
-/* *{
+*{
     background-color: aqua;
-} */
+}   
+
+div{
+    background-color: greenyellow;
+}
+p{
+    color: red;
+}
 
 body{
     background-color: pink;
 }
 
-#parent{
+/* #parent{
     background-color: aqua;
-}
+} */
 
 #parent .second{
-    color:greenyellow;
+    color:brown;
 }
 
 .first{
