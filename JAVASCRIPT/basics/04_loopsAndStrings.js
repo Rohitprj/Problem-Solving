@@ -86,4 +86,23 @@ console.lo("Asha \n learnlogy")
 \t ( for tab space )
 console.log("Asha \t learnlogy")
 
+
+String methods in JS :-
+
+let str = Asha Learnlogy;
+
+str.toUpperCase();  to uppercase all string
+str.toLowerCase();  to lowercase all string
+str.trim(); to trim spaces b/w strings
+str.slice(start, end);
+str.concat()
+
+
 */
+
+let str = "Asha Learnlogy";
+
+const x = str.slice(0, 5);
+const y = str.concat();
+
+console.log(x);
