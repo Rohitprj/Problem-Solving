@@ -234,3 +234,127 @@ Conditional Statements :-
 
 
 */
+
+/*
+
+OPERATORS – Practice Questions
+
+Basic Operators
+
+Write a program to add two numbers.
+
+Subtract one number from another.
+
+Multiply two numbers.
+
+Divide two numbers and print the result.
+
+Find the remainder when one number is divided by another.
+----------------------------------------------------------------------
+Comparison Operators
+
+Check if two numbers are equal.
+
+Check which number is greater between two numbers.
+
+Check if a number is greater than or equal to 10.
+
+Compare two numbers and print the larger one.
+
+Check if a number is less than 100.
+----------------------------------------------------------------------
+Logical Operators
+
+Check if a number is greater than 10 and less than 50.
+
+Check if a number is even and positive.
+
+Check if a number is negative or zero.
+
+Check if a person is eligible to vote (age ≥ 18).
+
+Check if a user can login (username AND password correct).
+----------------------------------------------------------------------
+CONDITIONAL STATEMENTS – Practice Questions
+If Statement
+
+Check if a number is positive.
+
+Check if a number is even.
+
+Check if a student has passed (marks ≥ 40).
+
+Check if a person is eligible for driving license (age ≥ 18).
+
+Print “Hello” if a number is greater than 5.
+----------------------------------------------------------------------
+If–Else Statement
+
+Check whether a number is even or odd.
+
+Check whether a number is positive or negative.
+
+Check whether a student passed or failed.
+
+Find the greater number between two numbers.
+
+Check if a number is divisible by 5.
+----------------------------------------------------------------------
+If–Else If Ladder
+
+Print grade based on marks:
+
+≥90 → A
+
+≥75 → B
+
+≥60 → C
+
+<60 → Fail
+
+Print day name based on number (1–7).
+
+Check age category:
+
+<13 → Child
+
+13–19 → Teen
+
+≥20 → Adult
+
+Check temperature:
+
+<10 → Cold
+
+10–25 → Normal
+
+25 → Hot
+
+Electricity bill calculation using slabs.
+----------------------------------------------------------------------
+ARRAYS – Practice Questions
+Basic Array
+
+Create an array of 5 numbers and print it.
+
+Print the first element of an array.
+
+Print the last element of an array.
+
+Find the length of an array.
+
+Print all elements of an array using loop.
+
+*/
+
+// let arr = [6,5,7,6,87,9,6,7,4,5,3,4,3,6,7,6,87,9,8,2,4,5,6,7,78,77,6,54,4,3,3,22,1,1];
+
+// for(let i = 0; i < arr.length; i++){
+
+//    if(arr[i] % 2 === 0){
+
+//    console.log(arr[i]);
+
+//    }
+
+// }
