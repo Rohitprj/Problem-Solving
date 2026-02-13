@@ -8,16 +8,17 @@ a{
 
 } */
 
-div{
+/* div{
     height: 100px;
     width: 100px;
     padding: 20px;
     margin: 20px;
     display: inline-block;
+    background-color: red;
 }
 
 .box2{
     background-color: blueviolet;
-     /* display: none */
+     display: none;
      visibility: hidden;
-}
+} */
