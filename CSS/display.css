@@ -15,3 +15,9 @@ div{
     margin: 20px;
     display: inline-block;
 }
+
+.box2{
+    background-color: blueviolet;
+     /* display: none */
+     visibility: hidden;
+}
