@@ -1,0 +1,17 @@
+/* div{
+    background-color: rebeccapurple;
+    display: inline;
+}
+a{
+    background-color: lightcoral;
+    display:block;
+
+} */
+
+div{
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+}
