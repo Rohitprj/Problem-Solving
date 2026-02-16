@@ -132,9 +132,147 @@
     em  Font size of the parent element.
     rem Font size of the root element.
 
-    vh: relative to 1% viewport height
+    vh = viewport height, vm = viewport width
+
+    vh : relative to 1% viewport height
     vw : relative to 1% viewport width 
+
+    Position in CSS ------------------
+
+    The position CSS property sets how an element is positioned in a document.
+
+    position : static / relative / absolute / fixed / sticky
+
+    static - default position (The top, right, bottom, left, and z-index properties have no effect)
+
+    relative - element is relative to itself. (The top, right, bottom, left, and z-index will work)
+    
+    absolute - positioned relative to its closest positioned ancestor. (removed from the flow)
+    
+    fixed - positioned relative to browser. (removed from flow)
+    
+    sticky - positioned based on use r's scroll position
+
 
     -->
   </body>
 </html>
+
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PositionInCSS</title>
+    <style>
+      div {
+        height: 150px;
+        width: 150px;
+        background-color: lightskyblue;
+        border: 2px solid black;
+        display: inline-block;
+      }
+
+      #box1 {
+        position: static;
+        top: 10px;
+        bottom: 20px;
+      }
+      #box2 {
+        position: relative;
+        right: 100px;
+        top: 40px;
+      }
+      #box3 {
+        position: absolute;
+        left: 30px;
+        top: 60px;
+      }
+      #box4 {
+        position: fixed;
+        top: 0px;
+      }
+      #box5 {
+        position: sticky;
+        top: 0px;
+        right: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        height: 500px;
+        width: 500px;
+        top: 20px;
+        position: relative;
+        left: 20px;
+      "
+    >
+      <div id="box5">box5</div>
+      <div id="box1">box1</div>
+      <div id="box2">box2</div>
+      <div id="box3">box3</div>
+      <div id="box4">box4</div>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore
+        doloremque possimus aperiam sed praesentium voluptatem. Repellat aperiam
+        doloremque nobis harum. At, soluta sunt! Quae fugiat recusandae modi
+        totam provident commodi repudiandae illum esse eos, maxime mollitia
+        pariatur quasi qui dolores corrupti rerum doloremque! Nesciunt
+        repellendus quia praesentium tenetur nam illum provident eius dolorum!
+        Blanditiis sunt velit corporis nihil dicta ut doloribus deleniti
+        voluptates sapiente quae fugiat quidem voluptatem odit dignissimos
+        exercitationem, ex harum similique eveniet provident. Voluptatibus
+        earum, laudantium deserunt nam repellat, iusto iste unde fuga eaque
+        repellendus error vitae quia animi mollitia similique harum
+        reprehenderit, natus facilis nemo dicta possimus nihil. Dolores, illum
+        illo? Accusantium atque odit ipsum facere magnam quidem dolor officiis
+        aliquid tempore alias, dolores necessitatibus eaque fugiat ut dicta
+        iusto eum provident incidunt distinctio voluptas. Optio eius
+        accusantium, soluta repellendus error debitis dolorum vero excepturi hic
+        veniam sunt non ipsum. Corrupti nulla, molestiae repudiandae nam
+        recusandae expedita sequi minima iure cum alias necessitatibus magni
+        atque eos cumque, ipsam quibusdam, id perspiciatis? Dolore reiciendis
+        temporibus iusto voluptatum esse perspiciatis minus! Dolorem explicabo
+        alias eveniet eligendi fugiat nostrum incidunt necessitatibus neque
+        suscipit culpa, possimus voluptatem impedit iure soluta nam commodi
+        minima? Natus officiis deleniti rerum recusandae! Possimus, dolores
+        ratione aliquam doloribus iste magni quod fuga aspernatur tempore sit
+        modi dignissimos esse delectus? Ducimus animi doloribus consequuntur
+        doloremque officiis accusantium soluta quod quam aperiam porro! Debitis,
+        esse dolore? Perspiciatis voluptas mollitia aut nemo quas debitis sint,
+        magni excepturi expedita suscipit earum ipsam sapiente, ullam
+        dignissimos laborum? Aut accusantium, debitis provident sunt eius nulla
+        aperiam aspernatur repudiandae praesentium magnam sequi hic optio! Nihil
+        accusantium unde, culpa molestiae nisi error nobis quidem dolor,
+        reprehenderit voluptates aliquid expedita possimus accusamus incidunt
+        inventore, molestias minima amet aliquam aspernatur est repudiandae
+        illum corporis! Dolor, nesciunt. Praesentium id perferendis rem nobis
+        impedit dolore optio totam? Vero distinctio praesentium esse possimus
+        dicta deserunt excepturi molestiae dolore magni nulla, aut aliquid
+        corporis, tempora quidem? Rem sequi illo, voluptas sint, rerum
+        accusantium libero neque obcaecati quos suscipit hic doloribus expedita
+        veniam quibusdam cumque vitae nobis magnam quis molestias, sapiente cum
+        nam fuga architecto! Obcaecati omnis similique temporibus et accusamus
+        ipsum architecto nobis modi, vero, alias molestias asperiores
+        reprehenderit odit debitis excepturi incidunt quas libero laborum
+        corporis corrupti in sed maxime quam atque. Odio, magnam ab, eos aperiam
+        ex at laboriosam quo, nulla sequi veniam quas autem libero ullam ea
+        voluptas minima ipsa harum illum. Odio at corrupti optio accusamus
+        nihil, placeat modi! Rerum nemo facere ipsam temporibus et ad neque
+        totam nulla fugiat consectetur omnis tempore corporis, ducimus nostrum,
+        quod inventore maiores odit, accusamus iusto dolor? Quos, beatae!
+        Nostrum voluptates eius distinctio voluptate? Explicabo consequuntur
+        unde quis, eius eum illo aspernatur, praesentium alias suscipit, cum
+        molestias eaque exercitationem corrupti vitae incidunt quidem. Et
+        facilis beatae possimus voluptates quos eligendi dolore quas sint? Ipsam
+        architecto inventore eos a cupiditate ratione, veritatis, sunt labore
+        enim amet fugiat nobis deleniti magnam aliquid illo nam dicta, quaerat
+        eum? Tempore dicta libero optio temporibus unde illum quae vero, eveniet
+        accusantium, id nesciunt necessitatibus!
+      </p>
+    </div>
+  </body>
+</html> -->
