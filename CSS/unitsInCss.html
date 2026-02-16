@@ -4,12 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        font-size: 20px;
+      }
+      #parent {
+        width: 400px;
+        height: 400px;
+        background-color: pink;
+        font-size: 20px;
+      }
+      .child {
+        width: 100px;
+        height: 100px;
+        background-color: goldenrod;
+        font-size: 1.5em;
+        margin: 2rem;
+      }
+    </style>
   </head>
   <body>
-    <div style="width: 400px; height: 400px; background-color: pink">
+    <!-- <div style="width: 400px; height: 400px; background-color: pink">
       <div style="height: 50%; width: 400px; background-color: red">
         Hello i am a child
       </div>
+    </div> -->
+
+    <div id="parent">
+      box1
+      <div class="child">Box2</div>
     </div>
   </body>
 </html>
