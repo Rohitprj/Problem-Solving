@@ -3,37 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zindex</title>
+    <title>Flex</title>
     <style>
+      * {
+        padding: 0;
+        margin: 0;
+        background-color: #000;
+      }
       #main {
         height: 500px;
-        width: 800px;
-        background-color: lightsalmon;
-        background-image: url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1274&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        width: 600px;
+        background-color: grey;
         background-size: cover;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
       .box1 {
+        align-content: center;
+        text-align: center;
         height: 50px;
         width: 50px;
         background-color: rgb(221, 53, 53);
-        position: absolute;
-        /* z-index: 1; */
       }
       .box2 {
         height: 50px;
         width: 50px;
         background-color: rgb(53, 53, 221);
-        position: absolute;
-        left: 40px;
-        z-index: 1;
       }
       .box3 {
-        position: relative;
-        z-index: 2;
         height: 50px;
         width: 50px;
         background-color: rgb(53, 221, 75);
-        /* left: 70px; */
+      }
+      .box4 {
+        height: 50px;
+        width: 50px;
+        background-color: rgb(221, 53, 179);
       }
     </style>
   </head>
@@ -42,6 +49,7 @@
       <div class="box1">Box1</div>
       <div class="box2">Box2</div>
       <div class="box3">Box3</div>
+      <div class="box4">Box4</div>
     </div>
   </body>
 </html>
