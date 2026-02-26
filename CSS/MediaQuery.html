@@ -4,9 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MediaQuery</title>
-    <style></style>
+    <style>
+      #parent {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+      }
+      .child {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: 10px;
+      }
+      @media only screen and (max-width: 412px) {
+        #parent {
+          flex-direction: column;
+        }
+        .child {
+          background-color: purple;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div></div>
+    <div id="parent">
+      <div class="child">box</div>
+      <div class="child">box</div>
+      <div class="child">box</div>
+    </div>
   </body>
 </html>
