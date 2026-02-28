@@ -225,7 +225,7 @@ Array :-
 
 Function :-
   Write a function that prints “Hello World”.
-  Write a function that takes two numbers and prints their sum.
+  Write a function that takes two numbers and prints their addition, subtraction, multiplication, and division.
   Write a function that returns the square of a number.  
   Write a function that takes a name as a parameter and prints a welcome message.
   
