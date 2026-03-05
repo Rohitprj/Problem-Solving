@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Smooth Scroll Example</title>
+
+    <style>
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        /*box-sizing:border-box;*/
+        /*font-family: Arial, sans-serif;*/
+      }
+
+      /* Navbar */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #333;
+        padding: 15px;
+        text-align: center;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 20px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      nav a:hover {
+        color: yellow;
+      }
+
+      /* Sections */
+      section {
+        height: 100vh;
+        padding-top: 80px;
+        text-align: center;
+        font-size: 40px;
+      }
+
+      /* Different section colors */
+      #home {
+        background: #f4a261;
+      }
+
+      #about {
+        background: #2a9d8f;
+      }
+
+      #services {
+        background: #e9c46a;
+      }
+
+      #contact {
+        background: #e76f51;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Sections -->
+    <section id="home">
+      <h1>Home Section</h1>
+    </section>
+
+    <section id="about">
+      <h1>About Section</h1>
+    </section>
+
+    <section id="services">
+      <h1>Services Section</h1>
+    </section>
+
+    <section id="contact">
+      <h1>Contact Section</h1>
+    </section>
+  </body>
+</html>
