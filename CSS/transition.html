@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- Pesudo Classes -->
+    <!-- <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        height: 200px;
+        width: 200px;
+        background-color: greenyellow;
+      }
+      div:hover {
+        background-color: pink;
+      }
+      div:active {
+        background-color: red;
+      }
+    </style> -->
     <style>
       * {
         margin: 0;
@@ -12,12 +30,19 @@
       div {
         height: 200px;
         width: 200px;
-        /* background-color: red; */
+        background-color: greenyellow;
+        transition-property: all;
+        transition-duration: 1s;
+        transition-timing-function: steps(5);
+        transition-delay: 2s;
       }
       div:hover {
-        /* background-color: pink; */
-        border: 2px solid black;
-        border-radius: 20px;
+        background-color: pink;
+        font-size: 50px;
+      }
+      div:active {
+        background-color: red;
+        font-size: 20px;
       }
     </style>
   </head>
