@@ -11,6 +11,7 @@ console.log(name, age, add);
 if (true) {
   console.log(name, age, add);
 }
+
 function print() {
   console.log(name, age, add);
 }
