@@ -1,5 +1,5 @@
 //  wow
-// madam
+//  madam
 
 function palindrom(str) {
   let a = 0;
