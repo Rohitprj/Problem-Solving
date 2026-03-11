@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hover Dropdown Menu</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* Header */
+      header {
+        background: #333;
+      }
+
+      /* Main Menu */
+      .menu {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      .menu li {
+        position: relative;
+      }
+
+      .menu a {
+        display: block;
+        padding: 15px 20px;
+        color: white;
+        text-decoration: none;
+      }
+
+      .menu a:hover {
+        background: #555;
+      }
+
+      /* Dropdown menu */
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        min-width: 180px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .dropdown-menu li a {
+        color: black;
+        padding: 10px 15px;
+      }
+
+      .dropdown-menu li a:hover {
+        background: #f2f2f2;
+      }
+
+      /* Show dropdown on hover */
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+
+          <li class="dropdown">
+            <a href="#">Services</a>
+
+            <ul class="dropdown-menu">
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">SEO Optimization</a></li>
+              <li><a href="#">App Development</a></li>
+              <li><a href="#">UI/UX Design</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
