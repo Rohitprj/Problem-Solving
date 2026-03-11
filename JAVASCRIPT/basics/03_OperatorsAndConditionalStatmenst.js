@@ -118,6 +118,12 @@ The nullish coalescing operator (??) returns its right operand when its left ope
 // greet("Ajay");
 // greet();
 
+// Example
+
+// let name = "Ajay";
+// let finalName = name ?? "Guest";
+// console.log(finalName);
+
 /*
  ---------------------------Optional Chaining---------------------------------
 
