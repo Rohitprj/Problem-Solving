@@ -105,6 +105,10 @@ str.charAt()                to search char based in its index
 // let str = "Asha Learnlogy";
 let str = "Yellow";
 
+str.slice();
+str.concat();
+str.replace();
+
 const x = str.replace("Y", "H");
 const y = str.replaceAll();
 const z = str.charAt(5);
