@@ -29,11 +29,15 @@ An array can hold many values under a single name, and you can access the values
 let cars = ["Saab", "Volvo", "BMW"];
 console.log(cars);
 
+----------------------------------------------------------------------------------------------------------------------------------------
+
 Creating an Array
 Using an array literal is the easiest way to create a JavaScript Array.
 
 Syntax :-  
 const array_name = [item1, item2, ...];
+
+----------------------------------------------------------------------------------------------------------------------------------------
 
 You can also create an empty array, and provide elements later:
 
@@ -43,5 +47,26 @@ myArray[0] = "John";
 myArray[1] = "Doe";
 
 console.log(myArray);
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Using the JavaScript Keyword new
+The following example also creates an Array, and assigns values to it:
+
+Example :-
+const cars = new Array("Saab", "Volvo", "BMW");
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Accessing Array Elements
+You access an array element by referring to the index number:
+
+const cars = ["Saab", "Volvo", "BMW"];
+let car = cars[0];
+
+Changing an Array Element
+This statement changes the value of the first element in cars:
+
+cars[0] = "Opel";
 
 */
