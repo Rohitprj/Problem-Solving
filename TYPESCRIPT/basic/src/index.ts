@@ -3,3 +3,7 @@ function greet(name: string): string {
 }
 const a = greet("Rohit Kuamr");
 console.log(a);
+
+console.log("====================================");
+console.log("Hello world");
+console.log("====================================");
