@@ -385,6 +385,34 @@ Q2. Create an array ["apple","banana","mango"] and add "orange" at index 1 using
 
 */
 
+// --------------------------------------------------------------------------------------------------------------------------------
+
+/*
+
+Looping over an Array
+Print all elements of an array
+
+Qs. For a given array with marks of students -> [85, 97, 44, 37, 76, 60]
+    Find the average marks of the entire class.
+
+Qs. For a given array with prices of 5 items -> [250, 645, 300, 900, 50]
+    All items have an offer of 10% OFF on them. Change the array to store final price after
+    applying offer.   
+    
+    let a = [100, 50, 70, 80, 90];
+
+for(let i = 0; i<=a.length - 1; i++){
+  
+  let b = a[i]/10;
+  
+  let c = a[i] - b
+  
+console.log(c);
+  
+}
+
+*/
+
 // let fruits = ["apple", "banana", "mango", "orange"];
 let fruits = "Apple";
 
