@@ -179,6 +179,118 @@ console.log(fruits);
 
 Output :- ["apple", "banana", "mango"]
 
+--------------------------------------------------------------------------------------------------------------------------------
 
+7. Array shift()
+
+Removes the first element from the array.
+
+let fruits = ["apple", "banana", "mango"];
+
+fruits.shift();
+
+console.log(fruits);
+
+Output :- ["banana", "mango"]
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+8. Array unshift()
+
+Adds elements to the beginning of the array.
+
+let fruits = ["banana", "mango"];
+
+fruits.unshift("apple");
+
+console.log(fruits);
+
+Output :- ["apple", "banana", "mango"]
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+9. Array.isArray()
+
+Checks if a variable is an array.
+
+let fruits = ["apple", "banana"];
+let num = 10;
+
+console.log(Array.isArray(fruits));
+console.log(Array.isArray(num));
+
+Output :- true
+       :-false
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+10. delete (Array delete)
+
+Deletes an element but keeps empty slot.
+
+let fruits = ["apple", "banana", "mango"];
+
+delete fruits[1];
+
+console.log(fruits);
+
+Output :- ["apple", empty, "mango"]
+
+⚠️ Not recommended usually.
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+11. Array concat()
+
+Combines two or more arrays.
+
+let arr1 = [1,2];
+let arr2 = [3,4];
+
+let result = arr1.concat(arr2);
+
+console.log(result);
+
+Output :- [1,2,3,4]
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+12. Array slice()
+
+Returns a new array from selected elements.
+
+let fruits = ["apple","banana","mango","orange"];
+
+let result = fruits.slice(1,3);
+
+console.log(result);
+
+Output :- ["banana","mango"]
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+13. Array splice()
+
+The splice() method can be used to add new items to an array:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");
+
+console.log(fruits);
+Output :- ["Banana", "Orange", "Lemon", "Kiwi", "Apple", "Mango"]
+
+The first parameter (2) defines the position where new elements should be added (spliced in).
+
+The second parameter (0) defines how many elements should be removed.
+
+The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.
+
+The splice() method returns an array with the deleted items:
 
 */
+
+let fruits = ["apple", "banana", "mango", "orange"];
+
+let a = fruits.slice(0, 2);
+
+console.log(a);
