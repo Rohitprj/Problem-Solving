@@ -64,9 +64,26 @@ You access an array element by referring to the index number:
 const cars = ["Saab", "Volvo", "BMW"];
 let car = cars[0];
 
+----------------------------------------------------------------------------------------------------------------------------------------
+
 Changing an Array Element
 This statement changes the value of the first element in cars:
 
 cars[0] = "Opel";
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Arrays are Objects
+Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+
+But, JavaScript arrays are best described as arrays.
+
+Arrays use numbers to access its "elements". In this example, person[0] returns John:
+
+*/
+
+/*
+
+
 
 */
