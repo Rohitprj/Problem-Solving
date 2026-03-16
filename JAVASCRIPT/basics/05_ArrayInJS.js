@@ -80,16 +80,105 @@ But, JavaScript arrays are best described as arrays.
 
 Arrays use numbers to access its "elements". In this example, person[0] returns John:
 
+--------------------------------------------------------------------------------------------------------------------------------
+
+In JavaScript Strings are Immutable and Arrays are Mutable  
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits[1] = "Kiwi"
+
+console.log(fruits);
+console.log(fruits.toString());
+
+const a = "Apple";
+
+let b = a[1] = "k";
+
+console.log(a);
+
 */
 
 /*
 
 JavaScript Array Methods :-
 
+1. Array length
+
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
 let size = fruits.length;
 
 console.log(size);
+
+Output :- 4
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+2. Array toString()
+
+Converts an array into a comma separated string.
+
+let fruits = ["apple", "banana", "mango"];
+
+console.log(fruits.toString());
+
+Output :- apple,banana,mango
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+3. Array at()
+
+Returns element at a specific index.
+
+let fruits = ["apple", "banana", "mango"];
+
+console.log(fruits.at(1));
+
+Output :- banana
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+4. Array join()
+
+The join() method also joins all array elements into a string.
+
+It behaves just like toString(), but in addition you can specify the separator :-
+
+let fruits = ["apple", "banana", "mango"];
+
+console.log(fruits.join(" - "));
+
+Output :- apple - banana - mango
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+5. Array pop()
+
+Removes the last element of an array.
+
+let fruits = ["apple", "banana", "mango"];
+
+fruits.pop();
+
+console.log(fruits);
+
+Output :- ["apple", "banana"]
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+6. Array push()
+
+Adds an element to the end of the array.
+
+let fruits = ["apple", "banana"];
+
+fruits.push("mango");
+
+console.log(fruits);
+
+Output :- ["apple", "banana", "mango"]
+
+
 
 */
