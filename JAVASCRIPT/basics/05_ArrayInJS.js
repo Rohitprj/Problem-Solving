@@ -84,7 +84,7 @@ Arrays use numbers to access its "elements". In this example, person[0] returns 
 
 /*
 
-JavaScript Array Methods
+JavaScript Array Methods :-
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
