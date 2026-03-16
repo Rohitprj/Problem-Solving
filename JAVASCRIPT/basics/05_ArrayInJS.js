@@ -384,3 +384,10 @@ Q1. Create an array [1,2,3,4] and remove the element 3 using splice().
 Q2. Create an array ["apple","banana","mango"] and add "orange" at index 1 using splice().
 
 */
+
+// let fruits = ["apple", "banana", "mango", "orange"];
+let fruits = "Apple";
+
+for (let x of fruits) {
+  console.log(x);
+}
