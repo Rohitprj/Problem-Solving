@@ -274,6 +274,7 @@ Output :- ["banana","mango"]
 The splice() method can be used to add new items to an array:
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
 fruits.splice(2, 0, "Lemon", "Kiwi");
 
 console.log(fruits);
@@ -414,8 +415,14 @@ console.log(c);
 */
 
 // let fruits = ["apple", "banana", "mango", "orange"];
-let fruits = "Apple";
+// let fruits = "Apple";
 
-for (let x of fruits) {
-  console.log(x);
-}
+// for (let x of fruits) {
+//   console.log(x);
+// }
+
+let fruits = ["apple", "banana", "mango", "orange"];
+
+fruits.splice(2, 2, "kiwi");
+
+console.log(fruits);
