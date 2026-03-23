@@ -380,8 +380,17 @@ const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const abc = arr.forEach(value => console.log(value)); // not return any value
 
 
+Map - Filter - Reduce
+
 const abc1 = arr.map((value,indx) => {return indx}); // return value
 
-console.log(abc1)
+console.log(abc1);
+
+const fil = arr.filter((data)=> data % 3 === 0 );
+
+console.log(fil);
+
+const red = arr.reduce((acc,cur) => acc + cur, 0);
+console.log(red);
 
 */
