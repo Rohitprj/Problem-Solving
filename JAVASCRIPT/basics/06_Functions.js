@@ -325,3 +325,50 @@ function sum(...args) {
 let x = sum(4, 9, 16, 25, 29, 100, 66, 77);
 
 */
+
+/*
+JavaScript Arrow Functions
+
+Arrow Functions allow a shorter syntax for function expressions.
+
+You can skip the function keyword, the return keyword, and the curly brackets:
+
+const multiply = (a, b) => a * b;
+
+----------------------------------------------------------------
+
+Arrow Function Syntax
+An arrow function uses the => symbol.
+
+An arrow function is always written as a function expression.
+
+const add = (a, b) => {
+  return a + b;
+};
+
+----------------------------------------------------------------
+
+Arrow Functions Return Value by Default
+
+If the function has only one statement that returns a value:
+
+You can remove the brackets and the return keyword:
+
+const hello = () => "Hello World!";
+
+Note :- This works only if the function has only one statement.
+
+----------------------------------------------------------------
+
+You can only omit the return keyword and the curly brackets if the function is a single statement. Because of this, it might be a good habit to always keep them:
+
+// This will return undefined
+const myFunction = (x, y) => { x * y };
+
+// This will return undefined
+const myFunction = (x, y) => return x * y;
+
+// This will return the expected result
+const myFunction = (x, y) => { return x * y };
+
+*/
