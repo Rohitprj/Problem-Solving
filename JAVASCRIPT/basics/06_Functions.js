@@ -377,6 +377,11 @@ const myFunction = (x, y) => { return x * y };
 
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+const abc = arr.forEach(value => console.log(value)); // not return any value
 
+
+const abc1 = arr.map((value,indx) => {return indx}); // return value
+
+console.log(abc1)
 
 */
