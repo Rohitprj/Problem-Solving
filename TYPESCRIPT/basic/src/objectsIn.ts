@@ -37,3 +37,31 @@ const makeCoffee: Nescafe = coffee;
 //----------------------------------------------------------------------------------------------------------
 
 // Utility Types in TS
+
+type Chai = {
+  name: string;
+  type: string;
+  isHot: boolean;
+  howMany: number;
+};
+// Partial works with partial values
+const updateChai = (updates: Partial<Chai>) => {
+  console.log(`Preparing chai with ${updates}`);
+};
+
+updateChai({ name: "chai" });
+updateChai({ isHot: true });
+updateChai({});
+
+type User = {
+  name?: string;
+  password?: number;
+};
+
+// Requires all values if its types are optional
+
+const register = (data: Required<User>) => {
+  console.log(`user data ${data}`);
+};
+
+register({ name: "User", password: 123 });
