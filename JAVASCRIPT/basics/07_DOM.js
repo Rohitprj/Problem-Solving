@@ -70,4 +70,20 @@ document.getElementById("title").onclick = function() {
   alert("Clicked!")
 }
 */
-console.dir(document.body);
+// console.dir(document.body);
+
+/*
+
+DOM Manipulation
+
+Selecting with id :- document.getElementById(“myId”)
+Selecting with class :- document.getElementsByClassName(“myClass”)
+Selecting with tag :- document.getElementsByTagName(“p”)
+Selecting with query :- document.querySelector(“#myId / .myClass / tag”)        //returns first element.
+Selecting with queryAll :- document.querySelectorAll(“#myId / .myClass / tag”)  //returns a NodeList.
+
+--------------------------------------------------------------------------------------
+
+Properties
+
+*/
