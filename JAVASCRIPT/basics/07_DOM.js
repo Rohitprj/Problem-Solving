@@ -93,8 +93,19 @@ textContent : returns textual content even for hidden elements
 
 */
 
-let a = document.getElementById("abc");
-console.dir(a);
+// let a = document.getElementById("abc");
+// console.dir(a);
 
-let b = document.getElementsByClassName("xyz");
-console.dir(b);
+// let b = document.getElementsByClassName("xyz");
+// console.dir(b);
+
+// let divs = document.getElementsByTagName("div");
+// console.dir(divs);
+
+let firstElement = document.querySelector("p").tagName; // returns first element
+console.log("FirstElement", firstElement);
+console.dir(firstElement);
+
+let allElements = document.querySelectorAll("p"); // returns all elements
+console.log("AllElement", allElements);
+console.dir(allElements);

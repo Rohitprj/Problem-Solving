@@ -12,4 +12,5 @@
 // string randomly.
 
 // not solved
-let a = "my name is rohit";
+// let a = "my name is rohit";
+let str = "apple pie please";
