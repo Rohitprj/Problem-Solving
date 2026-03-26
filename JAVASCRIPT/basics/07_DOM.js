@@ -93,5 +93,8 @@ textContent : returns textual content even for hidden elements
 
 */
 
-let a = document.getElementById("box");
-console.dir("This is our box", a);
+let a = document.getElementById("abc");
+console.dir(a);
+
+let b = document.getElementsByClassName("xyz");
+console.dir(b);
