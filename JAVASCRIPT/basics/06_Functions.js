@@ -394,3 +394,82 @@ const red = arr.reduce((acc,cur) => acc + cur, 0);
 console.log(red);
 
 */
+
+const ecommerceData = {
+  products: [
+    {
+      id: 1,
+      name: "Wireless Mouse",
+      category: "Electronics",
+      price: 599.99,
+      stock: 120,
+    },
+    {
+      id: 2,
+      name: "Running Shoes",
+      category: "Footwear",
+      price: 2499.0,
+      stock: 60,
+    },
+    {
+      id: 3,
+      name: "Backpack",
+      category: "Accessories",
+      price: 899.5,
+      stock: 80,
+    },
+  ],
+  customers: [
+    {
+      id: 101,
+      name: "Amit Sharma",
+      email: "amit.sharma@example.com",
+      phone: "+91-9876543210",
+    },
+    {
+      id: 102,
+      name: "Priya Verma",
+      email: "priya.verma@example.com",
+      phone: "+91-9123456780",
+    },
+  ],
+  orders: [
+    {
+      order_id: 5001,
+      customer_id: 101,
+      items: [
+        {
+          product_id: 1,
+          quantity: 2,
+          price: 599.99,
+        },
+        {
+          product_id: 3,
+          quantity: 1,
+          price: 899.5,
+        },
+      ],
+      total_amount: 2099.48,
+      status: "Delivered",
+      order_date: "2026-03-20",
+    },
+    {
+      order_id: 5002,
+      customer_id: 102,
+      items: [
+        {
+          product_id: 2,
+          quantity: 1,
+          price: 2499.0,
+        },
+      ],
+      total_amount: 2499.0,
+      status: "Shipped",
+      order_date: "2026-03-22",
+    },
+  ],
+};
+
+let getData = ecommerceData.products.map((value) => value.name);
+
+console.log(getData);

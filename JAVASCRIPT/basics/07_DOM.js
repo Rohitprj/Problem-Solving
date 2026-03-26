@@ -92,6 +92,10 @@ innerHTML : returns the plain text or HTML contents in the element
 textContent : returns textual content even for hidden elements
 
 */
+console.dir(document);
+let getElemId = document.querySelector("#abc");
+console.log((getElemId.innerText = "Hello World"));
+console.dir(getElemId);
 
 // let a = document.getElementById("abc");
 // console.dir(a);
@@ -110,11 +114,11 @@ textContent : returns textual content even for hidden elements
 // console.log("AllElement", allElements);
 // console.dir(allElements);
 
-let innertxt = document.querySelector("#abc");
+// let innertxt = document.querySelector("#abc");
 
-console.dir(document.body);
+// console.dir(document.body);
 
-console.dir(innertxt.tagName);
-console.dir(innertxt.innerText);
-console.dir(innertxt.innerHTML);
-console.dir(innertxt.textContent);
+// console.dir(innertxt.tagName);
+// console.dir(innertxt.innerText);
+// console.dir(innertxt.innerHTML);
+// console.dir(innertxt.textContent);
