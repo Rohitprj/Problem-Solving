@@ -146,10 +146,15 @@ node.remove( ) //removes the node
 
 */
 
-let getAttById = document.querySelector("div");
+let para = document.createElement("p");
+para.innerText = "Hello World i am a paragraph tag created by js";
+console.log(para);
+
+let getAttById = document.querySelector(".xyz");
 console.log(getAttById);
-console.log(getAttById.style);
-console.log((getAttById.style.backgroundColor = "red"));
+getAttById.after(para);
+// console.log(getAttById.style);
+// console.log((getAttById.style.backgroundColor = "red"));
 
 // let attr = getAttById.getAttribute("class");
 // console.log(attr);
