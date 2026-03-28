@@ -92,10 +92,10 @@ innerHTML : returns the plain text or HTML contents in the element
 textContent : returns textual content even for hidden elements
 
 */
-console.dir(document);
-let getElemId = document.querySelector("#abc");
-console.log((getElemId.innerText = "Hello World"));
-console.dir(getElemId);
+// console.dir(document);
+// let getElemId = document.querySelector("#abc");
+// console.log((getElemId.innerText = "Hello World"));
+// console.dir(getElemId);
 
 // let a = document.getElementById("abc");
 // console.dir(a);
@@ -122,3 +122,37 @@ console.dir(getElemId);
 // console.dir(innertxt.innerText);
 // console.dir(innertxt.innerHTML);
 // console.dir(innertxt.textContent);
+
+/*
+DOM 2
+Attributes :-
+
+getAttribute( attr )
+setAttribute( attr, value ) 
+
+Style :-
+
+node.style
+
+Insert Elements :-  let el = document.createElement(“div“)
+
+node.append( el ) //adds at the end of node (inside)
+node.prepend( el ) //adds at the start of node (inside)
+node.before( el ) //adds before the node (outside)
+node.after( el ) //adds after the node (outside)
+
+Delete Element :-
+node.remove( ) //removes the node
+
+*/
+
+let getAttById = document.querySelector("div");
+console.log(getAttById);
+console.log(getAttById.style);
+console.log((getAttById.style.backgroundColor = "red"));
+
+// let attr = getAttById.getAttribute("class");
+// console.log(attr);
+
+// getAttById.setAttribute("class", "pks");
+// console.dir(getAttById);
