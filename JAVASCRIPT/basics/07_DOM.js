@@ -153,6 +153,16 @@ console.log(para);
 let getAttById = document.querySelector(".xyz");
 console.log(getAttById);
 getAttById.after(para);
+
+let btn = document.createElement("button");
+btn.innerText = "Click Me";
+console.log(btn);
+
+let addBtn = document.querySelector("#box3");
+console.log(addBtn);
+
+addBtn.append(btn);
+
 // console.log(getAttById.style);
 // console.log((getAttById.style.backgroundColor = "red"));
 
