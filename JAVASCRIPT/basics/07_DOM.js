@@ -145,25 +145,35 @@ Delete Element :-
 node.remove( ) //removes the node
 
 */
-
-let para = document.createElement("p");
-para.innerText = "Hello World i am a paragraph tag created by js";
-console.log(para);
-
-let getAttById = document.querySelector(".xyz");
+let getAttById = document.querySelector("#abc");
 console.log(getAttById);
-getAttById.after(para);
 
-let btn = document.createElement("button");
-btn.innerText = "Click Me";
-console.log(btn);
+let a = document.createElement("div");
+a.innerText = "Hello World i am a paragraph tag created by js";
+console.log(a);
 
-let addBtn = document.querySelector("#box3");
-console.log(addBtn);
+// console.log(getAttById);
 
-// addBtn.remove();
+getAttById.after(a);
 
-addBtn.append(btn);
+// let para = document.createElement("p");
+// para.innerText = "Hello World i am a paragraph tag created by js";
+// console.log(para);
+
+// let getAttById = document.querySelector(".xyz");
+// console.log(getAttById);
+// getAttById.after(para);
+
+// let btn = document.createElement("button");
+// btn.innerText = "Click Me";
+// console.log(btn);
+
+// let addBtn = document.querySelector("#box3");
+// console.log(addBtn);
+
+// // addBtn.remove();
+
+// addBtn.append(btn);
 
 // console.log(getAttById.style);
 // console.log((getAttById.style.backgroundColor = "red"));
@@ -173,3 +183,9 @@ addBtn.append(btn);
 
 // getAttById.setAttribute("class", "pks");
 // console.dir(getAttById);
+
+// let abc = document.querySelector("#abc");
+// console.log((abc.style.backgroundColor = "pink"));
+
+// let abca = document.querySelector("#abc").innerHTML;
+// console.log(abca);
