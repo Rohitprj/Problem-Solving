@@ -1,0 +1,181 @@
+👤 PROFILE:
+
+* Experience: ~1–2 years
+* Skills: MERN + React Native
+* Goal: 6+ LPA
+
+---
+
+🎯 MAIN STRATEGY
+
+You need 3 things:
+
+1. DSA (to clear interviews)
+2. Strong Backend Skills (to stand out)
+3. Smart Applications (to get interviews)
+
+---
+
+📅 PHASE 1 (DAY 1–14): DSA FOUNDATION
+
+Platforms:
+
+* LeetCode
+* GeeksforGeeks
+
+Topics:
+
+* Arrays
+* Strings
+* HashMaps
+
+Daily Plan:
+
+* 2 problems/day
+* Max 1–1.5 hours
+
+Rules:
+
+* First understand solution
+* Then code yourself
+* Don’t rush for speed
+
+Goal:
+
+* Solve 25–30 easy problems
+* Build confidence
+
+---
+
+📅 PHASE 2 (DAY 15–30): INTERMEDIATE + BACKEND
+
+DSA Topics:
+
+* Sliding Window
+* Recursion (basic)
+* Linked List
+
+Backend Upgrade (VERY IMPORTANT):
+
+* Learn Redis (caching basics)
+* JWT Authentication (proper flow)
+* API optimization
+* Error handling & logging
+
+Project Upgrade:
+Pick 1 existing project and add:
+
+* Caching (Redis)
+* Rate limiting
+* Clean folder structure
+
+Goal:
+
+* Make 1 “strong” project
+
+---
+
+📅 PHASE 3 (DAY 30–45): START APPLYING
+
+Platforms:
+
+* Instahyre
+* Cutshort
+* Wellfound (AngelList)
+
+Target Roles:
+
+* React Developer
+* MERN Developer
+* Full Stack Developer (1–2 yrs)
+
+Daily:
+
+* Apply to 5–10 relevant jobs
+* Customize resume slightly
+
+---
+
+📅 PHASE 4 (DAY 45–60): INTERVIEW PREP
+
+Focus:
+
+* DSA revision
+* JS fundamentals:
+
+  * Closures
+  * Event Loop
+  * Promises
+
+System Design (basic):
+
+* How APIs work
+* Database design
+* Scalability basics
+
+Mock Interviews:
+
+* Practice explaining your projects
+
+---
+
+📄 RESUME STRATEGY
+
+❌ Bad:
+"Created APIs"
+
+✅ Good:
+"Built REST APIs handling X requests/day and improved response time by X%"
+
+Include:
+
+* Numbers
+* Performance improvements
+* Real impact
+
+---
+
+💡 WHAT TO LEARN (PRIORITY ORDER)
+
+1. DSA (MOST IMPORTANT)
+2. JavaScript deep concepts
+3. Backend scaling basics
+4. MongoDB optimization
+5. Basic AWS (optional but useful)
+
+---
+
+🚫 AVOID THESE MISTAKES
+
+* Random applying
+* Only building UI projects
+* Ignoring DSA
+* Copy-paste resume
+
+---
+
+💰 EXPECTED RESULT
+
+If followed properly:
+
+* 30 days → Interview calls start
+* 45–60 days → Job switch possible
+* Salary → 5–8 LPA achievable
+
+---
+
+🔥 DAILY ROUTINE (SIMPLE)
+
+* 1–1.5 hr → DSA
+* 1–2 hr → Backend / Project
+* 30 min → Job applying (after Day 30)
+
+---
+
+⚡ FINAL NOTE
+
+Consistency > Intelligence
+
+Even 2–3 focused hours daily is enough to change your career in 2 months.
+
+---

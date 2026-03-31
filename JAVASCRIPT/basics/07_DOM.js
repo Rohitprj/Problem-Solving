@@ -161,6 +161,8 @@ console.log(btn);
 let addBtn = document.querySelector("#box3");
 console.log(addBtn);
 
+// addBtn.remove();
+
 addBtn.append(btn);
 
 // console.log(getAttById.style);
