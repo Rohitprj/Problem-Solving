@@ -145,24 +145,24 @@ Delete Element :-
 node.remove( ) //removes the node
 
 */
+// let getAttById = document.querySelector("#abc");
+// console.log(getAttById);
+
+// let a = document.createElement("div");
+// a.innerText = "Hello World i am a paragraph tag created by js";
+// console.log(a);
+
+// console.log(getAttById);
+
+// getAttById.after(a);
+
+let para = document.createElement("p");
+para.innerText = "Hello World i am a paragraph tag created by js";
+console.log(para);
+
 let getAttById = document.querySelector("#abc");
-console.log(getAttById);
-
-let a = document.createElement("div");
-a.innerText = "Hello World i am a paragraph tag created by js";
-console.log(a);
-
-// console.log(getAttById);
-
-getAttById.after(a);
-
-// let para = document.createElement("p");
-// para.innerText = "Hello World i am a paragraph tag created by js";
-// console.log(para);
-
-// let getAttById = document.querySelector(".xyz");
-// console.log(getAttById);
-// getAttById.after(para);
+console.log(getAttById.children[0]);
+getAttById.after(para);
 
 // let btn = document.createElement("button");
 // btn.innerText = "Click Me";
