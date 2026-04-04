@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mode</title>
+  </head>
+  <body>
+    <button id="mode">Toggle</button>
+    <h1>hello i am mode</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <script>
+      let modeBtn = document.querySelector("#mode");
+
+      let currentMode = "light";
+
+      modeBtn.addEventListener("click", () => {
+        console.log("mode");
+        if (currentMode === "light") {
+          currentMode = "dark";
+          document.body.style.backgroundColor = "black";
+          document.body.style.color = "white";
+        } else {
+          currentMode = "light";
+          document.body.style.backgroundColor = "white";
+          document.body.style.color = "black";
+        }
+      });
+    </script>
+  </body>
+</html>
