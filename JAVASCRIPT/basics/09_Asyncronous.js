@@ -40,3 +40,47 @@ setTimeout(function() {
 myDisplayer("C");
 
 */
+
+// function getProducts() {
+//   console.log("Loading products...");
+
+//   fetch("https://dummyjson.com/products")
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log("Products:", data);
+//     })
+//     .catch((err) => {
+//       console.log("Failed to load products", err);
+//     });
+// }
+
+// getProducts();
+
+// --------------------------------------------------------------------------------------------------------------------
+
+// async function getProducts() {
+//   console.log("Loading products...");
+
+//   try {
+//     let res = await fetch("https://api.example.com/products");
+//     let data = await res.json();
+
+//     console.log("Products:", data);
+//     // yaha UI me products show karte hain
+
+//   } catch (err) {
+//     console.log("Failed to load products", err);
+//   }
+// }
+
+// getProducts();
+
+let a = 0;
+
+let b = setInterval(() => {
+  console.log(a);
+  a++;
+  if (a > 10) {
+    clearInterval(b);
+  }
+}, 1000);
