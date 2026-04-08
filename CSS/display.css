@@ -1,14 +1,17 @@
-/* div{
+div{
     background-color: rebeccapurple;
-    display: inline;
+    display: inline-block;
+}
+#hello{
+    padding: 20px;
 }
 a{
     background-color: lightcoral;
     display:block;
 
-} */
+} 
 
-/* div{
+  /* div{
     height: 100px;
     width: 100px;
     padding: 20px;
@@ -19,6 +22,6 @@ a{
 
 .box2{
     background-color: blueviolet;
-     display: none;
+     display: none; 
      visibility: hidden;
-} */
+}  */
