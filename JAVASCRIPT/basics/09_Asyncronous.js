@@ -75,12 +75,30 @@ myDisplayer("C");
 
 // getProducts();
 
-let a = 0;
+// let a = 0;
 
-let b = setInterval(() => {
-  console.log(a);
-  a++;
-  if (a > 10) {
-    clearInterval(b);
+// let b = setInterval(() => {
+//   console.log(a);
+//   a++;
+//   if (a > 10) {
+//     clearInterval(b);
+//   }
+// }, 1000);
+
+async function getProducts() {
+  console.time();
+  console.log("Loading products...");
+
+  try {
+    let res = await fetch("https://dummyjson.com/products");
+    let data = await res.json();
+
+    console.log("Products:", data);
+    // yaha UI me products show karte hain
+  } catch (err) {
+    console.log("Failed to load products", err);
   }
-}, 1000);
+  console.timeEnd();
+}
+
+getProducts();
