@@ -122,3 +122,41 @@ myDisplayer("C");
 // }
 
 // getProd();
+
+let name1 = document.querySelector("#name");
+let password = document.querySelector("#btn");
+
+selectedNode.addEventListener("click", async () => {
+  try {
+    let res = await fetch("https://dummyjson.com/posts/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: name1,
+        userId: password,
+      }),
+    });
+    let data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+async function sendSomeData() {
+  try {
+    let res = await fetch("https://dummyjson.com/posts/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: "I am in love with someone.",
+        userId: 5,
+      }),
+    });
+    let data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+}
+sendSomeData();
