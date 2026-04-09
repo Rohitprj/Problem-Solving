@@ -90,14 +90,18 @@ async function getProducts() {
   console.log("Loading products...");
 
   try {
+    // let res = await fetch("https://dummyjson.com/products").then((res) =>
+    //   res.json(),
+    // );
     let res = await fetch("https://dummyjson.com/products");
+
     let data = await res.json();
 
     console.log("Products:", data);
-    // yaha UI me products show karte hain
   } catch (err) {
     console.log("Failed to load products", err);
   }
+
   console.timeEnd();
 }
 
