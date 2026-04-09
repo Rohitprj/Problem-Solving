@@ -85,24 +85,40 @@ myDisplayer("C");
 //   }
 // }, 1000);
 
-async function getProducts() {
-  console.time();
-  console.log("Loading products...");
+// async function getProducts() {
+//   console.time();
+//   console.log("Loading products...");
 
-  try {
-    // let res = await fetch("https://dummyjson.com/products").then((res) =>
-    //   res.json(),
-    // );
-    let res = await fetch("https://dummyjson.com/products");
+//   try {
+//     // let res = await fetch("https://dummyjson.com/products").then((res) =>
+//     //   res.json(),
+//     // );
+//     let res = await fetch("https://dummyjson.com/products");
 
-    let data = await res.json();
+//     let data = await res.json();
 
-    console.log("Products:", data);
-  } catch (err) {
-    console.log("Failed to load products", err);
-  }
+//     console.log("Products:", data);
+//   } catch (err) {
+//     console.log("Failed to load products", err);
+//   }
 
-  console.timeEnd();
-}
+//   console.timeEnd();
+// }
 
-getProducts();
+// getProducts();
+
+// --------------------------------------------------------------------------------------------------------------------
+
+// async function getProd() {
+//   try {
+//     let res = await fetch("https://dummyjson.com/products");
+//     let data = await res.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.log(error);
+//   } finally {
+//     console.log("finally");
+//   }
+// }
+
+// getProd();
