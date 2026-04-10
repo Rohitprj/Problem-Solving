@@ -22,3 +22,19 @@ https://github.com/YOUR-USERNAME/YOUR-REPO.git
 ✅ Step 2: Set correct Git identity
 git config --global user.name "Your Name"
 git config --global user.email "your-email@example.com"
+
+
+Branches in Git :-
+
+git branch - This command lists all the branches in the current repository.
+git branch bug-fix - This command creates a new branch called bug-fix.
+git switch bug-fix - This command switches to the bug-fix branch.
+git log - This command shows the commit history for the current branch.
+git switch main - This command switches to the main branch.
+git switch -c dark-mode - This command creates a new branch called dark-mode. the -c flag is used to create a new branch.
+
+Rename a branch
+git branch -m <old-branch-name> <new-branch-name>
+
+Delete a branch
+git branch -d <branch-name>
