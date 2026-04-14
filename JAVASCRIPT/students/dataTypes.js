@@ -26,14 +26,3 @@
 // ];
 
 // console.log(a[2]);
-
-// let a;
-
-// a = 10;
-// console.log(a);
-
-// a = "Nitin";
-// console.log(a);
-
-const b = null;
-console.log(b);
