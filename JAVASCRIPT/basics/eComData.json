@@ -1,0 +1,103 @@
+{
+  "store": "ShopSphere",
+  "generated_at": "2026-04-14T10:25:00Z",
+  "currency": "USD",
+  "customers": [
+    {
+      "customer_id": "C1001",
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@example.com",
+      "location": "Delhi, India",
+      "orders": [
+        {
+          "order_id": "O5001",
+          "date": "2026-03-21",
+          "status": "Delivered",
+          "total_amount": 149.97,
+          "items": [
+            {
+              "product_id": "P101",
+              "name": "Wireless Mouse",
+              "category": "Electronics",
+              "price": 19.99,
+              "quantity": 2
+            },
+            {
+              "product_id": "P205",
+              "name": "Mechanical Keyboard",
+              "category": "Electronics",
+              "price": 109.99,
+              "quantity": 1
+            }
+          ],
+          "payment": {
+            "method": "Credit Card",
+            "transaction_id": "TX9001",
+            "status": "Paid"
+          },
+          "shipping": {
+            "address": "Sector 21, Dwarka, Delhi",
+            "method": "Standard",
+            "cost": 0
+          }
+        }
+      ]
+    },
+    {
+      "customer_id": "C1002",
+      "name": "Emma Johnson",
+      "email": "emma.johnson@example.com",
+      "location": "New York, USA",
+      "orders": [
+        {
+          "order_id": "O5002",
+          "date": "2026-04-02",
+          "status": "Shipped",
+          "total_amount": 89.5,
+          "items": [
+            {
+              "product_id": "P310",
+              "name": "Running Shoes",
+              "category": "Sportswear",
+              "price": 89.5,
+              "quantity": 1
+            }
+          ],
+          "payment": {
+            "method": "PayPal",
+            "transaction_id": "TX9002",
+            "status": "Paid"
+          },
+          "shipping": {
+            "address": "Manhattan, NY",
+            "method": "Express",
+            "cost": 10
+          }
+        }
+      ]
+    }
+  ],
+  "inventory": [
+    {
+      "product_id": "P101",
+      "name": "Wireless Mouse",
+      "category": "Electronics",
+      "stock": 120,
+      "price": 19.99
+    },
+    {
+      "product_id": "P205",
+      "name": "Mechanical Keyboard",
+      "category": "Electronics",
+      "stock": 60,
+      "price": 109.99
+    },
+    {
+      "product_id": "P310",
+      "name": "Running Shoes",
+      "category": "Sportswear",
+      "stock": 200,
+      "price": 89.5
+    }
+  ]
+}
