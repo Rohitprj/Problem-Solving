@@ -122,13 +122,14 @@
 
 import React from "react";
 import "./App.css";
-import FirstComp from "./components/FirstComp";
+import { FirstComp, SecondComp } from "./components/FirstComp";
 
 export default function App() {
   return (
     <div>
       <h1 style={{ backgroundColor: "red", color: "white" }}>Hello</h1>
-      <FirstComp />
+      <FirstComp name="Rohit" />
+      <SecondComp />
       <p>This is a paragraph</p>
       <p>This is a paragraph</p>
       <p>This is a paragraph</p>
