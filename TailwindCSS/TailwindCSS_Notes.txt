@@ -1,0 +1,277 @@
+Tailwind CSS Cheat Sheet 1) Text Properties in CSS → Tailwind color: red Use
+text color utilities.
+
+<p class="text-red-500">This text is red</p>
+
+Common examples:
+
+<p class="text-blue-600">Blue text</p>
+<p class="text-green-500">Green text</p>
+<p class="text-black">Black text</p>
+text-align: left / right / center
+<p class="text-left">Left aligned</p>
+<p class="text-center">Center aligned</p>
+<p class="text-right">Right aligned</p>
+text-decoration Underline
+<p class="underline">Underlined text</p>
+Overline
+<p class="overline">Overlined text</p>
+Line-through
+<p class="line-through">Strikethrough text</p>
+None
+<p class="no-underline">No underline</p>
+Decoration style: dotted, dashed, double, wavy
+<p class="underline decoration-dotted">Dotted underline</p>
+<p class="underline decoration-dashed">Dashed underline</p>
+<p class="underline decoration-double">Double underline</p>
+<p class="underline decoration-wavy">Wavy underline</p>
+font-weight Normal / Bold / Lighter / Bolder
+<p class="font-normal">Normal</p>
+<p class="font-bold">Bold</p>
+<p class="font-light">Lighter</p>
+<p class="font-extrabold">Bolder</p>
+Font weights from 100 to 900
+<p class="font-thin">100</p>
+<p class="font-extralight">200</p>
+<p class="font-light">300</p>
+<p class="font-normal">400</p>
+<p class="font-medium">500</p>
+<p class="font-semibold">600</p>
+<p class="font-bold">700</p>
+<p class="font-extrabold">800</p>
+<p class="font-black">900</p>
+font-family: arial Tailwind gives you font family utilities, or you can use
+custom values.
+
+<p class="font-sans">Sans font</p>
+
+For exact Arial:
+
+<p class="[font-family:Arial]">Arial text</p>
+
+For fallback fonts:
+
+<p class="[font-family:Arial,Roboto,sans-serif]">
+  Arial, then Roboto, then sans-serif
+</p>
+text-transform
+<p class="uppercase">uppercase text</p>
+<p class="lowercase">LOWERCASE TEXT</p>
+<p class="capitalize">hello world becomes Hello World</p>
+<p class="normal-case">normal case</p>
+2) Units in CSS → Tailwind Tailwind mostly uses a spacing scale based on rem,
+but you can also use arbitrary values. font-size: 2px
+<p class="text-[2px]">Tiny text</p>
+Width / Height in pixels
+<div class="w-[96px] h-[50px] bg-gray-300"></div>
+Percentage
+<div class="w-1/2">50% width</div>
+<div class="w-full">100% width</div>
+Viewport units
+<div class="h-screen">100vh</div>
+<div class="w-screen">100vw</div>
+rem-based example
+<p class="text-base">1rem</p>
+<p class="text-lg">bigger text</p>
+Practice Set 1 Q1: Create a heading centred on the page with all text
+capitalized by default
+<h1 class="text-center uppercase text-3xl font-bold">
+  welcome to tailwind css
+</h1>
+Q2: Set the font family of all content in the document to "Times New Roman" Best
+way: apply on body.
+
+<body class="[font-family:'Times_New_Roman',serif]">
+  <h1>Hello</h1>
+  <p>This page uses Times New Roman.</p>
+</body>
+
+If you want the exact fallback style:
+
+<body class="[font-family:'Times_New_Roman',Times,serif]">
+  Q3: One div inside another div. Outer text size 25px and inner text size 10px
+  <div id="outer" class="text-[25px] border border-black p-4">
+    outer
+    <div id="inner" class="text-[10px] border border-red-500 p-2 mt-2">
+      inner
+    </div>
+  </div>
+  3) Box Model in CSS → Tailwind Height and Width
+  <div class="h-40 w-64 bg-blue-200"></div>
+  Border Border width + style + color
+  <div class="border-2 border-solid border-black"></div>
+  Shorthand in Tailwind Tailwind usually combines these like this:
+
+  <div class="border-2 border-black"></div>
+  Different border styles
+  <div class="border-2 border-dotted border-black"></div>
+  <div class="border-2 border-dashed border-black"></div>
+  <div class="border-2 border-double border-black"></div>
+  Border radius
+  <div class="rounded-lg"></div>
+  <div class="rounded-full"></div>
+
+  Examples:
+
+  <div class="w-20 h-20 bg-blue-500 rounded-full"></div>
+  Padding
+  <div class="p-4">Padding all sides</div>
+  <div class="px-4 py-2">Horizontal and vertical padding</div>
+  <div class="pt-4 pr-2 pb-6 pl-1">Individual sides</div>
+  Margin
+  <div class="m-4">Margin all sides</div>
+  <div class="mx-auto">Auto horizontal margin</div>
+  <div class="mt-4 mb-2">Top and bottom margin</div>
+  Clockwise spacing idea CSS: padding: top right bottom left; Tailwind
+  equivalent:
+
+  <div class="pt-2 pr-4 pb-6 pl-8"></div>
+  4) Display Property in CSS → Tailwind inline
+  <span class="inline bg-yellow-200">inline element</span>
+  block
+  <span class="block bg-yellow-200">block element</span>
+  inline-block
+  <span class="inline-block bg-yellow-200 px-4 py-2">inline-block</span>
+  none
+  <div class="hidden">This will not show</div>
+  5) Visibility in CSS → Tailwind visibility: hidden
+  <div class="invisible">Hidden but space remains</div>
+  opacity
+  <div class="opacity-0">Fully transparent</div>
+  <div class="opacity-50">Half transparent</div>
+  <div class="opacity-100">Fully visible</div>
+  6) RGB / RGBA / Opacity → Tailwind Text color with opacity
+  <p class="text-red-500/50">Red with 50% opacity</p>
+  Background color with opacity
+  <div class="bg-blue-500/30">Background with opacity</div>
+  Overall element opacity
+  <div class="opacity-75">Whole element faded</div>
+  7) Units in CSS → Tailwind %
+  <div class="w-1/2">50% width</div>
+  <div class="w-3/4">75% width</div>
+  <div class="w-full">100% width</div>
+  em and rem Tailwind does not force you to use only its scale. Use arbitrary
+  values:
+
+  <p class="text-[2em]">2em font size</p>
+  <p class="text-[1.5rem]">1.5rem font size</p>
+  vh and vw
+  <div class="h-screen w-screen">Full viewport</div>
+  <div class="h-[50vh] w-[50vw]">Half viewport height and width</div>
+  8) Position in CSS → Tailwind static
+  <div class="static">Default position</div>
+  relative
+  <div class="relative top-2 left-4">Moved relative to itself</div>
+  absolute
+  <div class="relative">
+    <div class="absolute top-0 right-0">Absolute inside relative parent</div>
+  </div>
+  fixed
+  <div class="fixed bottom-4 right-4">Fixed on screen</div>
+  sticky
+  <div class="sticky top-0 bg-white">Sticky header</div>
+  9) z-index → Tailwind
+  <div class="relative z-10">Higher layer</div>
+  <div class="relative z-0">Lower layer</div>
+
+  Common values:
+
+  <div class="z-0"></div>
+  <div class="z-10"></div>
+  <div class="z-20"></div>
+  <div class="z-50"></div>
+  10) Background Image → Tailwind
+  <div class="bg-[url('/image.jpeg')] bg-cover bg-center h-64 w-full"></div>
+  Background size cover
+  <div class="bg-cover"></div>
+  contain
+  <div class="bg-contain"></div>
+  auto Tailwind uses default background sizing if you do not specify anything.
+  11) Flexbox Direction → Tailwind
+  <div class="flex flex-row">Row</div>
+  <div class="flex flex-row-reverse">Row reverse</div>
+  <div class="flex flex-col">Column</div>
+  <div class="flex flex-col-reverse">Column reverse</div>
+  12) Flex Properties for Flex Container → Tailwind justify-content
+  <div class="flex justify-start"></div>
+  <div class="flex justify-end"></div>
+  <div class="flex justify-center"></div>
+  <div class="flex justify-between"></div>
+  <div class="flex justify-around"></div>
+  <div class="flex justify-evenly"></div>
+  align-items
+  <div class="flex items-start"></div>
+  <div class="flex items-end"></div>
+  <div class="flex items-center"></div>
+  <div class="flex items-stretch"></div>
+  flex-wrap
+  <div class="flex flex-nowrap"></div>
+  <div class="flex flex-wrap"></div>
+  <div class="flex flex-wrap-reverse"></div>
+  13) Flex Properties for Flex Item → Tailwind align-self
+  <div class="self-start"></div>
+  <div class="self-center"></div>
+  <div class="self-end"></div>
+  <div class="self-stretch"></div>
+  flex-grow
+  <div class="flex-grow">This grows</div>
+  flex-shrink
+  <div class="flex-shrink">This shrinks</div>
+  14) Pseudo Classes → Tailwind :hover
+  <button class="bg-blue-500 text-white px-4 py-2 hover:bg-blue-700">
+    Hover me
+  </button>
+  :active
+  <button class="bg-green-500 text-white px-4 py-2 active:scale-95">
+    Press me
+  </button>
+
+  You can also combine:
+
+  <button class="bg-blue-500 hover:bg-blue-600 active:bg-blue-800">
+    Button
+  </button>
+  15) Transitions in CSS → Tailwind Transition all
+  <button class="transition-all duration-300 hover:scale-110">
+    Smooth button
+  </button>
+  Duration
+  <div class="transition-all duration-1000"></div>
+  <div class="transition-all duration-500"></div>
+  Timing function
+  <div class="transition-all ease-in"></div>
+  <div class="transition-all ease-out"></div>
+  <div class="transition-all ease-linear"></div>
+  <div class="transition-all ease-in-out"></div>
+  Delay
+  <div class="transition-all delay-200"></div>
+  Full example
+  <button
+    class="bg-purple-500 text-white px-4 py-2 rounded transition-all duration-500 ease-in-out delay-200 hover:bg-purple-700 hover:scale-105"
+  >
+    Hover Effect
+  </button>
+  16) Transform Example
+  <div class="transition-all duration-300 hover:rotate-6 hover:scale-110">
+    Transform on hover
+  </div>
+  17) Very Useful Tailwind Shorthand Examples Center a box
+  <div class="flex items-center justify-center h-screen">
+    <div class="bg-white p-6 rounded shadow-lg">Centered box</div>
+  </div>
+  Card design
+  <div class="max-w-sm p-4 border rounded-lg shadow-md bg-white">
+    <h2 class="text-xl font-bold mb-2">Card Title</h2>
+    <p class="text-gray-600">This is a simple card in Tailwind.</p>
+  </div>
+  Responsive text
+  <h1 class="text-2xl md:text-4xl font-bold">Responsive Heading</h1>
+  18) Quick Mapping Table CSS Tailwind color: red text-red-500 text-align:
+  center text-center font-weight: bold font-bold font-family: Arial
+  [font-family:Arial] text-transform: uppercase uppercase border: 2px solid
+  black border-2 border-black padding: 20px p-5 or p-[20px] margin: 20px m-5 or
+  m-[20px] display: none hidden visibility: hidden invisible position: relative
+  relative position: absolute absolute position: fixed fixed justify-content:
+  center justify-center align-items: center items-center transition: all 0.3s
+  transition-all duration-300
+</body>

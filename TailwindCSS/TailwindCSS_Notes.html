@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tailwind Cheat Sheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="p-6 space-y-6">
+    <!-- ===================================================== -->
+    <!-- 1) TEXT PROPERTIES -->
+    <!-- ===================================================== -->
+
+    <!-- color: red → text-red-500 -->
+    <p class="text-red-500">This text is red</p>
+
+    <!-- Common colors -->
+    <p class="text-blue-600">Blue text</p>
+    <p class="text-green-500">Green text</p>
+    <p class="text-black">Black text</p>
+
+    <!-- text-align -->
+    <p class="text-left">Left aligned</p>
+    <p class="text-center">Center aligned</p>
+    <p class="text-right">Right aligned</p>
+
+    <!-- text-decoration -->
+    <p class="underline">Underlined text</p>
+    <p class="overline">Overlined text</p>
+    <p class="line-through">Strikethrough text</p>
+    <p class="no-underline">No underline</p>
+
+    <!-- Decoration styles -->
+    <p class="underline decoration-dotted">Dotted underline</p>
+    <p class="underline decoration-dashed">Dashed underline</p>
+    <p class="underline decoration-double">Double underline</p>
+    <p class="underline decoration-wavy">Wavy underline</p>
+
+    <!-- font-weight -->
+    <p class="font-normal">Normal</p>
+    <p class="font-bold">Bold</p>
+    <p class="font-light">Lighter</p>
+    <p class="font-extrabold">Bolder</p>
+
+    <!-- Font weight scale -->
+    <p class="font-thin">100</p>
+    <p class="font-extralight">200</p>
+    <p class="font-light">300</p>
+    <p class="font-normal">400</p>
+    <p class="font-medium">500</p>
+    <p class="font-semibold">600</p>
+    <p class="font-bold">700</p>
+    <p class="font-extrabold">800</p>
+    <p class="font-black">900</p>
+
+    <!-- font-family -->
+    <p class="font-sans">Sans font</p>
+    <p class="[font-family:Arial]">Arial text</p>
+    <p class="[font-family:Arial,Roboto,sans-serif]">
+      Arial → Roboto → fallback
+    </p>
+
+    <!-- text-transform -->
+    <p class="uppercase">uppercase text</p>
+    <p class="lowercase">LOWERCASE TEXT</p>
+    <p class="capitalize">hello world becomes Hello World</p>
+    <p class="normal-case">normal case</p>
+
+    <!-- ===================================================== -->
+    <!-- 2) UNITS -->
+    <!-- ===================================================== -->
+
+    <!-- font-size -->
+    <p class="text-[2px]">Tiny text</p>
+
+    <!-- width / height -->
+    <div class="w-[96px] h-[50px] bg-gray-300"></div>
+
+    <!-- percentage -->
+    <div class="w-1/2 bg-blue-100">50% width</div>
+    <div class="w-full bg-blue-200">100% width</div>
+
+    <!-- viewport -->
+    <div class="h-screen bg-gray-100">100vh</div>
+    <div class="w-screen bg-gray-200">100vw</div>
+
+    <!-- rem -->
+    <p class="text-base">1rem</p>
+    <p class="text-lg">bigger text</p>
+
+    <!-- ===================================================== -->
+    <!-- PRACTICE SET -->
+    <!-- ===================================================== -->
+
+    <!-- Q1 -->
+    <h1 class="text-center uppercase text-3xl font-bold">
+      welcome to tailwind css
+    </h1>
+
+    <!-- Q2 -->
+    <div class="[font-family:'Times_New_Roman',serif]">
+      <h1>Hello</h1>
+      <p>This page uses Times New Roman.</p>
+    </div>
+
+    <!-- Q3 -->
+    <div id="outer" class="text-[25px] border border-black p-4">
+      outer
+      <div id="inner" class="text-[10px] border border-red-500 p-2 mt-2">
+        inner
+      </div>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- 3) BOX MODEL -->
+    <!-- ===================================================== -->
+
+    <!-- height & width -->
+    <div class="h-40 w-64 bg-blue-200"></div>
+
+    <!-- border -->
+    <div class="border-2 border-black"></div>
+    <div class="border-2 border-dotted border-black"></div>
+    <div class="border-2 border-dashed border-black"></div>
+    <div class="border-2 border-double border-black"></div>
+
+    <!-- border radius -->
+    <div class="rounded-lg bg-gray-200 p-2">Rounded</div>
+    <div class="w-20 h-20 bg-blue-500 rounded-full"></div>
+
+    <!-- padding -->
+    <div class="p-4 bg-gray-100">Padding all</div>
+    <div class="px-4 py-2 bg-gray-200">X & Y padding</div>
+    <div class="pt-4 pr-2 pb-6 pl-1 bg-gray-300">Individual padding</div>
+
+    <!-- margin -->
+    <div class="m-4 bg-gray-100">Margin</div>
+    <div class="mx-auto w-40 bg-gray-200">Center using margin</div>
+
+    <!-- ===================================================== -->
+    <!-- 4) DISPLAY -->
+    <!-- ===================================================== -->
+
+    <span class="inline bg-yellow-200">inline</span>
+    <span class="block bg-yellow-200">block</span>
+    <span class="inline-block bg-yellow-200 px-4 py-2">inline-block</span>
+    <div class="hidden">Hidden</div>
+
+    <!-- ===================================================== -->
+    <!-- 5) VISIBILITY -->
+    <!-- ===================================================== -->
+
+    <div class="invisible">Invisible but takes space</div>
+
+    <!-- opacity -->
+    <div class="opacity-0">0</div>
+    <div class="opacity-50">50%</div>
+    <div class="opacity-100">100%</div>
+
+    <!-- ===================================================== -->
+    <!-- 6) COLORS WITH OPACITY -->
+    <!-- ===================================================== -->
+
+    <p class="text-red-500/50">Red with opacity</p>
+    <div class="bg-blue-500/30 p-2">Background opacity</div>
+
+    <!-- ===================================================== -->
+    <!-- 7) POSITION -->
+    <!-- ===================================================== -->
+
+    <div class="relative top-2 left-4 bg-gray-200">Relative</div>
+
+    <div class="relative h-20 bg-gray-100">
+      <div class="absolute top-0 right-0 bg-red-300">Absolute</div>
+    </div>
+
+    <div class="fixed bottom-4 right-4 bg-black text-white p-2">Fixed</div>
+
+    <div class="sticky top-0 bg-white">Sticky</div>
+
+    <!-- ===================================================== -->
+    <!-- 8) FLEXBOX -->
+    <!-- ===================================================== -->
+
+    <div class="flex flex-row gap-2">
+      <div class="bg-blue-200 p-2">1</div>
+      <div class="bg-blue-200 p-2">2</div>
+    </div>
+
+    <div class="flex justify-center items-center h-20 bg-gray-100">
+      Centered
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- 9) PSEUDO CLASSES -->
+    <!-- ===================================================== -->
+
+    <button class="bg-blue-500 text-white px-4 py-2 hover:bg-blue-700">
+      Hover me
+    </button>
+
+    <button class="bg-green-500 text-white px-4 py-2 active:scale-95">
+      Press me
+    </button>
+
+    <!-- ===================================================== -->
+    <!-- 10) TRANSITIONS -->
+    <!-- ===================================================== -->
+
+    <button
+      class="transition-all duration-300 hover:scale-110 bg-purple-500 text-white px-4 py-2"
+    >
+      Smooth button
+    </button>
+
+    <!-- transform -->
+    <div
+      class="transition-all duration-300 hover:rotate-6 hover:scale-110 bg-gray-200 p-4"
+    >
+      Transform on hover
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- 11) REAL EXAMPLES -->
+    <!-- ===================================================== -->
+
+    <!-- Center box -->
+    <div class="flex items-center justify-center h-40 bg-gray-100">
+      <div class="bg-white p-6 rounded shadow-lg">Centered box</div>
+    </div>
+
+    <!-- Card -->
+    <div class="max-w-sm p-4 border rounded-lg shadow-md bg-white">
+      <h2 class="text-xl font-bold mb-2">Card Title</h2>
+      <p class="text-gray-600">Simple card</p>
+    </div>
+
+    <!-- Responsive -->
+    <h1 class="text-2xl md:text-4xl font-bold">Responsive Heading</h1>
+  </body>
+</html>

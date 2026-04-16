@@ -127,10 +127,10 @@ import { FirstComp, SecondComp } from "./components/FirstComp";
 export default function App() {
   return (
     <div>
-      <h1 style={{ backgroundColor: "red", color: "white" }}>Hello</h1>
+      <h1 className="bg-amber-300 font text-red-700">Hello</h1>
       <FirstComp name="Rohit" />
       <SecondComp />
-      <p>This is a paragraph</p>
+      <p className="bg-blue-700 font-extrabold">This is a paragraph</p>
       <p>This is a paragraph</p>
       <p>This is a paragraph</p>
       <p>This is a paragraph</p>
