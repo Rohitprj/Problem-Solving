@@ -23,6 +23,24 @@ https://github.com/YOUR-USERNAME/YOUR-REPO.git
 git config --global user.name "Your Name"
 git config --global user.email "your-email@example.com"
 
+---------------------------------------------------------------------------------------------------------------------
+
+Basics in Git :-
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Rohitprj/your-repo-name.git
+git push -u origin main
+
+…or push an existing repository from the command line :
+
+git remote add origin https://github.com/Rohitprj/your-repo-name.git
+git branch -M main
+git push -u origin main
+
+---------------------------------------------------------------------------------------------------------------------
 
 Branches in Git :-
 
@@ -38,3 +56,6 @@ git branch -m <old-branch-name> <new-branch-name>
 
 Delete a branch
 git branch -d <branch-name>
+
+Merge a branch
+git merge <branch-name> - This command merges the specified branch into the current branch.
