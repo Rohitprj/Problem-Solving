@@ -1,277 +1,299 @@
-Tailwind CSS Cheat Sheet 1) Text Properties in CSS → Tailwind color: red Use
-text color utilities.
+TAILWIND CSS CHEAT SHEET
 
+--------------------------------------------------
+1) TEXT PROPERTIES IN CSS → TAILWIND
+--------------------------------------------------
+
+Color:
 <p class="text-red-500">This text is red</p>
-
-Common examples:
-
 <p class="text-blue-600">Blue text</p>
 <p class="text-green-500">Green text</p>
 <p class="text-black">Black text</p>
-text-align: left / right / center
+
+Text Alignment:
 <p class="text-left">Left aligned</p>
 <p class="text-center">Center aligned</p>
 <p class="text-right">Right aligned</p>
-text-decoration Underline
+
+Text Decoration:
 <p class="underline">Underlined text</p>
-Overline
 <p class="overline">Overlined text</p>
-Line-through
 <p class="line-through">Strikethrough text</p>
-None
 <p class="no-underline">No underline</p>
-Decoration style: dotted, dashed, double, wavy
+
+Decoration Styles:
 <p class="underline decoration-dotted">Dotted underline</p>
 <p class="underline decoration-dashed">Dashed underline</p>
 <p class="underline decoration-double">Double underline</p>
 <p class="underline decoration-wavy">Wavy underline</p>
-font-weight Normal / Bold / Lighter / Bolder
+
+Font Weight:
 <p class="font-normal">Normal</p>
 <p class="font-bold">Bold</p>
 <p class="font-light">Lighter</p>
 <p class="font-extrabold">Bolder</p>
-Font weights from 100 to 900
-<p class="font-thin">100</p>
-<p class="font-extralight">200</p>
-<p class="font-light">300</p>
-<p class="font-normal">400</p>
-<p class="font-medium">500</p>
-<p class="font-semibold">600</p>
-<p class="font-bold">700</p>
-<p class="font-extrabold">800</p>
-<p class="font-black">900</p>
-font-family: arial Tailwind gives you font family utilities, or you can use
-custom values.
 
+Font Weight Scale:
+100 → font-thin
+200 → font-extralight
+300 → font-light
+400 → font-normal
+500 → font-medium
+600 → font-semibold
+700 → font-bold
+800 → font-extrabold
+900 → font-black
+
+Font Family:
 <p class="font-sans">Sans font</p>
-
-For exact Arial:
-
 <p class="[font-family:Arial]">Arial text</p>
+<p class="[font-family:Arial,Roboto,sans-serif]">Fallback fonts</p>
 
-For fallback fonts:
+Text Transform:
+<p class="uppercase">UPPERCASE</p>
+<p class="lowercase">lowercase</p>
+<p class="capitalize">Hello World</p>
+<p class="normal-case">Normal</p>
 
-<p class="[font-family:Arial,Roboto,sans-serif]">
-  Arial, then Roboto, then sans-serif
-</p>
-text-transform
-<p class="uppercase">uppercase text</p>
-<p class="lowercase">LOWERCASE TEXT</p>
-<p class="capitalize">hello world becomes Hello World</p>
-<p class="normal-case">normal case</p>
-2) Units in CSS → Tailwind Tailwind mostly uses a spacing scale based on rem,
-but you can also use arbitrary values. font-size: 2px
+--------------------------------------------------
+2) UNITS IN CSS → TAILWIND
+--------------------------------------------------
+
+Font Size:
 <p class="text-[2px]">Tiny text</p>
-Width / Height in pixels
-<div class="w-[96px] h-[50px] bg-gray-300"></div>
-Percentage
-<div class="w-1/2">50% width</div>
-<div class="w-full">100% width</div>
-Viewport units
-<div class="h-screen">100vh</div>
-<div class="w-screen">100vw</div>
-rem-based example
+
+Width / Height:
+<div class="w-[96px] h-[50px]"></div>
+
+Percentage:
+<div class="w-1/2">50%</div>
+<div class="w-full">100%</div>
+
+Viewport:
+<div class="h-screen"></div>
+<div class="w-screen"></div>
+
+Rem:
 <p class="text-base">1rem</p>
-<p class="text-lg">bigger text</p>
-Practice Set 1 Q1: Create a heading centred on the page with all text
-capitalized by default
+<p class="text-lg">Large</p>
+
+--------------------------------------------------
+PRACTICE SET
+--------------------------------------------------
+
+Q1:
 <h1 class="text-center uppercase text-3xl font-bold">
   welcome to tailwind css
 </h1>
-Q2: Set the font family of all content in the document to "Times New Roman" Best
-way: apply on body.
 
+Q2:
 <body class="[font-family:'Times_New_Roman',serif]">
-  <h1>Hello</h1>
-  <p>This page uses Times New Roman.</p>
-</body>
 
-If you want the exact fallback style:
+Q3:
+<div class="text-[25px]">
+  outer
+  <div class="text-[10px]">inner</div>
+</div>
 
-<body class="[font-family:'Times_New_Roman',Times,serif]">
-  Q3: One div inside another div. Outer text size 25px and inner text size 10px
-  <div id="outer" class="text-[25px] border border-black p-4">
-    outer
-    <div id="inner" class="text-[10px] border border-red-500 p-2 mt-2">
-      inner
-    </div>
-  </div>
-  3) Box Model in CSS → Tailwind Height and Width
-  <div class="h-40 w-64 bg-blue-200"></div>
-  Border Border width + style + color
-  <div class="border-2 border-solid border-black"></div>
-  Shorthand in Tailwind Tailwind usually combines these like this:
+--------------------------------------------------
+3) BOX MODEL → TAILWIND
+--------------------------------------------------
 
-  <div class="border-2 border-black"></div>
-  Different border styles
-  <div class="border-2 border-dotted border-black"></div>
-  <div class="border-2 border-dashed border-black"></div>
-  <div class="border-2 border-double border-black"></div>
-  Border radius
-  <div class="rounded-lg"></div>
-  <div class="rounded-full"></div>
+Height & Width:
+<div class="h-40 w-64"></div>
 
-  Examples:
+Border:
+<div class="border-2 border-black"></div>
+<div class="border-2 border-dotted"></div>
+<div class="border-2 border-dashed"></div>
+<div class="border-2 border-double"></div>
 
-  <div class="w-20 h-20 bg-blue-500 rounded-full"></div>
-  Padding
-  <div class="p-4">Padding all sides</div>
-  <div class="px-4 py-2">Horizontal and vertical padding</div>
-  <div class="pt-4 pr-2 pb-6 pl-1">Individual sides</div>
-  Margin
-  <div class="m-4">Margin all sides</div>
-  <div class="mx-auto">Auto horizontal margin</div>
-  <div class="mt-4 mb-2">Top and bottom margin</div>
-  Clockwise spacing idea CSS: padding: top right bottom left; Tailwind
-  equivalent:
+Border Radius:
+<div class="rounded-lg"></div>
+<div class="rounded-full"></div>
 
-  <div class="pt-2 pr-4 pb-6 pl-8"></div>
-  4) Display Property in CSS → Tailwind inline
-  <span class="inline bg-yellow-200">inline element</span>
-  block
-  <span class="block bg-yellow-200">block element</span>
-  inline-block
-  <span class="inline-block bg-yellow-200 px-4 py-2">inline-block</span>
-  none
-  <div class="hidden">This will not show</div>
-  5) Visibility in CSS → Tailwind visibility: hidden
-  <div class="invisible">Hidden but space remains</div>
-  opacity
-  <div class="opacity-0">Fully transparent</div>
-  <div class="opacity-50">Half transparent</div>
-  <div class="opacity-100">Fully visible</div>
-  6) RGB / RGBA / Opacity → Tailwind Text color with opacity
-  <p class="text-red-500/50">Red with 50% opacity</p>
-  Background color with opacity
-  <div class="bg-blue-500/30">Background with opacity</div>
-  Overall element opacity
-  <div class="opacity-75">Whole element faded</div>
-  7) Units in CSS → Tailwind %
-  <div class="w-1/2">50% width</div>
-  <div class="w-3/4">75% width</div>
-  <div class="w-full">100% width</div>
-  em and rem Tailwind does not force you to use only its scale. Use arbitrary
-  values:
+Padding:
+p-4 → all sides
+px-4 py-2 → horizontal & vertical
+pt-4 pr-2 pb-6 pl-1 → individual
 
-  <p class="text-[2em]">2em font size</p>
-  <p class="text-[1.5rem]">1.5rem font size</p>
-  vh and vw
-  <div class="h-screen w-screen">Full viewport</div>
-  <div class="h-[50vh] w-[50vw]">Half viewport height and width</div>
-  8) Position in CSS → Tailwind static
-  <div class="static">Default position</div>
-  relative
-  <div class="relative top-2 left-4">Moved relative to itself</div>
-  absolute
-  <div class="relative">
-    <div class="absolute top-0 right-0">Absolute inside relative parent</div>
-  </div>
-  fixed
-  <div class="fixed bottom-4 right-4">Fixed on screen</div>
-  sticky
-  <div class="sticky top-0 bg-white">Sticky header</div>
-  9) z-index → Tailwind
-  <div class="relative z-10">Higher layer</div>
-  <div class="relative z-0">Lower layer</div>
+Margin:
+m-4 → all sides
+mx-auto → center
+mt-4 mb-2 → top & bottom
 
-  Common values:
+--------------------------------------------------
+4) DISPLAY → TAILWIND
+--------------------------------------------------
 
-  <div class="z-0"></div>
-  <div class="z-10"></div>
-  <div class="z-20"></div>
-  <div class="z-50"></div>
-  10) Background Image → Tailwind
-  <div class="bg-[url('/image.jpeg')] bg-cover bg-center h-64 w-full"></div>
-  Background size cover
-  <div class="bg-cover"></div>
-  contain
-  <div class="bg-contain"></div>
-  auto Tailwind uses default background sizing if you do not specify anything.
-  11) Flexbox Direction → Tailwind
-  <div class="flex flex-row">Row</div>
-  <div class="flex flex-row-reverse">Row reverse</div>
-  <div class="flex flex-col">Column</div>
-  <div class="flex flex-col-reverse">Column reverse</div>
-  12) Flex Properties for Flex Container → Tailwind justify-content
-  <div class="flex justify-start"></div>
-  <div class="flex justify-end"></div>
-  <div class="flex justify-center"></div>
-  <div class="flex justify-between"></div>
-  <div class="flex justify-around"></div>
-  <div class="flex justify-evenly"></div>
-  align-items
-  <div class="flex items-start"></div>
-  <div class="flex items-end"></div>
-  <div class="flex items-center"></div>
-  <div class="flex items-stretch"></div>
-  flex-wrap
-  <div class="flex flex-nowrap"></div>
-  <div class="flex flex-wrap"></div>
-  <div class="flex flex-wrap-reverse"></div>
-  13) Flex Properties for Flex Item → Tailwind align-self
-  <div class="self-start"></div>
-  <div class="self-center"></div>
-  <div class="self-end"></div>
-  <div class="self-stretch"></div>
-  flex-grow
-  <div class="flex-grow">This grows</div>
-  flex-shrink
-  <div class="flex-shrink">This shrinks</div>
-  14) Pseudo Classes → Tailwind :hover
-  <button class="bg-blue-500 text-white px-4 py-2 hover:bg-blue-700">
-    Hover me
-  </button>
-  :active
-  <button class="bg-green-500 text-white px-4 py-2 active:scale-95">
-    Press me
-  </button>
+inline → class="inline"
+block → class="block"
+inline-block → class="inline-block"
+none → class="hidden"
 
-  You can also combine:
+--------------------------------------------------
+5) VISIBILITY → TAILWIND
+--------------------------------------------------
 
-  <button class="bg-blue-500 hover:bg-blue-600 active:bg-blue-800">
-    Button
-  </button>
-  15) Transitions in CSS → Tailwind Transition all
-  <button class="transition-all duration-300 hover:scale-110">
-    Smooth button
-  </button>
-  Duration
-  <div class="transition-all duration-1000"></div>
-  <div class="transition-all duration-500"></div>
-  Timing function
-  <div class="transition-all ease-in"></div>
-  <div class="transition-all ease-out"></div>
-  <div class="transition-all ease-linear"></div>
-  <div class="transition-all ease-in-out"></div>
-  Delay
-  <div class="transition-all delay-200"></div>
-  Full example
-  <button
-    class="bg-purple-500 text-white px-4 py-2 rounded transition-all duration-500 ease-in-out delay-200 hover:bg-purple-700 hover:scale-105"
-  >
-    Hover Effect
-  </button>
-  16) Transform Example
-  <div class="transition-all duration-300 hover:rotate-6 hover:scale-110">
-    Transform on hover
-  </div>
-  17) Very Useful Tailwind Shorthand Examples Center a box
-  <div class="flex items-center justify-center h-screen">
-    <div class="bg-white p-6 rounded shadow-lg">Centered box</div>
-  </div>
-  Card design
-  <div class="max-w-sm p-4 border rounded-lg shadow-md bg-white">
-    <h2 class="text-xl font-bold mb-2">Card Title</h2>
-    <p class="text-gray-600">This is a simple card in Tailwind.</p>
-  </div>
-  Responsive text
-  <h1 class="text-2xl md:text-4xl font-bold">Responsive Heading</h1>
-  18) Quick Mapping Table CSS Tailwind color: red text-red-500 text-align:
-  center text-center font-weight: bold font-bold font-family: Arial
-  [font-family:Arial] text-transform: uppercase uppercase border: 2px solid
-  black border-2 border-black padding: 20px p-5 or p-[20px] margin: 20px m-5 or
-  m-[20px] display: none hidden visibility: hidden invisible position: relative
-  relative position: absolute absolute position: fixed fixed justify-content:
-  center justify-center align-items: center items-center transition: all 0.3s
-  transition-all duration-300
-</body>
+invisible → hidden but space remains
+opacity-0 → invisible
+opacity-50 → half
+opacity-100 → visible
+
+--------------------------------------------------
+6) COLORS & OPACITY
+--------------------------------------------------
+
+text-red-500/50 → 50% opacity
+bg-blue-500/30 → background opacity
+opacity-75 → whole element
+
+--------------------------------------------------
+7) MORE UNITS
+--------------------------------------------------
+
+<div class="w-1/2">50%</div>
+<div class="w-3/4">75%</div>
+
+<p class="text-[2em]"></p>
+<p class="text-[1.5rem]"></p>
+
+<div class="h-screen w-screen"></div>
+<div class="h-[50vh] w-[50vw]"></div>
+
+--------------------------------------------------
+8) POSITION
+--------------------------------------------------
+
+static
+relative
+absolute
+fixed
+sticky
+
+Examples:
+<div class="relative top-2 left-4"></div>
+<div class="absolute top-0 right-0"></div>
+<div class="fixed bottom-4 right-4"></div>
+
+--------------------------------------------------
+9) Z-INDEX
+--------------------------------------------------
+
+z-0
+z-10
+z-20
+z-50
+
+--------------------------------------------------
+10) BACKGROUND IMAGE
+--------------------------------------------------
+
+<div class="bg-[url('/image.jpeg')] bg-cover bg-center"></div>
+
+bg-cover
+bg-contain
+
+--------------------------------------------------
+11) FLEX DIRECTION
+--------------------------------------------------
+
+flex-row
+flex-row-reverse
+flex-col
+flex-col-reverse
+
+--------------------------------------------------
+12) FLEX CONTAINER
+--------------------------------------------------
+
+Justify:
+justify-start
+justify-center
+justify-between
+justify-around
+justify-evenly
+
+Align:
+items-start
+items-center
+items-end
+items-stretch
+
+Wrap:
+flex-wrap
+flex-nowrap
+flex-wrap-reverse
+
+--------------------------------------------------
+13) FLEX ITEM
+--------------------------------------------------
+
+self-start
+self-center
+self-end
+self-stretch
+
+flex-grow
+flex-shrink
+
+--------------------------------------------------
+14) PSEUDO CLASSES
+--------------------------------------------------
+
+:hover
+:active
+
+Example:
+<button class="hover:bg-blue-700"></button>
+<button class="active:scale-95"></button>
+
+--------------------------------------------------
+15) TRANSITIONS
+--------------------------------------------------
+
+transition-all
+duration-300 / 500 / 1000
+ease-in / ease-out / linear / ease-in-out
+delay-200
+
+--------------------------------------------------
+16) TRANSFORM
+--------------------------------------------------
+
+hover:scale-110
+hover:rotate-6
+
+--------------------------------------------------
+17) USEFUL SHORTHANDS
+--------------------------------------------------
+
+Center Box:
+flex items-center justify-center h-screen
+
+Card:
+max-w-sm p-4 border rounded shadow
+
+Responsive Text:
+text-2xl md:text-4xl
+
+--------------------------------------------------
+18) QUICK MAPPING
+--------------------------------------------------
+
+color: red → text-red-500
+text-align: center → text-center
+font-weight: bold → font-bold
+font-family: Arial → [font-family:Arial]
+text-transform: uppercase → uppercase
+border → border-2 border-black
+padding → p-5
+margin → m-5
+display: none → hidden
+visibility: hidden → invisible
+position: relative → relative
+position: absolute → absolute
+position: fixed → fixed
+justify-content: center → justify-center
+align-items: center → items-center
+transition → transition-all duration-300
