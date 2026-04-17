@@ -70,6 +70,8 @@ Given that x = 5, the table below explains the comparison operators:
 
 ---------------------------Logical Operators---------------------------------
 
+Logical operators are used to combine conditional statements.
+x = 10, y = 5 ----------------------------------------------------
 | Operator | Description | Example             | Returns    |          |   |          |       |
 | -------: | ----------- | ------------------- | ---------- | -------- | - | -------- | ----- |
 |     `&&` | Logical AND | `(x < 10 && y > 1)` | true       |          |   |          |       |
