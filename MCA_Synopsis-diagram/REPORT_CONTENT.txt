@@ -1,0 +1,40 @@
+  System Analysis
+ Identification of Need 
+ PERT Chart and Gantt Chart both
+ Software requirement specifications (SRS) 
+ Software Engineering Paradigm applied 
+ Data models (like DFDs), Control Flow diagrams, State Diagrams/Sequence diagrams, Entity Relationship Model, Class Diagrams/CRC Models/Collaboration Diagrams/Use-case Diagrams/Activity Diagrams and other models depending upon your project requirements 
+
+  System Design
+ Modularization details
+ Data integrity and constraints
+ Database design, Procedural Design/Object Oriented Design
+ User Interface Design
+ Test Cases (Unit Test Cases and System Test Cases) 
+
+  Coding
+ SQL commands/Object description for (i) data or database creation (along with constraints), (ii) data collection, cleaning and generation and insertion into data structure or tables and (iii) access rights for different users
+ Complete Project Coding
+ Comments and Description of Coding segments
+
+  Standardization of the coding
+ Code Efficiency
+ Error handling
+ Parameters calling/passing
+ Validation checks
+
+  Testing
+ Testing techniques and Testing strategies used
+ Testing Plan used
+ Test reports for Unit Test Cases and System Test Cases 
+ Debugging and Code improvement 
+
+  System Security measures (Implementation of security for the project developed)
+ Database/data security
+ Creation of User profiles and access rights
+
+o Reports (sample layouts should be placed)
+o Future scope and further enhancement of the Project
+o Bibliography
+o Appendices (if any)
+o Glossary. 
