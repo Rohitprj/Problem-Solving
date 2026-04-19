@@ -1,0 +1,34 @@
+graph LR
+    %% Start Node
+    START((Start)) --> PLAN[Project Planning]
+    
+    %% Planning to Database
+    PLAN --> DB[MongoDB Setup]
+    
+    %% Parallel Development Paths
+    subgraph Development_Module [Backend & Tracking]
+    DB --> AUTH[User Auth System]
+    DB --> CLICK[Click Tracking Logic]
+    AUTH --> CHAT_API[Chat History API]
+    end
+
+    subgraph AI_Engine [AI & Knowledge]
+    DB --> KB[Knowledge Base/Books]
+    KB --> NLP[NLP & LLM Integration]
+    NLP --> VOICE[Voice Query Support]
+    end
+
+    %% Consolidation into Admin
+    CHAT_API --> ADMIN[Admin Dashboard]
+    CLICK --> ADMIN
+    VOICE --> ADMIN
+
+    %% Final Phases
+    ADMIN --> TEST[System Testing]
+    TEST --> END((Finish))
+
+    %% Styling
+    style START fill:#f9f,stroke:#333,stroke-width:2px
+    style END fill:#f9f,stroke:#333,stroke-width:2px
+    style PLAN fill:#bbf,stroke:#333
+    style TEST fill:#dfd,stroke:#333
