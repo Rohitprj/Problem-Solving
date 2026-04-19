@@ -5,6 +5,8 @@
  Software Engineering Paradigm applied 
  Data models (like DFDs), Control Flow diagrams, State Diagrams/Sequence diagrams, Entity Relationship Model, Class Diagrams/CRC Models/Collaboration Diagrams/Use-case Diagrams/Activity Diagrams and other models depending upon your project requirements 
 
+(I want to make - Control Flow diagrams, State Diagrams/Sequence diagrams, Activity Diagrams, Collaboration Diagrams/Use-case Diagrams, CRC Models  )
+
   System Design
  Modularization details
  Data integrity and constraints
