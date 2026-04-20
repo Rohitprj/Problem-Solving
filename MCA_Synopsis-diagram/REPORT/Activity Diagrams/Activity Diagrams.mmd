@@ -1,0 +1,32 @@
+%%{init: {"theme":"neutral","themeVariables":{"fontSize":"22px"}}}%%
+flowchart TD
+
+    A([Start]) --> B[Open App]
+    B --> C{Registered User?}
+
+    C -- No --> D[Signup]
+    D --> E[Login]
+
+    C -- Yes --> E[Login]
+
+    E --> F{Valid Login?}
+
+    F -- No --> E
+    F -- Yes --> G[Open Dashboard]
+
+    G --> H{Select Option}
+
+    H --> I[Chat with AI]
+    H --> J[View History]
+    H --> K[Voice Query]
+    H --> L[Admin Panel]
+    H --> M[Logout]
+
+    I --> N[Get Response]
+    N --> G
+
+    J --> G
+    K --> N
+    L --> G
+
+    M --> O([End])

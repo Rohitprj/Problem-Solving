@@ -1,0 +1,33 @@
+%%{init: {"theme":"neutral","themeVariables":{"fontSize":"22px"}}}%%
+flowchart LR
+
+    USER([User])
+
+    subgraph Spiritual_AI_Chat_Bot_System
+        direction TB
+        UC1((Register))
+        UC2((Login))
+        UC3((Chat with AI))
+        UC4((Voice Query))
+        UC5((View Chat History))
+        UC6((Update Profile))
+        UC7((Logout))
+        UC8((Manage Users))
+        UC9((Monitor Chats))
+        UC10((View Reports))
+    end
+
+    ADMIN([Admin])
+
+    USER --> UC1
+    USER --> UC2
+    USER --> UC3
+    USER --> UC4
+    USER --> UC5
+    USER --> UC6
+    USER --> UC7
+
+    UC2 --> ADMIN
+    UC8 --> ADMIN
+    UC9 --> ADMIN
+    UC10 --> ADMIN

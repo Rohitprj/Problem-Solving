@@ -1,0 +1,123 @@
+%% flowchart TD
+
+%%     A([Start]) --> B[Open Spiritual AI Chat Bot App]
+
+%%     B --> C{User Registered?}
+
+%%     C -- No --> D[Signup]
+%%     D --> E[Create Account in Database]
+%%     E --> F[Login]
+
+%%     C -- Yes --> F[Login]
+
+%%     F --> G{Valid Credentials?}
+
+%%     G -- No --> H[Show Error Message]
+%%     H --> F
+
+%%     G -- Yes --> I[Generate JWT Token]
+%%     I --> J[Open Dashboard]
+
+%%     J --> K{Choose Action}
+
+%%     K --> L[Start Chat]
+%%     K --> M[View Chat History]
+%%     K --> N[Voice Query]
+%%     K --> O[Profile Settings]
+%%     K --> P[Logout]
+
+%%     L --> Q[Enter Spiritual Question]
+%%     Q --> R[Send Request to AI Engine]
+%%     R --> S[Generate Response]
+%%     S --> T[Display Answer]
+%%     T --> U[Save Chat in Database]
+%%     U --> J
+
+%%     M --> V[Fetch Previous Chats]
+%%     V --> W[Display History]
+%%     W --> J
+
+%%     N --> X[Record Voice Input]
+%%     X --> Y[Convert Speech to Text]
+%%     Y --> R
+
+%%     O --> Z[Update Profile]
+%%     Z --> J
+
+%%     P --> AA[Destroy Session Token]
+%%     AA --> AB([End])
+
+%%     %% Admin Flow
+%%     J --> AC{Admin User?}
+%%     AC -- Yes --> AD[Open Admin Dashboard]
+%%     AD --> AE[View Users]
+%%     AD --> AF[Monitor Chats]
+%%     AD --> AG[Analytics Reports]
+%%     AE --> J
+%%     AF --> J
+%%     AG --> J
+
+%%     AC -- No --> J
+
+%%{init: {"theme":"neutral"}}%%
+flowchart TD
+
+    A([Start]) --> B[Open Spiritual AI Chat Bot App]
+
+    B --> C{User Registered?}
+
+    C -- No --> D[Signup]
+    D --> E[Create Account in Database]
+    E --> F[Login]
+
+    C -- Yes --> F
+
+    F --> G{Valid Credentials?}
+
+    G -- No --> H[Show Error Message]
+    H --> F
+
+    G -- Yes --> I[Generate JWT Token]
+    I --> J[Open Dashboard]
+
+    J --> K{Choose Action}
+
+    K --> L[Start Chat]
+    K --> M[View Chat History]
+    K --> N[Voice Query]
+    K --> O[Profile Settings]
+    K --> P[Logout]
+
+    L --> Q[Enter Spiritual Question]
+    Q --> R[Send Request to AI Engine]
+    R --> S[Generate Response]
+    S --> T[Display Answer]
+    T --> U[Save Chat in Database]
+    U --> J
+
+    M --> V[Fetch Previous Chats]
+    V --> W[Display History]
+    W --> J
+
+    N --> X[Record Voice Input]
+    X --> Y[Convert Speech to Text]
+    Y --> R
+
+    O --> Z[Update Profile]
+    Z --> J
+
+    P --> AA[Destroy Session Token]
+    AA --> AB([End])
+
+    J --> AC{Admin User?}
+
+    AC -- Yes --> AD[Open Admin Dashboard]
+    AD --> AE[View Users]
+    AD --> AF[Monitor Chats]
+    AD --> AG[Analytics Reports]
+
+    AE --> J
+    AF --> J
+    AG --> J
+
+    AC -- No --> J

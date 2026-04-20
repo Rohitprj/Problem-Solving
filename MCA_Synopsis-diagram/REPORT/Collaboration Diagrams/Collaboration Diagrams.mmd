@@ -1,0 +1,27 @@
+%%{init: {"theme":"neutral","themeVariables":{"fontSize":"22px"}}}%%
+flowchart LR
+
+    U[User]
+
+    APP[Mobile App]
+    AUTH[Auth System]
+    DB[(Database)]
+    AI[AI Engine]
+    ADMIN[Admin Panel]
+
+    U -- 1 Open App --> APP
+    U -- 2 Login / Signup --> AUTH
+    AUTH -- 3 Verify User --> DB
+    AUTH -- 4 Access Granted --> APP
+
+    U -- 5 Ask Question --> APP
+    APP -- 6 Send Query --> AI
+    AI -- 7 Generate Reply --> APP
+    APP -- 8 Save Chat --> DB
+    APP -- 9 Show Response --> U
+
+    U -- 10 View History --> APP
+    APP -- 11 Fetch History --> DB
+
+    U -- 12 Admin Access --> ADMIN
+    ADMIN -- 13 Reports / Users --> DB

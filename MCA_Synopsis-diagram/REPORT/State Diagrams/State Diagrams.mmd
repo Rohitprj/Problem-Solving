@@ -1,0 +1,62 @@
+%%{init: {"theme":"neutral"}}%%
+stateDiagram-v2
+
+    [*] --> App_Launched
+
+    App_Launched --> Authentication
+
+    state Authentication {
+        [*] --> Login_Page
+        Login_Page --> Signup_Page : New User
+        Signup_Page --> Login_Page : Account Created
+        Login_Page --> Dashboard : Valid Login
+        Login_Page --> Login_Page : Invalid Login
+    }
+
+    Dashboard --> Chat_Mode : Start Chat
+    Dashboard --> History_Mode : View History
+    Dashboard --> Voice_Mode : Voice Query
+    Dashboard --> Profile_Mode : Profile Settings
+    Dashboard --> Logout_State : Logout
+    Dashboard --> Admin_Check : Admin Access
+
+    state Chat_Mode {
+        [*] --> Enter_Query
+        Enter_Query --> AI_Processing
+        AI_Processing --> Show_Response
+        Show_Response --> Save_Chat
+        Save_Chat --> [*]
+    }
+
+    state History_Mode {
+        [*] --> Load_History
+        Load_History --> Show_History
+        Show_History --> [*]
+    }
+
+    state Voice_Mode {
+        [*] --> Record_Voice
+        Record_Voice --> Speech_To_Text
+        Speech_To_Text --> AI_Processing
+    }
+
+    state Profile_Mode {
+        [*] --> Update_Profile
+        Update_Profile --> [*]
+    }
+
+    state Admin_Check {
+        [*] --> Verify_Admin
+        Verify_Admin --> Admin_Dashboard : Yes
+        Verify_Admin --> Dashboard : No
+    }
+
+    state Admin_Dashboard {
+        [*] --> View_Users
+        View_Users --> Monitor_Chats
+        Monitor_Chats --> View_Reports
+        View_Reports --> [*]
+    }
+
+    Logout_State --> End_App
+    End_App --> [*]
