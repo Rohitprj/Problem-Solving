@@ -3,6 +3,9 @@ Loops in JS
 
 ## for loop
 
+for (initialization; condition; increment/decrement){
+}
+
 for (let i = 1; i <= 3; i++) {
     console.log("Count:", i);
 }
