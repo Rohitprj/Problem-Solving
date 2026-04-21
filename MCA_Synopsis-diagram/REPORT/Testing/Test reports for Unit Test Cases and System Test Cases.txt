@@ -1,0 +1,244 @@
+TEST REPORTS FOR UNIT TEST CASES AND SYSTEM TEST CASES
+
+1. INTRODUCTION
+
+A Test Report is a formal document prepared after executing test cases. It contains results of testing activities such as passed cases, failed cases, defects found, observations, and final quality status of the software.
+
+1.1 Test reports summarize what was tested, when it was tested, and the outcome of testing  
+1.2 It helps stakeholders decide whether the product is ready for release  
+1.3 It provides evidence of software quality and stability  
+
+1.4 For the Spiritual AI Chat Bot project, test reports are essential because the system includes multiple modules such as:
+
+1.4.1 User Registration and Login  
+1.4.2 JWT Authentication  
+1.4.3 AI Chatbot  
+1.4.4 Chat History  
+1.4.5 Voice Query Support  
+1.4.6 Admin Dashboard  
+1.4.7 Reports and Analytics  
+1.4.8 Mobile User Interface  
+
+1.5 Separate reports were prepared for:
+1.5.1 Unit Test Cases Report  
+1.5.2 System Test Cases Report  
+
+---
+
+2. OBJECTIVES OF TEST REPORTS
+
+2.1 Record test execution results  
+2.2 Identify passed and failed modules  
+2.3 Track defects and fixes  
+2.4 Evaluate software quality  
+2.5 Support final release decision  
+2.6 Improve future testing process  
+
+---
+
+3. COMPONENTS OF A TEST REPORT
+
+3.1 Project Name  
+3.2 Test Type  
+3.3 Test Date  
+3.4 Tester Name  
+3.5 Environment Used  
+3.6 Total Test Cases  
+3.7 Passed Cases  
+3.8 Failed Cases  
+3.9 Defects Found  
+3.10 Summary Remarks  
+3.11 Final Status  
+
+---
+
+4. PROJECT INFORMATION
+
+Item | Details
+---|---
+Project Name | Spiritual AI Chat Bot
+Technology Used | React Native, Node.js, Express.js, MongoDB
+Testing Tools | Jest, Postman, Manual Testing
+Platform | Android / Web / API
+Test Team | Developer / Tester
+Build Version | v1.0
+
+---
+
+PART A – UNIT TEST CASE REPORT
+
+5. MEANING OF UNIT TEST REPORT
+
+5.1 A Unit Test Report contains results of testing individual functions or modules in isolation  
+5.2 It ensures that small components work correctly before integration  
+
+5.3 In this project, unit testing was performed on:
+5.3.1 Validation functions  
+5.3.2 Login methods  
+5.3.3 JWT token generation  
+5.3.4 Password hashing  
+5.3.5 Chat save functions  
+5.3.6 Role authorization checks  
+5.3.7 History fetch methods  
+
+---
+
+6. UNIT TEST EXECUTION SUMMARY
+
+Item | Result
+---|---
+Total Unit Test Cases | 15
+Passed | 14
+Failed | 1
+Blocked | 0
+Success Rate | 93.3%
+
+---
+
+7. DETAILED UNIT TEST REPORT
+
+Test ID | Module | Scenario | Expected Result | Actual Result | Status
+---|---|---|---|---|---
+UT01 | Signup | Valid user registration | User created | User created | Pass
+UT02 | Signup | Duplicate email | Error message | Error shown | Pass
+UT03 | Login | Correct credentials | Login success | Success | Pass
+UT04 | Login | Wrong password | Access denied | Denied | Pass
+UT05 | Auth | JWT generation | Token created | Token created | Pass
+UT06 | Auth | Expired token check | Reject token | Rejected | Pass
+UT07 | Chat | Empty message | Validation error | Error shown | Pass
+UT08 | Chat | Save message | Record saved | Saved | Pass
+UT09 | Chat | Fetch history | Data returned | Returned | Pass
+UT10 | Voice | Valid audio upload | Accepted | Accepted | Pass
+UT11 | Voice | Invalid file type | Reject file | Rejected | Pass
+UT12 | Admin | Admin access | Access granted | Granted | Pass
+UT13 | Admin | User access denied | Access denied | Denied | Pass
+UT14 | Reports | Count users | Correct count | Correct | Pass
+UT15 | Reports | Date filter summary | Accurate data | Incorrect result | Fail
+
+---
+
+8. UNIT TEST DEFECT SUMMARY
+
+Defect ID | Module | Issue Found | Severity | Status
+---|---|---|---|---
+BUG-UT01 | Reports | Date filter mismatch in totals | Medium | Fixed
+
+---
+
+9. UNIT TEST OBSERVATIONS
+
+9.1 Authentication module performed correctly  
+9.2 Chat save and fetch functions worked properly  
+9.3 Role-based access control passed all cases  
+9.4 One issue found in report calculation logic  
+
+---
+
+10. UNIT TEST FINAL STATUS
+
+10.1 Unit Testing Completed Successfully  
+10.2 System is ready for Integration Testing  
+
+---
+
+PART B – SYSTEM TEST CASE REPORT
+
+11. MEANING OF SYSTEM TEST REPORT
+
+11.1 A System Test Report contains results of testing the complete integrated system  
+11.2 It ensures all modules work together as a single application  
+
+11.3 In this project, system testing covered:
+11.3.1 Signup to Login flow  
+11.3.2 Login to Dashboard flow  
+11.3.3 Chat request to AI response  
+11.3.4 Voice query flow  
+11.3.5 Chat history retrieval  
+11.3.6 Admin dashboard access  
+11.3.7 Logout and session handling  
+
+---
+
+12. SYSTEM TEST EXECUTION SUMMARY
+
+Item | Result
+---|---
+Total System Test Cases | 12
+Passed | 11
+Failed | 1
+Blocked | 0
+Success Rate | 91.6%
+
+---
+
+13. DETAILED SYSTEM TEST REPORT
+
+Test ID | Scenario | Expected Result | Actual Result | Status
+---|---|---|---|---
+ST01 | User signup | Account created | Created | Pass
+ST02 | User login | Dashboard opens | Opened | Pass
+ST03 | Invalid login | Error shown | Shown | Pass
+ST04 | Chatbot question | AI response | Displayed | Pass
+ST05 | Save chat | Message stored | Stored | Pass
+ST06 | Fetch history | Chats visible | Visible | Pass
+ST07 | Voice query | Speech converted | Converted | Pass
+ST08 | Voice + AI reply | Response shown | Shown | Pass
+ST09 | Admin login | Admin panel opens | Opened | Pass
+ST10 | Analytics report | Data displayed | Slow loading | Fail
+ST11 | Logout | Session ended | Ended | Pass
+ST12 | Unauthorized access | Access denied | Denied | Pass
+
+---
+
+14. SYSTEM TEST DEFECT SUMMARY
+
+Defect ID | Module | Issue Found | Severity | Status
+---|---|---|---|---
+BUG-ST01 | Analytics | Slow report loading under heavy data | Medium | Optimized
+
+---
+
+15. SYSTEM TEST OBSERVATIONS
+
+15.1 Full user flow worked correctly  
+15.2 Chatbot responses were stable  
+15.3 Voice feature functioned properly  
+15.4 Admin module worked as expected  
+15.5 Analytics screen required optimization  
+
+---
+
+16. SYSTEM TEST FINAL STATUS
+
+16.1 System Testing Completed Successfully  
+16.2 Application Ready for Deployment after minor fixes  
+
+---
+
+17. SEVERITY CLASSIFICATION
+
+Severity | Meaning
+---|---
+High | Critical crash or security issue
+Medium | Functional issue with workaround
+Low | UI or minor delay issue
+
+---
+
+18. RECOMMENDATIONS AFTER TEST REPORTS
+
+18.1 Optimize analytics queries  
+18.2 Improve performance for large datasets  
+18.3 Increase automated regression testing  
+18.4 Enhance chatbot timeout handling  
+18.5 Continue post-deployment monitoring  
+
+---
+
+19. BENEFITS OF TEST REPORTS
+
+19.1 Clear visibility of software quality  
+19.2 Better release decision making  
+19.3 Easy defect tracking  
+19.4 Permanent testing documentation  
+19.5 Improved team coordination  

@@ -1,0 +1,300 @@
+CREATION OF USER PROFILES AND ACCESS RIGHTS
+
+1. INTRODUCTION
+
+In modern software systems, not all users should have the same permissions. Different users require different levels of access based on their roles and responsibilities.
+
+1.1 The process of creating user accounts with defined permissions is called Creation of User Profiles and Access Rights  
+1.2 It is a core security mechanism used to protect system data and resources  
+1.3 It ensures only authorized actions are allowed within the application  
+
+1.4 For the Spiritual AI Chat Bot project:
+
+1.4.1 Users interact with chatbot features  
+1.4.2 Admins manage system data and monitor activity  
+1.4.3 Separate access levels are required for security  
+
+1.5 Role-Based Access Control (RBAC) is used:
+
+1.5.1 Permissions are assigned to roles, not individuals  
+1.5.2 It follows the principle of least privilege  
+
+---
+
+2. OBJECTIVES OF USER PROFILES AND ACCESS RIGHTS
+
+2.1 Create secure user identities  
+2.2 Restrict unauthorized access  
+2.3 Separate user and admin privileges  
+2.4 Protect sensitive data  
+2.5 Prevent misuse of system functions  
+2.6 Improve accountability  
+2.7 Support system scalability  
+
+---
+
+3. MEANING OF USER PROFILE
+
+3.1 A User Profile is a stored account record that identifies a system user  
+
+3.2 Typical profile data includes:
+
+3.2.1 Full Name  
+3.2.2 Email Address  
+3.2.3 Password (hashed)  
+3.2.4 Role Type  
+3.2.5 Profile Image (optional)  
+3.2.6 Account Status  
+3.2.7 Created Date  
+3.2.8 Last Login Time  
+
+3.3 Each registered user gets a unique profile after signup  
+
+---
+
+4. MEANING OF ACCESS RIGHTS
+
+4.1 Access Rights define what a user is allowed to do in the system  
+
+4.2 Examples of permissions:
+
+4.2.1 Read data  
+4.2.2 Create data  
+4.2.3 Update profile  
+4.2.4 Delete records  
+4.2.5 View reports  
+4.2.6 Manage users  
+4.2.7 Access admin dashboard  
+
+4.3 RBAC structure:
+
+4.3.1 User → Role → Permissions  
+
+---
+
+5. USER ROLES IMPLEMENTED IN THE PROJECT
+
+5.1 NORMAL USER
+
+5.1.1 Standard application user  
+
+Permissions:
+5.1.2 Register account  
+5.1.3 Login / Logout  
+5.1.4 Use chatbot  
+5.1.5 Voice queries  
+5.1.6 View own chat history  
+5.1.7 Update own profile  
+5.1.8 Change password  
+
+---
+
+5.2 ADMINISTRATOR
+
+5.2.1 System-level privileged user  
+
+Permissions:
+5.2.2 Access admin dashboard  
+5.2.3 View users  
+5.2.4 Monitor chats  
+5.2.5 View analytics  
+5.2.6 Block/unblock users  
+5.2.7 Manage system settings  
+5.2.8 Audit system activity  
+
+---
+
+6. USER PROFILE CREATION PROCESS
+
+6.1 Signup form submitted  
+6.2 Input validation performed  
+6.3 Duplicate email check  
+6.4 Password hashing applied  
+6.5 User record stored in database  
+6.6 Default role assigned (USER)  
+6.7 Account created successfully  
+
+---
+
+7. SAMPLE DATABASE STRUCTURE
+
+{
+  name: "Rohit",
+  email: "rohit@gmail.com",
+  password: "hashed_value",
+  role: "USER",
+  status: "ACTIVE"
+}
+
+---
+
+8. ROLE-BASED ACCESS CONTROL (RBAC)
+
+8.1 Permissions are assigned based on roles  
+
+8.2 Benefits of RBAC:
+
+8.2.1 Easier permission management  
+8.2.2 Improved security  
+8.2.3 Faster onboarding/offboarding  
+8.2.4 Cleaner authorization logic  
+8.2.5 Supports least privilege principle  
+
+---
+
+9. ACCESS RIGHTS TABLE
+
+Function | User | Admin
+---|---|---
+Signup | Yes | Yes
+Login | Yes | Yes
+Use Chatbot | Yes | Yes
+View Own History | Yes | Yes
+View All Users | No | Yes
+Admin Dashboard | No | Yes
+Block Users | No | Yes
+View Reports | No | Yes
+
+---
+
+10. SECURITY CONTROLS IMPLEMENTED
+
+10.1 SECURE AUTHENTICATION
+
+10.1.1 Email and password login  
+10.1.2 JWT token authentication  
+10.1.3 Session validation  
+
+---
+
+10.2 PASSWORD PROTECTION
+
+10.2.1 Passwords stored using bcrypt hashing  
+
+Example:
+Password → Hash → Database  
+
+---
+
+10.3 AUTHORIZATION MIDDLEWARE
+
+10.3.1 Role checked before access is granted  
+
+Example:
+10.3.2 If role == ADMIN → allow access  
+10.3.3 Else → deny access  
+
+---
+
+10.4 ACCOUNT STATUS CONTROL
+
+10.4.1 ACTIVE account → allowed login  
+10.4.2 BLOCKED account → access denied  
+10.4.3 SUSPENDED account → restricted access  
+
+---
+
+10.5 TOKEN EXPIRY SECURITY
+
+10.5.1 JWT tokens expire after defined time  
+10.5.2 Prevents unauthorized reuse  
+
+---
+
+11. PROFILE MANAGEMENT FEATURES
+
+11.1 Update name  
+11.2 Update password  
+11.3 Upload profile image  
+11.4 View account details  
+
+11.5 Restrictions:
+11.5.1 Cannot change role manually  
+11.5.2 Cannot access other user profiles  
+
+---
+
+12. ADMIN PROFILE CONTROLS
+
+12.1 Strong password enforcement  
+12.2 Admin-only routes  
+12.3 Audit logging enabled  
+12.4 Optional admin approval process  
+
+---
+
+13. ACCESS FLOW
+
+13.1 User requests system feature  
+13.2 JWT token verified  
+13.3 Role extracted  
+13.4 Permission checked  
+13.5 Access granted or denied  
+
+---
+
+14. DATABASE SECURITY FOR PROFILES
+
+14.1 Unique email constraint  
+14.2 Hashed passwords  
+14.3 Input validation  
+14.4 Secure database queries  
+14.5 Regular backups  
+14.6 Restricted DB credentials  
+
+---
+
+15. COMMON THREATS PREVENTED
+
+Threat | Protection
+---|---
+Fake Login | JWT + Password Hashing
+Admin Access Abuse | Role Check
+Duplicate Accounts | Unique Email
+Password Leak | Hashing
+Unauthorized Access | Secure APIs
+
+---
+
+16. EXAMPLE API ROUTES
+
+16.1 POST /signup  
+16.2 POST /login  
+16.3 GET /profile  
+16.4 PUT /profile/update  
+16.5 GET /admin/users  
+16.6 GET /admin/reports  
+
+---
+
+17. BENEFITS ACHIEVED
+
+17.1 Secure user management  
+17.2 Clear role separation  
+17.3 Safe admin operations  
+17.4 Improved privacy  
+17.5 Easier maintenance  
+17.6 Scalable permission system  
+17.7 Professional security design  
+
+---
+
+18. FUTURE IMPROVEMENTS
+
+18.1 Multi-Factor Authentication (MFA)  
+18.2 Sub-admin roles  
+18.3 Fine-grained permissions  
+18.4 Login alert system  
+18.5 Device-based session control  
+18.6 Role approval workflow  
+
+---
+
+19. PROBLEMS WITHOUT ACCESS CONTROL SYSTEM
+
+19.1 Unauthorized admin access  
+19.2 Data leakage  
+19.3 Profile misuse  
+19.4 Security breaches  
+19.5 Poor accountability  
+19.6 System mismanagement  

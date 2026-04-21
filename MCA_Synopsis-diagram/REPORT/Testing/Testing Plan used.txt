@@ -1,0 +1,366 @@
+TESTING PLAN USED
+
+1. INTRODUCTION
+
+A Testing Plan is a formal document that defines the scope, objectives, resources, schedule, methods, and activities required for software testing.
+
+1.1 It acts as a roadmap for the testing process  
+1.2 It ensures all modules are verified in a structured manner  
+1.3 A test plan commonly documents objectives, resources, schedules, and testing processes  
+
+1.4 For the Spiritual AI Chat Bot project, a proper testing plan is essential because the application contains multiple modules such as:
+
+1.4.1 User registration and login  
+1.4.2 JWT authentication  
+1.4.3 AI chatbot response system  
+1.4.4 Chat history management  
+1.4.5 Voice query support  
+1.4.6 Admin dashboard  
+1.4.7 Reports and analytics  
+1.4.8 Mobile user interface  
+
+1.5 Without a testing plan, testing becomes unorganized, incomplete, and inefficient.
+
+---
+
+2. MEANING OF TESTING PLAN
+
+2.1 A testing plan is a documented strategy that defines how testing will be performed.
+
+2.2 It answers the following questions:
+2.2.1 What will be tested?  
+2.2.2 How will it be tested?  
+2.2.3 When will testing happen?  
+2.2.4 Who will perform testing?  
+2.2.5 Which tools will be used?  
+2.2.6 What are pass/fail criteria?  
+
+2.3 It helps coordinate the complete testing lifecycle.
+
+---
+
+3. OBJECTIVES OF TESTING PLAN IN THIS PROJECT
+
+3.1 Ensure all modules work correctly  
+3.2 Detect defects before deployment  
+3.3 Validate security of user data  
+3.4 Improve chatbot reliability  
+3.5 Verify UI responsiveness  
+3.6 Test admin controls  
+3.7 Reduce production failures  
+3.8 Improve overall software quality  
+
+---
+
+4. SCOPE OF TESTING
+
+4.1 FUNCTIONAL MODULES
+
+4.1.1 Signup system  
+4.1.2 Login system  
+4.1.3 Logout system  
+4.1.4 Password encryption  
+4.1.5 Chatbot messaging  
+4.1.6 Voice input system  
+4.1.7 Chat history  
+4.1.8 Profile management  
+4.1.9 Admin dashboard  
+
+---
+
+4.2 NON-FUNCTIONAL MODULES
+
+4.2.1 Performance testing  
+4.2.2 Security testing  
+4.2.3 Compatibility testing  
+4.2.4 Usability testing  
+4.2.5 Reliability testing  
+
+---
+
+5. TESTING APPROACH USED
+
+5.1 MANUAL TESTING
+
+5.1.1 UI flow testing  
+5.1.2 Button click testing  
+5.1.3 Navigation testing  
+5.1.4 Chat readability testing  
+5.1.5 Voice feature behavior  
+
+---
+
+5.2 AUTOMATED TESTING
+
+5.2.1 Unit testing  
+5.2.2 API testing  
+5.2.3 Regression testing  
+5.2.4 Authentication checks  
+
+---
+
+5.3 RISK-BASED TESTING
+
+5.3.1 Login security  
+5.3.2 Token validation  
+5.3.3 Admin access  
+5.3.4 Database storage  
+5.3.5 Chat privacy  
+
+5.4 Critical modules are prioritized based on business impact.
+
+---
+
+6. TESTING LEVELS USED
+
+6.1 UNIT TESTING
+
+6.1.1 Individual functions tested separately  
+
+Examples:
+6.1.2 validateEmail()  
+6.1.3 generateJWT()  
+6.1.4 saveChat()  
+
+---
+
+6.2 INTEGRATION TESTING
+
+6.2.1 Combined modules tested together  
+
+Examples:
+6.2.2 Login API + Database  
+6.2.3 Chat API + AI engine  
+6.2.4 Voice input + Speech service  
+
+---
+
+6.3 SYSTEM TESTING
+
+6.3.1 Complete application tested end-to-end  
+
+Examples:
+6.3.2 Signup → Login → Chat → Logout  
+6.3.3 Admin Login → Reports → Logout  
+
+---
+
+6.4 ACCEPTANCE TESTING
+
+6.4.1 Verifies system meets project requirements  
+6.4.2 Ensures readiness for deployment  
+
+---
+
+7. TESTING ENVIRONMENT
+
+7.1 HARDWARE
+
+7.1.1 Laptop/Desktop  
+7.1.2 Android mobile device  
+7.1.3 Internet connection  
+7.1.4 Microphone for voice testing  
+
+---
+
+7.2 SOFTWARE
+
+7.2.1 React Native frontend  
+7.2.2 Node.js backend  
+7.2.3 MongoDB database  
+7.2.4 Postman  
+7.2.5 Browser tools  
+7.2.6 Android emulator / physical device  
+
+---
+
+8. TEST SCHEDULE PLAN
+
+8.1 PHASE 1 – REQUIREMENT REVIEW  
+8.1.1 Analyze features  
+8.1.2 Prepare scenarios  
+8.1.3 Define expected outputs  
+
+---
+
+8.2 PHASE 2 – TEST CASE DESIGN  
+8.2.1 Create unit test cases  
+8.2.2 Create system test cases  
+8.2.3 Prepare negative scenarios  
+
+---
+
+8.3 PHASE 3 – TEST EXECUTION  
+8.3.1 Run all test cases  
+8.3.2 Capture failures  
+8.3.3 Record observations  
+
+---
+
+8.4 PHASE 4 – BUG REPORTING  
+8.4.1 Report defects  
+8.4.2 Assign priority levels  
+
+---
+
+8.5 PHASE 5 – RE-TESTING  
+8.5.1 Verify fixed bugs  
+
+---
+
+8.6 PHASE 6 – REGRESSION TESTING  
+8.6.1 Ensure existing features are not broken  
+
+---
+
+8.7 PHASE 7 – FINAL APPROVAL  
+8.7.1 Confirm release readiness  
+
+---
+
+9. SAMPLE TESTING FLOW
+
+9.1 Requirement Review  
+9.2 Test Planning  
+9.3 Test Case Preparation  
+9.4 Execution  
+9.5 Bug Fixing  
+9.6 Re-Testing  
+9.7 Regression Testing  
+9.8 Final Release  
+
+---
+
+10. TEST CASES PLANNED FOR MODULES
+
+10.1 Signup → Valid / Invalid / Duplicate Email  
+10.2 Login → Correct / Wrong / Empty Fields  
+10.3 Chatbot → Normal / Empty / Long Query  
+10.4 Voice Query → Mic Access / Audio Conversion  
+10.5 History → Save / Fetch / Delete  
+10.6 Admin → Role Access / Reports  
+10.7 Security → Invalid Token / Unauthorized Access  
+
+---
+
+11. ENTRY CRITERIA
+
+11.1 Core development completed  
+11.2 APIs available  
+11.3 UI screens ready  
+11.4 Database connected  
+11.5 Basic build stable  
+
+---
+
+12. EXIT CRITERIA
+
+12.1 Major defects fixed  
+12.2 Critical flows passed  
+12.3 Security checks passed  
+12.4 Chatbot working correctly  
+12.5 Reports generated successfully  
+12.6 App stable for release  
+
+---
+
+13. DEFECT PRIORITY PLAN
+
+13.1 HIGH PRIORITY  
+13.1.1 Login failure  
+13.1.2 App crash  
+13.1.3 Token bypass  
+13.1.4 Data not saving  
+
+---
+
+13.2 MEDIUM PRIORITY  
+13.2.1 UI alignment issues  
+13.2.2 Slow loading screens  
+13.2.3 Voice delay  
+
+---
+
+13.3 LOW PRIORITY  
+13.3.1 Minor text spacing  
+13.3.2 Small UI inconsistencies  
+
+---
+
+14. TOOLS USED IN TESTING PLAN
+
+14.1 Jest  
+14.2 Postman  
+14.3 React Native Testing Library  
+14.4 MongoDB Compass  
+14.5 Manual device testing  
+14.6 Browser DevTools  
+
+---
+
+15. SPECIAL TESTING FOR SPIRITUAL AI CHAT BOT
+
+15.1 CHATBOT RESPONSE TESTING  
+15.1.1 Response accuracy  
+15.1.2 Relevance of answers  
+15.1.3 Timeout handling  
+15.1.4 Retry behavior  
+
+---
+
+15.2 VOICE QUERY TESTING  
+15.2.1 Microphone permission  
+15.2.2 Speech-to-text conversion  
+15.2.3 Message sending accuracy  
+
+---
+
+15.3 SECURITY TESTING  
+15.3.1 Password hashing  
+15.3.2 JWT validation  
+15.3.3 Admin route restrictions  
+
+---
+
+16. RISKS IDENTIFIED IN TESTING PLAN
+
+16.1 Third-party AI API downtime  
+16.2 Network failures  
+16.3 Device compatibility issues  
+16.4 Invalid user inputs  
+16.5 High traffic response delays  
+
+16.6 Mitigation includes fallback messages, retries, and broader device testing.
+
+---
+
+17. BENEFITS OF TESTING PLAN USED
+
+17.1 Organized testing process  
+17.2 Better defect detection  
+17.3 Faster release readiness  
+17.4 Improved product quality  
+17.5 Reduced missed scenarios  
+17.6 Better team coordination  
+17.7 Higher user satisfaction  
+
+---
+
+18. PROBLEMS WITHOUT TESTING PLAN
+
+18.1 Random testing approach  
+18.2 Missed defects  
+18.3 Late bug discovery  
+18.4 Poor release quality  
+18.5 Security vulnerabilities  
+18.6 Unclear responsibilities  
+
+---
+
+19. FUTURE IMPROVEMENTS
+
+19.1 CI/CD automated testing pipeline  
+19.2 Load testing for scalability  
+19.3 AI-based test generation  
+19.4 Real device cloud testing  
+19.5 Continuous post-release monitoring  
