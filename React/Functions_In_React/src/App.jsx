@@ -1,41 +1,40 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-export default function App() {
-  function value(val) {
-    console.log(val);
-  }
-  const wheel = (value) => {
-    console.log("wheel", value);
-    console.log("wheel", value.deltaX);
-    console.log("wheel", value.deltaY);
-  };
-  const double = (value) => {
-    console.log("double", value);
-  };
+// export default function App() {
+//   function value(val) {
+//     console.log(val);
+//   }
+//   const wheel = (value) => {
+//     console.log("wheel", value);
+//     console.log("wheel", value.deltaX);
+//     console.log("wheel", value.deltaY);
+//   };
+//   const double = (value) => {
+//     console.log("double", value);
+//   };
 
-  const click = (value) => {
-    console.log(value);
-  };
+//   const click = (value) => {
+//     console.log(value);
+//   };
 
-  return (
-    <div
-      onWheel={(element) => wheel(element)}
-      style={{ height: "1000px", width: "1000px" }}
-    >
-      <p>Main</p>
-      <input
-        type="text"
-        placeholder="Enter here.."
-        onChange={(element) => value(element.target.value)}
-        value={}
-      />
-      <button onDoubleClick={(element) => double(element)}>Submit</button>
-      <br />
-      <br />
-      <button onClick={(element) => click(element.target)}>Click</button>
-    </div>
-  );
-}
+//   return (
+//     <div
+//       onWheel={(element) => wheel(element)}
+//       style={{ height: "1000px", width: "1000px" }}
+//     >
+//       <p>Main</p>
+//       <input
+//         type="text"
+//         placeholder="Enter here.."
+//         onChange={(element) => value(element.target.value)}
+//       />
+//       <button onDoubleClick={(element) => double(element)}>Submit</button>
+//       <br />
+//       <br />
+//       <button onClick={(element) => click(element.target)}>Click</button>
+//     </div>
+//   );
+// }
 
 // import React, { useState, useEffect } from "react";
 
@@ -73,18 +72,25 @@ export default function App() {
 
 // export default UsersList;
 
-// import React, { useState } from "react";
+import React, { useState } from "react";
 
-// export default function App() {
-//   const [count, setCount] = useState(0);
-//   return (
-//     <div>
-//       <button onClick={() => setCount(count++)}>increment</button>
-//       <p>{count}</p>
-//       <button onClick={() => setCount(count--)}>decrement</button>
-//     </div>
-//   );
-// }
+export default function App() {
+  // const [count, setCount] = useState(0);
+  const [input, setInput] = useState("");
+  const [submit, setSubmit] = useState("");
+  return (
+    <div>
+      <input type="text" onChange={(e) => setInput(e.target.value)} />
+      <button type="submit" onClick={() => setSubmit(input)}>
+        Submit
+      </button>
+      <p>{submit}</p>
+      {/* <button onClick={() => setCount(count++)}>increment</button>
+      <p>{count}</p>
+      <button onClick={() => setCount(count--)}>decrement</button> */}
+    </div>
+  );
+}
 
 // import React from "react";
 // import { Routes, Route } from "react-router-dom";
