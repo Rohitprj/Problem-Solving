@@ -1,0 +1,299 @@
+ERROR HANDLING
+
+1. INTRODUCTION
+
+Error handling is the method used by software to identify and manage problems such as:
+
+1.1 Invalid user input  
+1.2 Missing data  
+1.3 Server failure  
+1.4 Network disconnection  
+1.5 Database errors  
+1.6 Unauthorized access  
+1.7 Unexpected exceptions  
+1.8 Resource unavailability  
+
+Good error handling ensures failures are:
+
+1.9 Visible  
+1.10 Controlled  
+1.11 Logged  
+1.12 Recoverable where possible  
+1.13 Informative to users  
+1.14 Useful for debugging  
+
+Well-designed systems treat errors as expected events in an imperfect environment rather than ignoring them.
+
+2. IMPORTANCE OF ERROR HANDLING IN THIS PROJECT
+
+2.1 Prevent Application Crash  
+If one API fails, the full chatbot should not crash.
+
+2.2 Better User Experience  
+Users see friendly messages instead of technical errors.
+
+2.3 Protect User Data  
+Errors during save/update should not corrupt chat history.
+
+2.4 Improve Security  
+Unauthorized requests must be blocked safely.
+
+2.5 Easier Maintenance  
+Logged errors help developers fix issues quickly.
+
+3. OBJECTIVES OF STANDARDIZED ERROR HANDLING
+
+3.1 Detect failures early  
+3.2 Show meaningful user messages  
+3.3 Keep system stable  
+3.4 Log technical issues  
+3.5 Protect sensitive information  
+3.6 Support recovery where possible  
+3.7 Maintain code consistency across modules  
+
+4. TYPES OF ERRORS IN SPIRITUAL AI CHAT BOT
+
+4.1 Validation Errors
+
+Examples:
+4.1.1 Empty message  
+4.1.2 Invalid email  
+4.1.3 Weak password  
+
+4.2 Authentication Errors
+
+Examples:
+4.2.1 Wrong password  
+4.2.2 Expired JWT token  
+4.2.3 Unauthorized access  
+
+4.3 Network Errors
+
+Examples:
+4.3.1 Internet unavailable  
+4.3.2 API timeout  
+4.3.3 Server unreachable  
+
+4.4 Database Errors
+
+Examples:
+4.4.1 Duplicate email  
+4.4.2 DB connection failure  
+4.4.3 Query timeout  
+
+4.5 AI Service Errors
+
+Examples:
+4.5.1 AI response unavailable  
+4.5.2 Request limit exceeded  
+4.5.3 Processing timeout  
+
+4.6 System Errors
+
+Examples:
+4.6.1 Null reference  
+4.6.2 Unhandled exception  
+4.6.3 Memory issues  
+
+5. ERROR HANDLING STANDARDS USED IN THE PROJECT
+
+5.1 Input Validation First
+
+Examples:
+5.1.1 Email format validation  
+5.1.2 Password length check  
+5.1.3 Empty chat blocked  
+
+5.2 Use Specific Errors
+
+Examples:
+5.2.1 InvalidCredentialsError  
+5.2.2 UserNotFoundError  
+5.2.3 ChatSaveError  
+5.2.4 TokenExpiredError  
+
+5.3 Centralized Error Handling
+
+Flow:
+API Request → Controller → Error Middleware → Response  
+
+Benefits:
+5.3.1 Consistent responses  
+5.3.2 Cleaner controllers  
+5.3.3 Easier logging  
+5.3.4 Reusable pattern  
+
+5.4 Friendly User Messages
+
+Bad:
+MongoServerError duplicate key index...
+
+Good:
+This email is already registered.
+
+5.5 Log Technical Errors
+
+Logs include:
+5.5.1 Time  
+5.5.2 Module name  
+5.5.3 Error message  
+5.5.4 Stack trace  
+5.5.5 User ID (if applicable)  
+5.5.6 API route  
+
+5.6 Do Not Hide Errors Silently
+
+Bad:
+try { ... } catch(e) { }
+
+Good:
+try { ... } catch(e) {
+   log error
+   show message
+}
+
+6. ERROR HANDLING IN FRONTEND (REACT NATIVE)
+
+6.1 During Login
+6.1.1 Show invalid credentials message  
+6.1.2 Disable repeated login attempts  
+6.1.3 Retry option on failure  
+
+6.2 During Chat
+6.2.1 Show “Please try again” on failure  
+6.2.2 Preserve unsent message  
+6.2.3 Show loading indicator  
+
+6.3 During Voice Query
+6.3.1 Request microphone permission  
+6.3.2 Show recording failure message  
+
+6.4 During Navigation
+6.4.1 Redirect to login if token expired  
+
+7. ERROR HANDLING IN BACKEND (NODE.JS / EXPRESS)
+
+7.1 Try-Catch for Async Operations
+
+try  
+   database query  
+catch  
+   next(error)  
+
+7.2 Global Error Middleware
+
+Standard JSON response:
+
+{
+ success: false,
+ message: "Something went wrong"
+}
+
+7.3 HTTP STATUS CODES
+
+7.3.1 200 – Success  
+7.3.2 400 – Bad Request  
+7.3.3 401 – Unauthorized  
+7.3.4 403 – Forbidden  
+7.3.5 404 – Not Found  
+7.3.6 500 – Server Error  
+
+8. ERROR HANDLING IN DATABASE LAYER
+
+8.1 Duplicate email detection  
+8.2 Connection retry logic  
+8.3 Transaction rollback  
+8.4 Required field validation  
+8.5 Safe update/delete operations  
+
+9. ERROR HANDLING IN AI CHAT MODULE
+
+9.1 If AI Service Delays  
+Message: Response is taking longer than usual.
+
+9.2 If AI Service Fails  
+Fallback: I’m unable to respond right now. Please try again shortly.
+
+9.3 If Input Too Large  
+Ask user to shorten the query.
+
+10. SECURITY-ORIENTED ERROR HANDLING
+
+10.1 Do not expose internal server details  
+10.2 Use generic authentication messages  
+10.3 Rate limit suspicious requests  
+10.4 Log repeated failed logins  
+10.5 Restrict admin routes  
+
+11. STANDARD ERROR RESPONSE FORMAT
+
+{
+  success: false,
+  code: "INVALID_LOGIN",
+  message: "Incorrect email or password"
+}
+
+Benefits:
+11.1 Easy frontend handling  
+11.2 Consistent API contracts  
+11.3 Cleaner debugging  
+
+12. RETRY AND RECOVERY HANDLING
+
+12.1 Retry Suitable For:
+12.1.1 Network timeout  
+12.1.2 Temporary server overload  
+12.1.3 Database reconnect  
+
+12.2 Not Suitable For:
+12.2.1 Wrong password  
+12.2.2 Invalid email  
+12.2.3 Unauthorized access  
+
+13. ERROR HANDLING TOOLS
+
+13.1 Winston / Pino (logging)  
+13.2 Sentry (crash tracking)  
+13.3 Postman (API testing)  
+13.4 Jest (unit testing)  
+13.5 React Error Boundaries  
+
+14. BENEFITS ACHIEVED IN THIS PROJECT
+
+14.1 Stable chatbot system  
+14.2 Better user trust  
+14.3 Faster bug fixing  
+14.4 Safer authentication flow  
+14.5 Fewer crashes  
+14.6 Better scalability  
+14.7 Cleaner codebase  
+14.8 Professional product quality  
+
+15. PROBLEMS WITHOUT PROPER ERROR HANDLING
+
+15.1 App crashes unexpectedly  
+15.2 Confusing user messages  
+15.3 Silent data loss  
+15.4 Security vulnerabilities  
+15.5 Difficult debugging  
+15.6 Poor user trust  
+
+16. FUTURE IMPROVEMENTS
+
+16.1 Real-time monitoring dashboard  
+16.2 Auto alert on repeated failures  
+16.3 AI-based anomaly detection  
+16.4 Better offline recovery mode  
+16.5 Smart retry queues  
+
+17. CODING STANDARDS FOLLOWED
+
+17.1 Use try-catch in risky operations  
+17.2 Return standard API responses  
+17.3 Log errors with context  
+17.4 Handle errors at correct level  
+17.5 Never expose sensitive data  
+17.6 Validate all inputs  
+17.7 Use proper HTTP status codes  
+
+Consistent and structured error handling improves reliability, security, and maintainability of the system.

@@ -1,0 +1,177 @@
+TEST CASES (UNIT TEST CASES AND SYSTEM TEST CASES)
+
+1. INTRODUCTION
+
+Testing is one of the most important phases of software development. It ensures that the developed system works according to user requirements and performs correctly under different conditions. A test case is a set of conditions, inputs, steps, and expected results used to verify whether a software feature functions as intended. Formal test cases define inputs, execution steps, and expected outputs so tests can be repeated consistently.
+
+For the Spiritual AI Chat Bot project, testing is necessary because the system includes user authentication, chatbot responses, voice queries, chat history, admin dashboard, and analytics. If these modules are not tested properly, users may face login failures, data loss, incorrect responses, or security issues.
+
+Testing in this project is divided into:
+
+1.1 Unit Testing – testing individual modules or functions separately  
+1.2 System Testing – testing the complete integrated application as a whole  
+
+Unit testing validates isolated components or source code behavior.
+
+2. OBJECTIVES OF TESTING
+
+The objectives of testing in this project are:
+
+2.1 Verify correctness of all modules  
+2.2 Detect bugs and errors early  
+2.3 Ensure smooth user experience  
+2.4 Validate security mechanisms  
+2.5 Check system performance  
+2.6 Confirm expected chatbot functionality  
+2.7 Improve software quality and reliability  
+
+3. UNIT TEST CASES
+
+3.1 Meaning of Unit Testing
+
+Unit testing checks the smallest testable parts of software such as functions, methods, or modules independently. It is generally performed by developers during coding.
+
+For this project, unit testing is performed on:
+
+3.1.1 Authentication functions  
+3.1.2 Input validation functions  
+3.1.3 Chat save logic  
+3.1.4 Token generation  
+3.1.5 Role verification  
+3.1.6 Voice conversion handlers  
+3.1.7 Analytics counters  
+
+3.2 Unit Test Case Format
+
+Test Case ID | Module | Test Description | Input | Expected Result | Status  
+
+3.3 Unit Test Cases for Spiritual AI Chat Bot
+
+Authentication Module:
+
+UT01 | Signup | Register with valid data | Name, Email, Password | User created successfully | Pass  
+UT02 | Signup | Duplicate email registration | Existing Email | Error message shown | Pass  
+UT03 | Login | Valid credentials | Correct Email & Password | JWT token generated | Pass  
+UT04 | Login | Invalid password | Wrong Password | Login denied | Pass  
+UT05 | Password | Password hashing check | Raw Password | Stored as encrypted hash | Pass  
+
+Chat Module:
+
+UT06 | Chat | Empty message validation | Blank Text | Error message | Pass  
+UT07 | Chat | Valid user query | "How to stay calm?" | Message accepted | Pass  
+UT08 | Chat Save | Save chat record | User ID + Chat | Stored in DB | Pass  
+UT09 | Chat History | Fetch history | User ID | Previous chats returned | Pass  
+
+Admin Module:
+
+UT10 | Role Check | Admin access validation | Admin Token | Access granted | Pass  
+UT11 | Role Check | User tries admin route | User Token | Access denied | Pass  
+UT12 | Reports | Count total users | DB Users | Correct count shown | Pass  
+
+Voice Module:
+
+UT13 | Voice Input | Start recording | Mic Enabled | Recording begins | Pass  
+UT14 | Speech to Text | Convert speech | Audio Input | Text output generated | Pass  
+
+4. SYSTEM TEST CASES
+
+4.1 Meaning of System Testing
+
+System testing validates the complete integrated system from end to end to ensure all modules work together correctly. It checks the whole application rather than individual units.
+
+For this project, system testing includes:
+
+4.1.1 User registration to chatbot usage  
+4.1.2 Login to dashboard access  
+4.1.3 Chat flow with database save  
+4.1.4 Voice query to response flow  
+4.1.5 Admin monitoring system  
+4.1.6 Logout and session expiry  
+
+4.2 System Test Case Format
+
+Test Case ID | Scenario | Steps | Expected Result | Status  
+
+4.3 System Test Cases for Spiritual AI Chat Bot
+
+User Authentication Flow:
+
+ST01 | New User Signup | Open app → Signup → Submit form | User registered and redirected to login | Pass  
+ST02 | User Login | Enter valid credentials | Dashboard opens successfully | Pass  
+ST03 | Invalid Login | Wrong password entered | Error shown, login blocked | Pass  
+
+Chatbot Functional Flow:
+
+ST04 | Chat Response | Login → Open Chat → Ask question | AI reply displayed | Pass  
+ST05 | Save Chat History | Ask question and exit | Chat visible in history page | Pass  
+ST06 | Multiple Questions | Ask 5 consecutive questions | All responses shown correctly | Pass  
+
+Voice Query Flow:
+
+ST07 | Voice Input | Open chat → Press mic → Speak | Speech converted and processed | Pass  
+ST08 | Voice + AI Reply | Speak query | AI response returned | Pass  
+
+Admin Flow:
+
+ST09 | Admin Login | Login with admin account | Admin dashboard opens | Pass  
+ST10 | View Users | Open dashboard users page | User list displayed | Pass  
+ST11 | Reports | Open analytics section | Correct reports shown | Pass  
+
+Security & Session Flow:
+
+ST12 | Logout | Click logout | Session destroyed, redirected login | Pass  
+ST13 | Unauthorized Access | Access dashboard without token | Access denied | Pass  
+ST14 | Session Timeout | Expired token used | Re-login required | Pass  
+
+5. NEGATIVE TEST CASES
+
+Negative testing checks invalid inputs or misuse scenarios.
+
+NT01 | Blank Signup Form | Empty fields | Validation error  
+NT02 | Invalid Email | abc@ | Reject input  
+NT03 | Empty Chat Message | Blank message | Not submitted  
+NT04 | Unauthorized Admin Access | Normal user token | Denied  
+NT05 | Invalid Voice File | Corrupted audio | Error shown  
+
+6. PERFORMANCE TEST CASES
+
+PT01 | 100 simultaneous logins | System stable  
+PT02 | 500 chat requests/day | No crash  
+PT03 | Dashboard report load | Within acceptable time  
+
+7. SECURITY TEST CASES
+
+SEC01 | SQL/NoSQL injection attempt | Blocked  
+SEC02 | Password visibility | Hidden input  
+SEC03 | Token tampering | Access denied  
+SEC04 | Admin route without role | Blocked  
+
+8. TOOLS USED FOR TESTING
+
+8.1 Jest (Unit Testing)  
+8.2 Postman (API Testing)  
+8.3 Manual Testing  
+8.4 MongoDB Compass Validation  
+8.5 React Native Testing Library  
+8.6 Browser / Device Testing  
+
+9. EXPECTED TESTING OUTCOME
+
+After successful testing, the system should:
+
+9.1 Allow secure user registration/login  
+9.2 Generate chatbot responses correctly  
+9.3 Save and fetch chat history  
+9.4 Support voice input  
+9.5 Protect admin routes  
+9.6 Show accurate reports  
+9.7 Handle errors gracefully  
+
+10. BENEFITS OF PROPER TESTING
+
+10.1 Fewer bugs in production  
+10.2 Better user satisfaction  
+10.3 Improved security  
+10.4 Stable chatbot performance  
+10.5 Easier maintenance  
+10.6 Professional software quality  

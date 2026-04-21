@@ -1,0 +1,294 @@
+VALIDATION CHECKS
+
+1. INTRODUCTION
+
+Validation checks are rules used to test whether entered or received data matches expected requirements before it is accepted.
+
+1.1 Validation ensures data correctness before processing  
+1.2 It prevents invalid or malicious input from entering the system  
+1.3 It improves overall system reliability and security  
+
+1.4 Validation can include:
+1.4.1 Required field checks  
+1.4.2 Data type checks  
+1.4.3 Length checks  
+1.4.4 Format checks  
+1.4.5 Range checks  
+1.4.6 Business rule checks  
+1.4.7 Security checks  
+
+1.5 Validation generally includes:
+1.5.1 Syntactic correctness (format/type)  
+1.5.2 Semantic correctness (meaning/business rules)  
+
+2. IMPORTANCE OF VALIDATION CHECKS IN THIS PROJECT
+
+2.1 Prevent Invalid Data Entry  
+2.1.1 Empty messages are blocked  
+2.1.2 Wrong email formats are rejected  
+2.1.3 Weak passwords are not accepted  
+
+2.2 Improve User Experience  
+2.2.1 Users receive immediate feedback  
+2.2.2 Errors are shown clearly with guidance  
+
+2.3 Increase Security  
+2.3.1 Prevents injection attacks  
+2.3.2 Blocks malicious or malformed input  
+
+2.4 Protect Database Integrity  
+2.4.1 Only structured and clean data is stored  
+2.4.2 Prevents corruption of records  
+
+2.5 Improve System Stability  
+2.5.1 Prevents unexpected crashes  
+2.5.2 Stops invalid data before processing  
+
+3. OBJECTIVES OF VALIDATION CHECKS
+
+3.1 Accept only valid input  
+3.2 Reject incorrect or dangerous input  
+3.3 Improve data quality  
+3.4 Prevent system crashes  
+3.5 Enhance security  
+3.6 Maintain coding consistency  
+3.7 Reduce backend processing errors  
+
+4. TYPES OF VALIDATION CHECKS
+
+4.1 REQUIRED FIELD VALIDATION
+
+4.1.1 Ensures mandatory fields are not empty  
+
+Examples:
+4.1.2 Name required  
+4.1.3 Email required  
+4.1.4 Password required  
+4.1.5 Chat message required  
+
+Example:
+4.1.6 If email == blank  
+4.1.7 Show "Email is required"  
+
+---
+
+4.2 DATA TYPE VALIDATION
+
+4.2.1 Ensures input matches expected type  
+
+Examples:
+4.2.2 Age must be number  
+4.2.3 isAdmin must be boolean  
+4.2.4 Date must be valid  
+
+---
+
+4.3 LENGTH VALIDATION
+
+4.3.1 Checks minimum or maximum character limits  
+
+Examples:
+4.3.2 Password minimum 8 characters  
+4.3.3 Name maximum 50 characters  
+4.3.4 Message maximum 1000 characters  
+
+---
+
+4.4 FORMAT VALIDATION
+
+4.4.1 Checks pattern structure of input  
+
+Examples:
+4.4.2 Email format  
+4.4.3 Mobile number format  
+4.4.4 URL format  
+4.4.5 OTP numeric format  
+
+Example:
+4.4.6 abc@gmail.com = valid  
+4.4.7 abcgmail = invalid  
+
+---
+
+4.5 RANGE VALIDATION
+
+4.5.1 Ensures values are within allowed limits  
+
+Examples:
+4.5.2 Age between 13 and 100  
+4.5.3 Rating between 1 and 5  
+4.5.4 Date not in future (where required)  
+
+---
+
+4.6 ENUM / ALLOWED VALUES VALIDATION
+
+4.6.1 Only predefined values are allowed  
+
+Examples:
+4.6.2 Role = USER / ADMIN  
+4.6.3 Status = ACTIVE / BLOCKED  
+
+---
+
+4.7 BUSINESS RULE VALIDATION
+
+4.7.1 Ensures application logic correctness  
+
+Examples:
+4.7.2 Confirm password must match password  
+4.7.3 End date must be after start date  
+4.7.4 Admin only can access reports  
+
+---
+
+4.8 SECURITY VALIDATION
+
+4.8.1 Protects system from malicious input  
+
+Examples:
+4.8.2 Script tags blocked  
+4.8.3 SQL/NoSQL injection prevented  
+4.8.4 Large payload requests rejected  
+
+4.8.5 Allowlisting safe input is preferred over blocking patterns  
+
+5. VALIDATION CHECKS IN SPIRITUAL AI CHAT BOT
+
+5.1 SIGNUP SCREEN VALIDATION
+
+5.1.1 Full name required  
+5.1.2 Valid email required  
+5.1.3 Password minimum length required  
+5.1.4 Confirm password must match  
+
+Example:
+5.1.5 Password = Rohit123  
+5.1.6 Confirm = Rohit123 → Valid  
+
+---
+
+5.2 LOGIN VALIDATION
+
+5.2.1 Email must be entered  
+5.2.2 Password must be entered  
+5.2.3 Credentials must be correct  
+
+If invalid:
+5.2.4 Show "Incorrect email or password"  
+
+---
+
+5.3 CHAT INPUT VALIDATION
+
+5.3.1 Message must not be blank  
+5.3.2 Message must be within size limit  
+5.3.3 Spam or harmful content filtered  
+
+---
+
+5.4 VOICE QUERY VALIDATION
+
+5.4.1 Microphone permission required  
+5.4.2 Audio file must exist  
+5.4.3 Audio duration must be valid  
+5.4.4 Language must be supported  
+
+---
+
+5.5 PROFILE UPDATE VALIDATION
+
+5.5.1 Valid name required  
+5.5.2 Valid email format required  
+5.5.3 Strong password required  
+
+---
+
+5.6 ADMIN VALIDATION
+
+5.6.1 JWT token must be valid  
+5.6.2 Role must be ADMIN  
+5.6.3 Route must be authorized  
+
+6. FRONTEND VS BACKEND VALIDATION
+
+6.1 FRONTEND VALIDATION
+
+6.1.1 Provides quick user feedback  
+6.1.2 Runs in browser/app  
+
+Examples:
+6.1.3 Empty field warning  
+6.1.4 Invalid email format message  
+
+---
+
+6.2 BACKEND VALIDATION
+
+6.2.1 Final security check on server  
+6.2.2 Cannot be bypassed by user  
+
+Examples:
+6.2.3 Duplicate email check  
+6.2.4 Token verification  
+6.2.5 Database constraints  
+
+7. VALIDATION STANDARDS IN CODING
+
+7.1 Validate Early  
+7.1.1 Input should be validated immediately  
+
+---
+
+7.2 Reuse Validation Functions  
+7.2.1 Common validators should be used  
+
+Examples:
+7.2.2 validateEmail()  
+7.2.3 validatePassword()  
+7.2.4 validateMessage()  
+
+---
+
+7.3 Centralize Rules  
+7.3.1 Validation logic should be shared  
+
+---
+
+7.4 Show Clear Error Messages  
+7.4.1 Messages should be user-friendly  
+
+Bad:
+7.4.2 Invalid input  
+
+Good:
+7.4.3 Password must be at least 8 characters  
+
+---
+
+7.5 Never Trust External Input  
+7.5.1 All external data is untrusted until validated  
+
+8. EXAMPLE VALIDATION FLOW
+
+8.1 User Input  
+8.2 Frontend Validation  
+8.3 API Request  
+8.4 Backend Validation  
+8.5 Database Save  
+
+9. COMMON MISTAKES TO AVOID
+
+9.1 Only frontend validation  
+9.2 Weak validation rules  
+9.3 Poor error messages  
+9.4 Duplicate validation logic  
+9.5 Missing edge case handling  
+
+10. TOOLS USED FOR VALIDATION
+
+10.1 Joi / Zod / Yup  
+10.2 Express Validator  
+10.3 Mongoose Schema Validation  
+10.4 React Hook Form Validation  
+10.5 TypeScript Types  

@@ -1,0 +1,278 @@
+PARAMETER PASSING
+
+1. INTRODUCTION
+
+In software development, functions, methods, and procedures are used to divide programs into smaller reusable parts. These program units often need data to perform their tasks. The process of sending data to a function when it is invoked is known as parameter calling or parameter passing.
+
+1.1 Parameters help functions receive input values, process them, and sometimes return results.  
+1.2 In coding standardization, correct parameter passing improves readability, reusability, maintainability, performance, and reliability.  
+1.3 Parameter passing techniques generally include passing values, references, or other modes depending on language design.  
+
+1.4 In the Spiritual AI Chat Bot project, parameters are used in almost every module such as:  
+1.4.1 User login functions  
+1.4.2 Signup APIs  
+1.4.3 Chat message processing  
+1.4.4 Voice query handlers  
+1.4.5 Admin report generation  
+1.4.6 Database queries  
+1.4.7 UI reusable components  
+
+1.5 Therefore, proper parameter design is an important coding standard.
+
+2. MEANING OF PARAMETERS
+
+2.1 A parameter is a variable declared in a function definition that receives a value when the function is called.
+
+2.2 Example:
+loginUser(email, password)
+
+2.3 Here:
+2.3.1 email and password are parameters in the function definition  
+2.3.2 Actual values passed during the call are called arguments  
+
+2.4 Distinction:
+2.4.1 Parameters belong to function declaration  
+2.4.2 Arguments are values supplied at function call  
+
+3. IMPORTANCE OF PARAMETER PASSING IN THIS PROJECT
+
+3.1 Reusability  
+Same function can be reused with different input values.
+
+3.2 Cleaner Code  
+Avoids hardcoded values and improves flexibility.
+
+3.3 Better Modularity  
+Modules communicate through structured inputs.
+
+3.4 Easier Testing  
+Functions can be tested with different parameters.
+
+3.5 Scalability  
+System can grow without rewriting core logic.
+
+4. OBJECTIVES OF STANDARDIZED PARAMETER PASSING
+
+4.1 Improve readability  
+4.2 Avoid duplicate code  
+4.3 Reduce hardcoded values  
+4.4 Improve maintainability  
+4.5 Support reusable modules  
+4.6 Prevent input-related bugs  
+4.7 Improve code consistency  
+
+5. TYPES OF PARAMETERS USED IN THE PROJECT
+
+5.1 REQUIRED PARAMETERS
+
+5.1.1 These parameters must be passed to the function.
+
+Example:
+sendMessage(userId, message)
+
+5.1.2 Required inputs:
+5.1.2.1 userId  
+5.1.2.2 message  
+
+---
+
+5.2 OPTIONAL PARAMETERS
+
+5.2.1 These parameters have default values if not provided.
+
+Example:
+getChats(page = 1, limit = 20)
+
+5.2.2 Default values:
+5.2.2.1 page = 1  
+5.2.2.2 limit = 20  
+
+---
+
+5.3 NAMED / OBJECT PARAMETERS
+
+5.3.1 Used when multiple inputs are required.
+
+Example:
+createUser({
+ name,
+ email,
+ password,
+ role
+})
+
+5.3.2 Advantages:
+5.3.2.1 Improves readability  
+5.3.2.2 Avoids parameter confusion  
+5.3.2.3 Easy to extend  
+
+---
+
+5.4 VARIABLE PARAMETERS
+
+5.4.1 Used to accept multiple values.
+
+Example:
+logEvents(...events)
+
+6. PARAMETER PASSING METHODS
+
+6.1 CALL BY VALUE
+
+6.1.1 A copy of the value is passed to the function.  
+6.1.2 Changes inside function do not affect original value.
+
+Example:
+x = 5  
+change(x)
+
+6.1.3 Use cases:
+6.1.3.1 Counters  
+6.1.3.2 Flags  
+6.1.3.3 Temporary calculations  
+
+---
+
+6.2 CALL BY REFERENCE
+
+6.2.1 Reference of variable is passed to the function.  
+6.2.2 Changes affect original data (language dependent).
+
+Example:
+updateProfile(userObject)
+
+6.2.3 Use cases:
+6.2.3.1 Updating objects  
+6.2.3.2 Shared state handling  
+6.2.3.3 Large data structures  
+
+---
+
+6.3 PASS BY OBJECT SHARING (JAVASCRIPT STYLE)
+
+6.3.1 Primitive values are copied.  
+6.3.2 Objects are passed as shared references.
+
+6.3.3 Use cases:
+6.3.3.1 React state objects  
+6.3.3.2 API requests  
+6.3.3.3 Session management  
+
+7. STANDARD RULES FOR PARAMETER DESIGN
+
+7.1 Keep parameter count low  
+7.1.1 Avoid too many parameters in a function.
+
+Bad:
+createUser(a,b,c,d,e,f,g)
+
+Good:
+createUser(userData)
+
+---
+
+7.2 Use meaningful names  
+7.2.1 Names should clearly describe purpose.
+
+Bad:
+login(a,b)
+
+Good:
+login(email, password)
+
+---
+
+7.3 Maintain correct order  
+7.3.1 Follow consistent parameter order.
+
+Example:
+updateUser(id, data)
+
+---
+
+7.4 Use default values carefully  
+7.4.1 Reduce unnecessary arguments.
+
+Example:
+getHistory(page = 1)
+
+---
+
+7.5 Validate parameters  
+7.5.1 null check  
+7.5.2 empty check  
+7.5.3 type check  
+7.5.4 range check  
+
+8. PARAMETER USAGE IN SPIRITUAL AI CHAT BOT MODULES
+
+8.1 AUTHENTICATION MODULE  
+8.1.1 registerUser(name, email, password)  
+8.1.2 loginUser(email, password)  
+
+---
+
+8.2 CHAT MODULE  
+8.2.1 sendMessage(userId, question)  
+8.2.2 saveChat(userId, question, response)  
+
+---
+
+8.3 VOICE QUERY MODULE  
+8.3.1 processVoice(audioFile)  
+8.3.2 convertSpeech(languageCode, audioData)  
+
+---
+
+8.4 ADMIN MODULE  
+8.4.1 getReport(startDate, endDate)  
+8.4.2 blockUser(userId, reason)  
+
+---
+
+8.5 UI COMPONENTS  
+8.5.1 Button(title="Send", loading=true)  
+8.5.2 Input(placeholder="Ask anything")  
+
+9. BENEFITS OF PARAMETER STANDARDIZATION
+
+9.1 Reusable functions  
+9.2 Cleaner APIs  
+9.3 Easier debugging  
+9.4 Better team collaboration  
+9.5 Lower bug rate  
+
+10. COMMON MISTAKES TO AVOID
+
+10.1 Too many parameters  
+10.2 Wrong parameter order  
+10.3 Unclear naming  
+10.4 Missing validation  
+10.5 Unexpected mutation of objects  
+
+11. EXAMPLE OF GOOD DESIGN
+
+11.1 BAD APPROACH  
+createChat(id,msg,time,type,status,user,lang)
+
+11.2 BETTER APPROACH  
+createChat({
+ userId,
+ message,
+ type,
+ language
+})
+
+12. PARAMETER VALIDATION STANDARDS
+
+12.1 LOGIN MODULE  
+12.1.1 Email required  
+12.1.2 Password required  
+
+12.2 CHAT MODULE  
+12.2.1 Message must not be empty  
+12.2.2 UserId must be valid  
+
+12.3 REPORT MODULE  
+12.3.1 Valid dates required  
+12.3.2 Admin role verification required  
