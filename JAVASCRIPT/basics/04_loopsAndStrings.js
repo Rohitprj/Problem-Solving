@@ -96,7 +96,7 @@ let str = Asha Learnlogy;
 
 str.toUpperCase();          to uppercase all string
 str.toLowerCase();          to lowercase all string
-str.trim();                 to trim spaces b/w strings
+str.trim();                 to trim spaces around strings
 str.slice(start, end);      to slice string from start to end -1
 str.concat();               to concat string
 str.replace();              to replace first selected char from a string
