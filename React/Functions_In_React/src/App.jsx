@@ -1,41 +1,3 @@
-// import React, { useState } from "react";
-
-// export default function App() {
-//   function value(val) {
-//     console.log(val);
-//   }
-//   const wheel = (value) => {
-//     console.log("wheel", value);
-//     console.log("wheel", value.deltaX);
-//     console.log("wheel", value.deltaY);
-//   };
-//   const double = (value) => {
-//     console.log("double", value);
-//   };
-
-//   const click = (value) => {
-//     console.log(value);
-//   };
-
-//   return (
-//     <div
-//       onWheel={(element) => wheel(element)}
-//       style={{ height: "1000px", width: "1000px" }}
-//     >
-//       <p>Main</p>
-//       <input
-//         type="text"
-//         placeholder="Enter here.."
-//         onChange={(element) => value(element.target.value)}
-//       />
-//       <button onDoubleClick={(element) => double(element)}>Submit</button>
-//       <br />
-//       <br />
-//       <button onClick={(element) => click(element.target)}>Click</button>
-//     </div>
-//   );
-// }
-
 // import React, { useState, useEffect } from "react";
 
 // function UsersList() {
@@ -72,22 +34,40 @@
 
 // export default UsersList;
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
+
+// export default function App() {
+//   // const [count, setCount] = useState(0);
+//   const [input, setInput] = useState("");
+//   const [submit, setSubmit] = useState("");
+//   return (
+//     <div>
+//       <input type="text" onChange={(e) => setInput(e.target.value)} />
+//       <button type="submit" onClick={() => setSubmit(input)}>
+//         Submit
+//       </button>
+//       <p>{submit}</p>
+//       {/* <button onClick={() => setCount(count++)}>increment</button>
+//       <p>{count}</p>
+//       <button onClick={() => setCount(count--)}>decrement</button> */}
+//     </div>
+//   );
+// }
+
+import React from "react";
 
 export default function App() {
-  // const [count, setCount] = useState(0);
-  const [input, setInput] = useState("");
-  const [submit, setSubmit] = useState("");
+  const submit = (e) => {
+    e.preventDefault();
+    console.log("form submitted with the value: " + e.target.elements[0].value);
+  };
+
   return (
     <div>
-      <input type="text" onChange={(e) => setInput(e.target.value)} />
-      <button type="submit" onClick={() => setSubmit(input)}>
-        Submit
-      </button>
-      <p>{submit}</p>
-      {/* <button onClick={() => setCount(count++)}>increment</button>
-      <p>{count}</p>
-      <button onClick={() => setCount(count--)}>decrement</button> */}
+      <form onSubmit={(e) => submit(e)}>
+        <input type="text" />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
@@ -111,16 +91,3 @@ export default function App() {
 // };
 
 // export default App;
-
-// import React, { useState } from "react";
-
-// export default function App() {
-//   const [count, setCount] = useState(0);
-//   // setCount(10);
-//   return (
-//     <div>
-//       <button onClick={() => setCount(count + 1)}>increase</button>
-//       <p>count = {count}</p>
-//     </div>
-//   );
-// }
