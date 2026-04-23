@@ -37,40 +37,96 @@
 // import React, { useState } from "react";
 
 // export default function App() {
-//   // const [count, setCount] = useState(0);
 //   const [input, setInput] = useState("");
-//   const [submit, setSubmit] = useState("");
+//   const [submit, setSubmit] = useState([]);
+//   console.log(submit);
 //   return (
 //     <div>
-//       <input type="text" onChange={(e) => setInput(e.target.value)} />
-//       <button type="submit" onClick={() => setSubmit(input)}>
+//       <input
+//         className="border-2"
+//         type="text"
+//         onChange={(e) => setInput(e.target.value)}
+//       />
+//       {"\t"}
+//       <button type="submit" onClick={() => setSubmit([...submit, input])}>
 //         Submit
 //       </button>
-//       <p>{submit}</p>
-//       {/* <button onClick={() => setCount(count++)}>increment</button>
-//       <p>{count}</p>
-//       <button onClick={() => setCount(count--)}>decrement</button> */}
+//       <ul>
+//         {submit.map((item, index) => (
+//           <li key={index}>{item}</li>
+//         ))}
+//       </ul>
 //     </div>
 //   );
 // }
 
-import React from "react";
+import React, { useState } from "react";
 
 export default function App() {
-  const submit = (e) => {
-    e.preventDefault();
-    console.log("form submitted with the value: " + e.target.elements[0].value);
+  const [name, setName] = useState("");
+  const [prev, prevName] = useState([]);
+  const [diaplay, setDisplay] = useState("");
+  // prevName(name);
+  // const store = [...name, prev];
+  // console.log("storeee", store);
+
+  const submit = (value) => {
+    value.preventDefault();
+    // console.log(value);
+    // console.log(name);
+    localStorage.setItem("name", name);
+    console.log(name);
   };
+  localStorage.removeItem("name");
+  // const myname = localStorage.getItem("name");
+
+  // console.log("This is myname", myname);
 
   return (
     <div>
       <form onSubmit={(e) => submit(e)}>
-        <input type="text" />
-        <button type="submit">Submit</button>
+        <p>Name</p>
+        <input
+          className="border-4"
+          type="text"
+          onChange={(e) => setName(e.target.value)}
+        />
+        <p>Password</p>
+        <input className="border-4" type="text" />
+        <br />
+        <br />
+        <button
+          type="submit"
+          className="border-amber-400 border-2 bg-amber-700"
+          onClick={() => setDisplay(name)}
+        >
+          Log in
+        </button>
       </form>
+      <p>{name}</p>
     </div>
   );
 }
+
+// import React from "react";
+// import Notes from "./pages/Notes";
+
+// export default function App() {
+//   const submit = (e) => {
+//     e.preventDefault();
+//     console.log("form submitted with the value: " + e.target.elements[0].value);
+//   };
+
+//   return (
+//     <div>
+//       {/* <form onSubmit={(e) => submit(e)}>
+//         <input type="text" />
+//         <button type="submit">Submit</button>
+//       </form> */}
+//       <Notes />
+//     </div>
+//   );
+// }
 
 // import React from "react";
 // import { Routes, Route } from "react-router-dom";
