@@ -1,61 +1,118 @@
-%%{init: {"theme":"neutral"}}%%
+%% %%{init: {"theme":"neutral"}}%%
+%% stateDiagram-v2
+
+%%     [*] --> App_Launched
+
+%%     App_Launched --> Authentication
+
+%%     state Authentication {
+%%         [*] --> Login_Page
+%%         Login_Page --> Signup_Page : New User
+%%         Signup_Page --> Login_Page : Account Created
+%%         Login_Page --> Dashboard : Valid Login
+%%         Login_Page --> Login_Page : Invalid Login
+%%     }
+
+%%     Dashboard --> Chat_Mode : Start Chat
+%%     Dashboard --> History_Mode : View History
+%%     Dashboard --> Voice_Mode : Voice Query
+%%     Dashboard --> Profile_Mode : Profile Settings
+%%     Dashboard --> Logout_State : Logout
+%%     Dashboard --> Admin_Check : Admin Access
+
+%%     state Chat_Mode {
+%%         [*] --> Enter_Query
+%%         Enter_Query --> AI_Processing
+%%         AI_Processing --> Show_Response
+%%         Show_Response --> Save_Chat
+%%         Save_Chat --> [*]
+%%     }
+
+%%     state History_Mode {
+%%         [*] --> Load_History
+%%         Load_History --> Show_History
+%%         Show_History --> [*]
+%%     }
+
+%%     state Voice_Mode {
+%%         [*] --> Record_Voice
+%%         Record_Voice --> Speech_To_Text
+%%         Speech_To_Text --> AI_Processing
+%%     }
+
+%%     state Profile_Mode {
+%%         [*] --> Update_Profile
+%%         Update_Profile --> [*]
+%%     }
+
+%%     state Admin_Check {
+%%         [*] --> Verify_Admin
+%%         Verify_Admin --> Admin_Dashboard : Yes
+%%         Verify_Admin --> Dashboard : No
+%%     }
+
+%%     state Admin_Dashboard {
+%%         [*] --> View_Users
+%%         View_Users --> Monitor_Chats
+%%         Monitor_Chats --> View_Reports
+%%         View_Reports --> [*]
+%%     }
+
+%%     Logout_State --> End_App
+%%     End_App --> [*]
+
+%%{init: {
+  "theme":"neutral",
+  "themeVariables": {
+    "fontSize": "20px",
+    "labelFontSize": "16px"
+  }
+}}%%
 stateDiagram-v2
+    direction TB
 
     [*] --> App_Launched
-
     App_Launched --> Authentication
 
     state Authentication {
         [*] --> Login_Page
         Login_Page --> Signup_Page : New User
-        Signup_Page --> Login_Page : Account Created
-        Login_Page --> Dashboard : Valid Login
-        Login_Page --> Login_Page : Invalid Login
+        Signup_Page --> Login_Page : Created
+        Login_Page --> Dashboard : Valid
     }
 
-    Dashboard --> Chat_Mode : Start Chat
-    Dashboard --> History_Mode : View History
-    Dashboard --> Voice_Mode : Voice Query
-    Dashboard --> Profile_Mode : Profile Settings
-    Dashboard --> Logout_State : Logout
-    Dashboard --> Admin_Check : Admin Access
+    state Dashboard {
+        direction LR
+        Chat_Mode
+        History_Mode
+        Voice_Mode
+        Profile_Mode
+    }
+
+    Dashboard --> Admin_Check : Admin
+    Dashboard --> Logout_State : Exit
 
     state Chat_Mode {
-        [*] --> Enter_Query
-        Enter_Query --> AI_Processing
-        AI_Processing --> Show_Response
-        Show_Response --> Save_Chat
-        Save_Chat --> [*]
-    }
-
-    state History_Mode {
-        [*] --> Load_History
-        Load_History --> Show_History
-        Show_History --> [*]
+        [*] --> Query
+        Query --> AI_Proc
+        AI_Proc --> Save
+        Save --> [*]
     }
 
     state Voice_Mode {
-        [*] --> Record_Voice
-        Record_Voice --> Speech_To_Text
-        Speech_To_Text --> AI_Processing
-    }
-
-    state Profile_Mode {
-        [*] --> Update_Profile
-        Update_Profile --> [*]
+        [*] --> Record
+        Record --> STT
+        STT --> AI_Proc
     }
 
     state Admin_Check {
-        [*] --> Verify_Admin
-        Verify_Admin --> Admin_Dashboard : Yes
-        Verify_Admin --> Dashboard : No
+        Verify --> Admin_DB : Yes
+        Verify --> Dashboard : No
     }
 
-    state Admin_Dashboard {
-        [*] --> View_Users
-        View_Users --> Monitor_Chats
-        Monitor_Chats --> View_Reports
-        View_Reports --> [*]
+    state Admin_DB {
+        View_Users --> Monitor
+        Monitor --> Reports
     }
 
     Logout_State --> End_App
