@@ -234,7 +234,7 @@ delete fruits[1];
 
 console.log(fruits);
 
-Output :- ["apple", empty, "mango"]
+Output :- ["apple", <1 empty item>, "mango"];
 
 ⚠️ Not recommended usually.
 
