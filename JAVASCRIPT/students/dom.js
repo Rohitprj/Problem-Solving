@@ -11,6 +11,11 @@
 // const para = document.getElementsByClassName("hello")[0];
 // console.log(para);
 
-const getElem = document.querySelector(".hello").innerText;
+// const getElem = document.querySelector(".hello").innerText;
 
-console.log("TAKE ELEM", getElem);
+// console.log("TAKE ELEM", getElem);
+
+console.log(document.children[0]);
+
+const button = (document.getElementById("btn").innerText = "ME click");
+console.log("This is my btn", button);

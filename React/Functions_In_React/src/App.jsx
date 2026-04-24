@@ -60,53 +60,53 @@
 //   );
 // }
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-export default function App() {
-  const [name, setName] = useState("");
-  const [prev, prevName] = useState([]);
-  const [diaplay, setDisplay] = useState("");
-  // prevName(name);
-  // const store = [...name, prev];
-  // console.log("storeee", store);
+// export default function App() {
+//   const [name, setName] = useState("");
+//   const [prev, prevName] = useState([]);
+//   const [diaplay, setDisplay] = useState("");
+//   // prevName(name);
+//   // const store = [...name, prev];
+//   // console.log("storeee", store);
 
-  const submit = (value) => {
-    value.preventDefault();
-    // console.log(value);
-    // console.log(name);
-    localStorage.setItem("name", name);
-    console.log(name);
-  };
-  localStorage.removeItem("name");
-  // const myname = localStorage.getItem("name");
+//   const submit = (value) => {
+//     value.preventDefault();
+//     // console.log(value);
+//     // console.log(name);
+//     localStorage.setItem("name", name);
+//     console.log(name);
+//   };
+//   localStorage.removeItem("name");
+//   // const myname = localStorage.getItem("name");
 
-  // console.log("This is myname", myname);
+//   // console.log("This is myname", myname);
 
-  return (
-    <div>
-      <form onSubmit={(e) => submit(e)}>
-        <p>Name</p>
-        <input
-          className="border-4"
-          type="text"
-          onChange={(e) => setName(e.target.value)}
-        />
-        <p>Password</p>
-        <input className="border-4" type="text" />
-        <br />
-        <br />
-        <button
-          type="submit"
-          className="border-amber-400 border-2 bg-amber-700"
-          onClick={() => setDisplay(name)}
-        >
-          Log in
-        </button>
-      </form>
-      <p>{name}</p>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <form onSubmit={(e) => submit(e)}>
+//         <p>Name</p>
+//         <input
+//           className="border-4"
+//           type="text"
+//           onChange={(e) => setName(e.target.value)}
+//         />
+//         <p>Password</p>
+//         <input className="border-4" type="text" />
+//         <br />
+//         <br />
+//         <button
+//           type="submit"
+//           className="border-amber-400 border-2 bg-amber-700"
+//           onClick={() => setDisplay(name)}
+//         >
+//           Log in
+//         </button>
+//       </form>
+//       <p>{name}</p>
+//     </div>
+//   );
+// }
 
 // import React from "react";
 // import Notes from "./pages/Notes";
@@ -147,3 +147,15 @@ export default function App() {
 // };
 
 // export default App;
+
+import React from "react";
+import { AiFillAmazonCircle } from "react-icons/ai";
+
+export default function App() {
+  return (
+    <div className="">
+      <AiFillAmazonCircle size={50} color="red" />
+      <p>hi</p>
+    </div>
+  );
+}

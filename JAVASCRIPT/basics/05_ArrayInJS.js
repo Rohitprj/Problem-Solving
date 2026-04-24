@@ -1,6 +1,6 @@
 /*
 
-Array in JS
+Array in JS 
 
 An Array is an object type designed for storing data collections.
 
