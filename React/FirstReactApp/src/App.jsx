@@ -138,54 +138,70 @@
 //   );
 // }
 
-import { useEffect, useState } from "react";
-import WhoITrain from "./components/WhoITrain";
+// import { useEffect, useState } from "react";
+// import WhoITrain from "./components/WhoITrain";
+
+// export default function App() {
+//   const [loaded, setLoaded] = useState(false);
+
+//   useEffect(() => {
+//     setTimeout(() => {
+//       setLoaded(true);
+//     }, 1200);
+//   }, []);
+
+//   const items = [1, 2, 3];
+
+//   return (
+//     <div>
+//       <WhoITrain />
+//     </div>
+//     // <div className="p-10 grid grid-cols-3 gap-6">
+//     //   {items.map((item, index) => (
+//     //     <div
+//     //       key={item}
+//     //       className="w-64 h-72 border rounded-xl overflow-hidden shadow bg-white"
+//     //     >
+//     //       {!loaded ? (
+//     //         <div className="animate-pulse p-4 space-y-4">
+//     //           <div className="h-40 bg-gray-300 rounded"></div>
+//     //           <div className="h-4 bg-gray-300 rounded w-3/4"></div>
+//     //           <div className="h-4 bg-gray-300 rounded w-1/2"></div>
+//     //         </div>
+//     //       ) : (
+//     //         <div
+//     //           className={`transition-all duration-700 ease-in-out delay-${
+//     //             index * 200
+//     //           } opacity-100 translate-y-0`}
+//     //         >
+//     //           <img
+//     //             src="https://picsum.photos/300/200"
+//     //             className="w-full h-40 object-cover"
+//     //           />
+//     //           <div className="p-4">
+//     //             <h2 className="font-bold text-lg">Card Title</h2>
+//     //             <p className="text-gray-500">Smooth reveal animation</p>
+//     //           </div>
+//     //         </div>
+//     //       )}
+//     //     </div>
+//     //   ))}
+//     // </div>
+//   );
+// }
+
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 export default function App() {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true);
-    }, 1200);
-  }, []);
-
-  const items = [1, 2, 3];
-
   return (
-    <div>
-      <WhoITrain />
-    </div>
-    // <div className="p-10 grid grid-cols-3 gap-6">
-    //   {items.map((item, index) => (
-    //     <div
-    //       key={item}
-    //       className="w-64 h-72 border rounded-xl overflow-hidden shadow bg-white"
-    //     >
-    //       {!loaded ? (
-    //         <div className="animate-pulse p-4 space-y-4">
-    //           <div className="h-40 bg-gray-300 rounded"></div>
-    //           <div className="h-4 bg-gray-300 rounded w-3/4"></div>
-    //           <div className="h-4 bg-gray-300 rounded w-1/2"></div>
-    //         </div>
-    //       ) : (
-    //         <div
-    //           className={`transition-all duration-700 ease-in-out delay-${
-    //             index * 200
-    //           } opacity-100 translate-y-0`}
-    //         >
-    //           <img
-    //             src="https://picsum.photos/300/200"
-    //             className="w-full h-40 object-cover"
-    //           />
-    //           <div className="p-4">
-    //             <h2 className="font-bold text-lg">Card Title</h2>
-    //             <p className="text-gray-500">Smooth reveal animation</p>
-    //           </div>
-    //         </div>
-    //       )}
-    //     </div>
-    //   ))}
-    // </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
   );
 }

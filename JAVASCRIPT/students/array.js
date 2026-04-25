@@ -10,12 +10,12 @@
 
 // console.log(Array.isArray(cars));
 
-let fruits = ["apple", "banana", "mango", "kiwi"];
+// let fruits = ["apple", "banana", "mango", "kiwi"];
 
-// let newFruits = fruits.slice(1, 3);
-fruits.splice(0, 2, "lemon", "orange");
+// // let newFruits = fruits.slice(1, 3);
+// fruits.splice(0, 2, "lemon", "orange");
 
-console.log(fruits);
+// console.log(fruits);
 
 // console.log(fruits.toString());
 
@@ -31,3 +31,15 @@ console.log(fruits);
 // fruits.unshift("lemon");
 
 // delete fruits[1];
+
+// const req = fetch("https://jsonplaceholder.typicode.com/todos/1")
+//   .then((res) => res.json())
+//   .then((data) => console.log(data))
+//   .catch((e) => console.log(e));
+
+async function getData() {
+  const req = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const data = await req.json();
+  console.log(data);
+}
+getData();

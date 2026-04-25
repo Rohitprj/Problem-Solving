@@ -33,26 +33,169 @@
 %%     style PLAN fill:#bbf,stroke:#333
 %%     style TEST fill:#dfd,stroke:#333
 
-%%{init: {"theme":"neutral"}}%%
-graph LR
-    START((Start)) --> PLAN[Project Planning]
-    PLAN --> DB[MongoDB Setup]
+%% %%{init: {"theme":"neutral"}}%%
+%% graph LR
+%%     START((Start)) --> PLAN[Project Planning]
+%%     PLAN --> DB[MongoDB Setup]
 
+%%     subgraph Development_Module [Backend & Tracking]
+%%     DB --> AUTH[User Auth System]
+%%     DB --> TRACK[Analytics Tracking Logic]
+%%     AUTH --> CHAT_API[Chat History API]
+%%     end
+
+%%     subgraph AI_Engine [AI & Knowledge]
+%%     DB --> KB[Knowledge Base / Books]
+%%     KB --> NLP[NLP & LLM Integration]
+%%     NLP --> VOICE[Voice Query Support]
+%%     end
+
+%%     CHAT_API --> ADMIN[Admin Dashboard]
+%%     TRACK --> ADMIN
+%%     VOICE --> ADMIN
+
+%%     ADMIN --> TEST[System Testing]
+%%     TEST --> END((Finish))
+
+%% %%{init: {
+%%   'theme': 'neutral',
+%%   'themeVariables': {
+%%     'fontSize': '20px',
+%%     'labelFontSize': '18px',
+%%     'primaryTextColor': '#2c3e50',
+%%     'edgeLabelBackground':'#ffffff',
+%%     'clusterBkg': '#ffffff',
+%%     'clusterBorder': '#333333',
+%%     'mainBkg': '#ffffff'
+%%   }
+%% }%%
+%% graph TB
+%%     %% Nodes with background forced to white
+%%     START((Start))
+    
+%%     PLAN["TASK: Project Planning<br/>DUR: 5 Days"]
+%%     style PLAN fill:#fff,stroke:#333
+    
+%%     DB["TASK: MongoDB Setup<br/>DUR: 2 Days"]
+%%     style DB fill:#fff,stroke:#333
+
+%%     %% Backend Module Subgraph with white background
+%%     subgraph Development_Module [Backend & Tracking]
+%%         direction TB
+%%         AUTH["TASK: User Auth System<br/>DUR: 4 Days"]
+%%         TRACK["TASK: Analytics Logic<br/>DUR: 3 Days"]
+%%         CHAT_API["TASK: Chat History API<br/>DUR: 4 Days"]
+        
+%%         style AUTH fill:#fff,stroke:#333
+%%         style TRACK fill:#fff,stroke:#333
+%%         style CHAT_API fill:#fff,stroke:#333
+%%     end
+
+%%     %% AI Engine Subgraph with white background
+%%     subgraph AI_Engine [AI & Knowledge]
+%%         direction TB
+%%         KB["TASK: Knowledge Base / Books<br/>DUR: 7 Days"]
+%%         NLP["TASK: LLM Integration<br/>DUR: 10 Days"]
+%%         VOICE["TASK: Voice Query Support<br/>DUR: 6 Days"]
+        
+%%         style KB fill:#fff,stroke:#333
+%%         style NLP fill:#fff,stroke:#333
+%%         style VOICE fill:#fff,stroke:#333
+%%     end
+
+%%     ADMIN["TASK: Admin Dashboard<br/>DUR: 8 Days"]
+%%     style ADMIN fill:#fff,stroke:#333
+    
+%%     TEST["TASK: System Testing<br/>DUR: 5 Days"]
+%%     style TEST fill:#fff,stroke:#333
+    
+%%     END((Finish))
+
+%%     %% Connections
+%%     START --> PLAN
+%%     PLAN --> DB
+
+%%     DB --> AUTH
+%%     DB --> TRACK
+%%     AUTH --> CHAT_API
+
+%%     DB --> KB
+%%     KB --> NLP
+%%     NLP --> VOICE
+
+%%     CHAT_API --> ADMIN
+%%     TRACK --> ADMIN
+%%     VOICE --> ADMIN
+
+%%     ADMIN --> TEST
+%%     TEST --> END
+
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#ffffff',
+    'primaryTextColor': '#000000',
+    'primaryBorderColor': '#000000',
+    'lineColor': '#000000',
+    'fontSize': '20px',
+    'labelFontSize': '18px',
+    'clusterBkg': '#ffffff',
+    'clusterBorder': '#000000',
+    'edgeLabelBackground':'#ffffff',
+    'mainBkg': '#ffffff'
+  }
+}%%
+graph TB
+    %% Start/Finish nodes default to a different color in base theme, 
+    %% styling them explicitly to force the B&W look.
+    START((Start))
+    style START fill:#fff,stroke:#000,stroke-width:2px,color:#000
+    
+    PLAN["TASK: Project Planning<br/>DUR: 5 Days"]
+    
+    DB["TASK: MongoDB Setup<br/>DUR: 2 Days"]
+
+    %% Backend Module Subgraph
     subgraph Development_Module [Backend & Tracking]
-    DB --> AUTH[User Auth System]
-    DB --> TRACK[Analytics Tracking Logic]
-    AUTH --> CHAT_API[Chat History API]
+        direction TB
+        AUTH["TASK: User Auth System<br/>DUR: 4 Days"]
+        TRACK["TASK: Analytics Logic<br/>DUR: 3 Days"]
+        CHAT_API["TASK: Chat History API<br/>DUR: 4 Days"]
     end
 
+    %% AI Engine Subgraph
     subgraph AI_Engine [AI & Knowledge]
-    DB --> KB[Knowledge Base / Books]
-    KB --> NLP[NLP & LLM Integration]
-    NLP --> VOICE[Voice Query Support]
+        direction TB
+        KB["TASK: Knowledge Base / Books<br/>DUR: 7 Days"]
+        NLP["TASK: LLM Integration<br/>DUR: 10 Days"]
+        VOICE["TASK: Voice Query Support<br/>DUR: 6 Days"]
     end
 
-    CHAT_API --> ADMIN[Admin Dashboard]
+    ADMIN["TASK: Admin Dashboard<br/>DUR: 8 Days"]
+    TEST["TASK: System Testing<br/>DUR: 5 Days"]
+    
+    END((Finish))
+    style END fill:#fff,stroke:#000,stroke-width:2px,color:#000
+
+    %% Add default styling rules to all rectangles to be strict B&W
+    classDef bw fill:#fff,stroke:#000,color:#000,stroke-width:1px;
+    class PLAN,DB,AUTH,TRACK,CHAT_API,KB,NLP,VOICE,ADMIN,TEST bw;
+
+    %% Connections
+    START --> PLAN
+    PLAN --> DB
+
+    DB --> AUTH
+    DB --> TRACK
+    AUTH --> CHAT_API
+
+    DB --> KB
+    KB --> NLP
+    NLP --> VOICE
+
+    CHAT_API --> ADMIN
     TRACK --> ADMIN
     VOICE --> ADMIN
 
-    ADMIN --> TEST[System Testing]
-    TEST --> END((Finish))
+    ADMIN --> TEST
+    TEST --> END

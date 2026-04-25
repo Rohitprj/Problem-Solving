@@ -6,25 +6,25 @@
  Data models (like DFDs), Control Flow diagrams, State Diagrams/Sequence diagrams, Entity Relationship Model, Class Diagrams/CRC Models/Collaboration Diagrams/Use-case Diagrams/Activity Diagrams and other models depending upon your project requirements 
 
 (I want to make - Control Flow diagrams, State Diagrams/Sequence diagrams, Activity Diagrams, Collaboration Diagrams/Use-case Diagrams, CRC Models  )
-
+6
   System Design
  Modularization details
  Data integrity and constraints
  Database design, Procedural Design/Object Oriented Design
  User Interface Design
  Test Cases (Unit Test Cases and System Test Cases) 
-
+7
   Coding
  SQL commands/Object description for (i) data or database creation (along with constraints), (ii) data collection, cleaning and generation and insertion into data structure or tables and (iii) access rights for different users
  Complete Project Coding
  Comments and Description of Coding segments
-
+8
   Standardization of the coding
  Code Efficiency
  Error handling
  Parameters calling/passing
  Validation checks
-
+9
   Testing
  Testing techniques and Testing strategies used
  Testing Plan used
@@ -40,3 +40,48 @@ o Future scope and further enhancement of the Project
 o Bibliography
 o Appendices (if any)
 o Glossary. 
+
+
+
+
+
+
+1. Introduction                                                    4
+2. OBJECTIVES                                                      7
+3. Project category                                                8
+4. Hardware & software requirement specifications                  9
+5. SYSTEM ANALYSIS                                                10
+5.1 PERT Chart                                                    10
+5.2  Gantt Chart                                                  11
+5.3 Software Requirements Specification (SRS)                     12
+5.4 Software Engineering Paradigm Applied                         20
+5.5 Data models                                                   26
+6. System Design                                                  35
+6.1 Modularization details                                        35
+6.2 Data integrity and constraints                                44
+6.3 Database design, Procedural Design/Object Oriented Design     55
+6.4 User Interface Design                                         68
+6.5 Test Cases                                                    77
+7.	Coding                                                        83
+7.1	Object description                                            83
+7.2 Data structure & tables                                       89
+7.3 Complete Project Coding                                       93
+8. Standardization of the coding                                  147
+8.1 Code Efficiency                                               147
+8.2 Error handling                                                155
+8.3 Parameters calling & passing                                  166
+8.4 Validation checks                                             175
+9.	Testing                                                       184
+9.1	Testing techniques & Testing strategies used                  184
+9.2 Testing Plan used                                             195
+9.3 Test reports for Unit Test Cases and System Test Cases        206
+9.4 DEBUGGING AND CODE IMPROVEMENT                                213
+10.	Security measures                                             223
+10.1	DATABASE / DATA SECURITY                                    223
+10.2 CREATION OF USER PROFILES AND ACCESS RIGHTS                  231
+11.	 Reports                                                      239
+12.	 Limitations of the project                                   240
+13.	 Future Scope and Further Enhancement of the Project          241
+14.	 Bibliography                                                 242
+15.	 Appendices                                                   243
+   
