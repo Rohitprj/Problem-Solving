@@ -504,15 +504,29 @@ let arr = [
 // const newArr = arr.map((val) => val.stock);
 // console.log(newArr);
 
+const newArr = arr.map(({ name, price }) => ({ name, price }));
+console.log(newArr);
+
+const newArr = arr.map((item) => {
+  let newItem = {
+    id: item.id,
+    name: item.name,
+    price: item.price,
+  };
+
+  return newItem;
+});
+console.log(newArr);
+
 // const filData = arr.filter((data) => data.stock > 60);
 // console.log(filData);
 
-const red = arr.reduce(
-  (previous, currentValue) => previous + currentValue.stock,
-  0,
-);
+// const red = arr.reduce(
+//   (previous, currentValue) => previous + currentValue.stock,
+//   0,
+// );
 
-console.log(red);
+// console.log(red);
 
 // console.log(arr[0].name);
 // let newArr = arr.map((value) => value);

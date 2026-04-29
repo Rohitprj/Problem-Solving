@@ -15,7 +15,15 @@
 
 // console.log("TAKE ELEM", getElem);
 
-console.log(document.children[0]);
+// console.log(document.children[0]);
 
-const button = (document.getElementById("btn").innerText = "ME click");
-console.log("This is my btn", button);
+// const button = (document.getElementById("btn").innerText = "ME click");
+// console.log("This is my btn", button);
+
+const btn = (document.getElementById("btn").innerText = "ME CLICK");
+
+console.log("ACCESSED BTN", btn);
+
+// const cls = document.getElementsByClassName("hello")[0];
+
+// console.log(cls);
