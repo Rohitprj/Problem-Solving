@@ -501,11 +501,32 @@ let arr = [
   },
 ];
 
+// const newArr = arr.map((val) => val.stock);
+// console.log(newArr);
+
+// const filData = arr.filter((data) => data.stock > 60);
+// console.log(filData);
+
+const red = arr.reduce(
+  (previous, currentValue) => previous + currentValue.stock,
+  0,
+);
+
+console.log(red);
+
 // console.log(arr[0].name);
 // let newArr = arr.map((value) => value);
 // console.log(newArr);
 
-let filterData = arr.filter();
+// let filterData = arr.filter((value) => value.stock > 60);
+// console.log(filterData);
+// let num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// let reduceData = arr.reduce(
+//   (previous, currentValue) => previous + currentValue.price,
+//   0,
+// );
+// console.log(reduceData);
 
 // async function getProd() {
 //   try {

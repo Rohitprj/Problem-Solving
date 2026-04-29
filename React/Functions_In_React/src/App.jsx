@@ -128,34 +128,51 @@
 //   );
 // }
 
-// import React from "react";
-// import { Routes, Route } from "react-router-dom";
-// import About from "./pages/About";
-// import Home from "./pages/Home";
-// import Contact from "./pages/Contact";
-
-// const App = () => {
-//   return (
-//     <div>
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/about" element={<About />} />
-//         <Route path="/Contact" element={<Contact />} />
-//       </Routes>
-//     </div>
-//   );
-// };
-
-// export default App;
-
 import React from "react";
-import { AiFillAmazonCircle } from "react-icons/ai";
+import { Routes, Route } from "react-router-dom";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
 
-export default function App() {
+const App = () => {
   return (
-    <div className="">
-      <AiFillAmazonCircle size={50} color="red" />
-      <p>hi</p>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
+      </Routes>
     </div>
   );
-}
+};
+
+export default App;
+
+// import React from "react";
+// import { AiFillAmazonCircle } from "react-icons/ai";
+
+// export default function App() {
+//   return (
+//     <div className="">
+//       <AiFillAmazonCircle size={50} color="red" />
+//       <p>hi</p>
+//     </div>
+//   );
+// }
+
+// import React, { useEffect } from "react";
+
+// export default function App() {
+//   // useEffect(() => {}, []);
+
+//   fetch("https://fakestoreapi.com/products")
+//     .then((response) => response.json())
+//     .then((data) => console.log("API DATA", data))
+//     .catch((error) => console.log(error));
+
+//   return (
+//     <div>
+//       <p>hi</p>
+//     </div>
+//   );
+// }
