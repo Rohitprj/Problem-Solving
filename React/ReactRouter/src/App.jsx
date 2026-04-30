@@ -1,18 +1,47 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Login from "./pages/Login";
+// import React from "react";
+// import { Routes, Route } from "react-router-dom";
+// import Home from "./pages/Home";
+// import About from "./pages/About";
+// import Contact from "./pages/Contact";
+// import Login from "./pages/Login";
+
+// export default function App() {
+//   return (
+//     <Routes>
+//       <Route path="/" element={<Home />} />
+//       <Route path="/about" element={<About />} />
+//       <Route path="/contact" element={<Contact />} />
+//       <Route path="/Login" element={<Login />} />
+//     </Routes>
+//   );
+// }
+
+import React, { useEffect, useState } from "react";
 
 export default function App() {
+  const [products, setProducts] = useState(null);
+
+  async function getData() {
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    const data = await res.json();
+    setProducts(data);
+    console.log(data);
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/Login" element={<Login />} />
-    </Routes>
+    <div>
+      <p>This is a Home page</p>
+      {products && (
+        <>
+          <p>{products.id}</p>
+          <p>{products.title}</p>
+        </>
+      )}
+    </div>
   );
 }
 
