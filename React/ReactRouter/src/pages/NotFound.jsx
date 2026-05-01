@@ -3,7 +3,7 @@ import React from "react";
 export default function NotFound() {
   return (
     <div>
-      <div class="relative w-screen h-screen bg-gray-900 text-white overflow-hidden">
+      {/* <div class="relative w-screen h-screen bg-gray-900 text-white overflow-hidden">
         <div class="absolute inset-0 flex flex-col items-center justify-center z-10">
           <h1 class="text-6xl font-bold mb-4">Page Not Found</h1>
           <p class="text-xl">
@@ -21,7 +21,10 @@ export default function NotFound() {
           id="overlay"
           class="absolute inset-0 bg-black z-20 pointer-events-none"
         ></div>
-      </div>
+      </div> */}
+      <p>Page Not Found</p>
+      <p>Sorry, we couldn’t find the page you’re looking for.</p>
+      <a href="/">Go Home</a>
     </div>
   );
 }
