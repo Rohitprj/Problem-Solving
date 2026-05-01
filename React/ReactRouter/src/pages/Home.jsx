@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
 
 export default function Home() {
   const [products, setProducts] = useState(null);
@@ -22,7 +21,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <Header />
       <main className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-6">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-600">
           Main Page

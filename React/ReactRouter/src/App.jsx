@@ -5,16 +5,22 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/Login" element={<Login />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
