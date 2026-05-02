@@ -7,6 +7,12 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Products from "./pages/Products";
+import Mens from "./pages/Mens";
+import Womens from "./pages/Womens";
+import Category from "./pages/Category";
+import Clothes from "./pages/Clothes";
+import Accessories from "./pages/Accessories";
 
 export default function App() {
   return (
@@ -15,14 +21,41 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/about/:username" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/mens" element={<Mens />} />
+        <Route path="/products/womens" element={<Womens />} />
+        <Route path="/category" element={<Category />}>
+          <Route path="clothes" element={<Clothes />} />
+          <Route path="accessories" element={<Accessories />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
   );
 }
+
+// import React, { useState } from "react";
+// import { TbHandClick } from "react-icons/tb";
+// import Options from "./Options";
+
+// export default function App() {
+//   const [show, setShow] = useState(false);
+//   return (
+//     <div className="flex justify-center items-center h-screen bg-amber-100 ">
+//       <button
+//         onClick={() => setShow(!show)}
+//         className="cursor-pointer border-2 p-6"
+//       >
+//         <TbHandClick size={50} />
+//       </button>
+//       {show && <Options setShow={setShow} />}
+//     </div>
+//   );
+// }
 
 // import React, { useEffect, useState } from "react";
 

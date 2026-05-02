@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function About() {
-  const [theme, setTheme] = React.useState("light");
-  const [toggle, setToggle] = React.useState(false);
+  const params = useParams();
+  console.log("My params", params);
+
+  const [theme, setTheme] = useState("light");
+  const [toggle, setToggle] = useState(false);
 
   const lightColors = {
     background: "#FFFFFF",
@@ -14,7 +18,7 @@ export default function About() {
     text: "#FFFFFF",
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (toggle) {
       setTheme("dark");
     } else {
@@ -31,6 +35,7 @@ export default function About() {
       }}
       className=" mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-16"
     >
+      <p>Params :- {params.username}</p>
       <p
         onClick={() => setToggle(!toggle)}
         style={{

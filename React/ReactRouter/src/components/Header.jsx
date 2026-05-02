@@ -15,6 +15,12 @@ export default function Header() {
           <Link className="hover:text-slate-950" to="/about">
             About
           </Link>
+          <Link className="hover:text-slate-950" to="/products">
+            Products
+          </Link>
+          <Link className="hover:text-slate-950" to="/category">
+            Category
+          </Link>
           <Link className="hover:text-slate-950" to="/contact">
             Contact
           </Link>
