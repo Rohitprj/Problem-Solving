@@ -43,7 +43,7 @@ export default function Login() {
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-0.5 rounded-3xl bg-gradient-to-br from-cyan-400/40 via-fuchsia-500/40 to-emerald-400/40 blur-2xl" />
+            <div className="absolute -inset-0.5 rounded-3xl bg-linear-to-br from-cyan-400/40 via-fuchsia-500/40 to-emerald-400/40 blur-2xl" />
             <div className="relative rounded-3xl border border-white/10 bg-slate-950/70 p-8 shadow-2xl shadow-black/50 backdrop-blur-2xl">
               <div className="flex items-center justify-between">
                 <div>
@@ -102,7 +102,7 @@ export default function Login() {
 
                 <button
                   type="submit"
-                  className="group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-emerald-400 px-4 py-3 text-base font-semibold text-slate-950 shadow-lg shadow-fuchsia-500/30 transition duration-300 hover:scale-[1.02]"
+                  className="group relative w-full overflow-hidden rounded-xl bg-linear-to-r from-cyan-400 via-fuchsia-400 to-emerald-400 px-4 py-3 text-base font-semibold text-slate-950 shadow-lg shadow-fuchsia-500/30 transition duration-300 hover:scale-[1.02]"
                 >
                   <span className="absolute inset-0 -translate-x-full bg-white/40 opacity-0 transition duration-500 group-hover:translate-x-0 group-hover:opacity-100" />
                   <span className="relative">Continue</span>
