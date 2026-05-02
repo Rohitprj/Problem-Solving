@@ -6,12 +6,22 @@ export default function Category() {
     <div className="h-screen">
       <p>This is a Category page</p>
       <button>
-        <Link to="/category/clothes">Clothes</Link>
+        <Link
+          className="p-6 bg-amber-200 text-2xl border-2 inline-block cursor-pointer"
+          to="/category/clothes"
+        >
+          Clothes
+        </Link>
       </button>
       <button>
-        <Link to="/category/accessories">Accessories</Link>
+        <Link
+          className="p-6 bg-amber-200 text-2xl border-2 inline-block cursor-pointer"
+          to="/category/accessories"
+        >
+          Accessories
+        </Link>
       </button>
-      {/* <Outlet /> */}
+      <Outlet />
     </div>
   );
 }
