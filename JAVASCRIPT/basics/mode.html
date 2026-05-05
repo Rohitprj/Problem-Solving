@@ -15,13 +15,14 @@
       let currentMode = "light";
 
       modeBtn.addEventListener("click", () => {
-        console.log("mode");
         if (currentMode === "light") {
           currentMode = "dark";
+          console.log("mode", currentMode);
           document.body.style.backgroundColor = "black";
           document.body.style.color = "white";
         } else {
           currentMode = "light";
+          console.log("mode", currentMode);
           document.body.style.backgroundColor = "white";
           document.body.style.color = "black";
         }

@@ -26,10 +26,18 @@
   </head>
   <body>
     <div>
-      <button onclick="console.log('clicked')">Click me</button>
-      <button ondblclick="console.log('DBL clicked')">Click me</button>
-      <button onmouseover="console.log('Mouse over')">Click me</button>
+      <button
+        onclick="
+          console.log('Hello i am a button');
+          alert('Hello i am a button');
+        "
+      >
+        Click me
+      </button>
+      <button ondblclick="console.log('Hello i am a DBL click')">
+        Click me1
+      </button>
+      <button onmouseover="alert('404 error')">Click me2</button>
     </div>
-    <script src="08_Events.js"></script>
   </body>
 </html> -->
