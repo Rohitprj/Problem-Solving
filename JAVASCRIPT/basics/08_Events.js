@@ -18,7 +18,32 @@ node.removeEventListener( event, callback )
 */
 
 let btn = document.querySelector("#btn");
-// console.log(btn);
+console.log(btn);
+
+// let a = 10;
+// btn.onclick = () => {
+//   console.log("helloooo");
+//   a++;
+//   console.log(a);
+// };
+
+let box = document.querySelector("#box");
+
+box.onmouseover = (event) => {
+  console.log(event);
+  console.log(event.type);
+  console.log("inside box in js file");
+};
+
+// let btn2 = document.querySelector("#btn2");
+// console.log(btn2);
+
+let a = btn2.addEventListener("click", () => {
+  console.log("I am an event listener");
+});
+let b = btn2.addEventListener("click", () => {
+  console.log("I am an event listener 2");
+});
 
 // let arrow = () => {
 //   console.log("We are in js file----");
@@ -29,8 +54,8 @@ let btn = document.querySelector("#btn");
 // let a = 10;
 // btn.onclick = () => {
 //   console.log("We are in js file");
-//   a++;
-//   console.log(a);
+//   // a++;
+//   // console.log(a);
 // };
 
 // let box = document.querySelector("#box");
@@ -41,16 +66,17 @@ let btn = document.querySelector("#btn");
 //   console.log("inside box in js file");
 // };
 
-let a = btn.addEventListener("click", () => {
-  console.log("I am an event listener-a");
-});
-let b = () => {
-  console.log("I am an event listener-b");
-};
+// let a = btn.addEventListener("click", () => {
+//   console.log("I am an event listener-a");
+// });
+// let b = () => {
+//   console.log("I am an event listener-b");
+// };
 
-btn.addEventListener("click", b);
-let c = btn.addEventListener("click", () => {
-  console.log("I am an event listener-c");
-});
+// btn.addEventListener("click", b);
 
-btn.removeEventListener("click", b);
+// let c = btn.addEventListener("click", () => {
+//   console.log("I am an event listener-c");
+// });
+
+// btn.removeEventListener("click", b);
