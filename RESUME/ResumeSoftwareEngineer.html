@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rohit Kumar - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+        color: #1f2937;
+        line-height: 1.5;
+      }
+
+      /* Print styles to ensure it looks good when saved to PDF */
+      @media print {
+        @page {
+          size: A4;
+          margin: 10mm;
+        }
+        body {
+          background-color: white;
+          padding: 0;
+        }
+        .page-container {
+          box-shadow: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          max-width: 100% !important;
+          border: none !important;
+        }
+        .download-btn {
+          display: none !important;
+        }
+        a[href]:after {
+          content: none !important;
+        }
+      }
+
+      .download-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #1f2937;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        cursor: pointer;
+        transition: all 0.2s;
+        z-index: 100;
+        text-decoration: none;
+        border: none;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      .download-btn:hover {
+        background-color: #374151;
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body class="py-8 print:py-0">
+    <!-- Download Button -->
+    <button onclick="window.print()" class="download-btn">
+      <i class="fa-solid fa-download"></i>
+      Download PDF
+    </button>
+
+    <!-- Main Resume Container -->
+    <div
+      class="page-container max-w-[850px] mx-auto bg-white shadow-xl p-10 sm:p-12 border-gray-800 text-justify"
+    >
+      <!-- Header Section -->
+      <header class="text-center mb-8">
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-1 tracking-tight">
+          Rohit Kumar
+        </h1>
+        <h2
+          class="text-xl font-medium text-gray-600 mb-4 tracking-wide uppercase"
+        >
+          Software Engineer
+        </h2>
+
+        <!-- Contact Info -->
+        <div
+          class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-gray-700 mb-3"
+        >
+          <span class="flex items-center gap-1.5">
+            <i class="fa-solid fa-phone text-gray-400"></i> +91-9205173426
+          </span>
+          <span class="flex items-center gap-1.5">
+            <i class="fa-solid fa-envelope text-gray-400"></i>
+            rohitprj.1282@gmail.com
+          </span>
+          <span class="flex items-center gap-1.5">
+            <i class="fa-solid fa-location-dot text-gray-400"></i> New Delhi,
+            India
+          </span>
+        </div>
+
+        <!-- Social Links -->
+        <div
+          class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm"
+        >
+          <a
+            href="https://github.com/Rohitprj"
+            target="_blank"
+            class="flex items-center gap-1.5 text-blue-700 hover:text-blue-900 font-medium transition-colors"
+          >
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/rohit-kumar-4b5800218/"
+            target="_blank"
+            class="flex items-center gap-1.5 text-blue-700 hover:text-blue-900 font-medium transition-colors"
+          >
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            class="flex items-center gap-1.5 text-blue-700 hover:text-blue-900 font-medium transition-colors"
+          >
+            <i class="fa-solid fa-link"></i> Portfolio
+          </a>
+        </div>
+      </header>
+
+      <!-- Professional Experience Section -->
+      <section class="mb-8">
+        <h3
+          class="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-1 mb-4 uppercase tracking-wider"
+        >
+          Professional Experience
+        </h3>
+
+        <div class="mb-4">
+          <div class="flex justify-between items-baseline mb-1">
+            <h4 class="font-bold text-gray-900 text-lg">Asha Tech</h4>
+            <span class="text-sm font-medium text-gray-500"
+              >May 2024 — Present</span
+            >
+          </div>
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="font-semibold text-gray-700">Software Developer</span>
+            <span class="text-sm italic text-gray-500">Saket, New Delhi</span>
+          </div>
+          <p class="text-sm text-gray-700 mb-2 leading-relaxed">
+            Developed, tested, and maintained software solutions for flagship
+            products. Collaborated with cross-functional teams to deliver
+            high-quality features and resolve complex technical challenges.
+          </p>
+          <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1.5">
+            <li>
+              Engineered key functional features that significantly boosted user
+              interaction and retention metrics.
+            </li>
+            <li>
+              Partnered with product managers and designers to align technical
+              implementation with business goals and user needs.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="mb-8">
+        <h3
+          class="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-1 mb-4 uppercase tracking-wider"
+        >
+          Projects
+        </h3>
+
+        <!-- Project: Wavevisas -->
+        <div class="mb-5">
+          <div class="flex justify-between items-baseline">
+            <h4 class="font-bold text-gray-900 text-base">Wavevisas</h4>
+            <span class="text-xs font-semibold text-gray-500 uppercase"
+              >Next.js | React</span
+            >
+          </div>
+          <p class="text-sm italic text-gray-600 mb-2">
+            Immigration consultancy platform based in Delhi, India.
+          </p>
+          <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1.5">
+            <li>
+              Engineered a scalable and SEO-optimized immigration platform using
+              Next.js and React, ensuring fast load times and cross-device
+              compatibility.
+            </li>
+            <li>
+              Built modular, dynamic service pages for multiple visa categories,
+              improving maintainability and user experience.
+            </li>
+            <li>
+              Optimized lead capture and consultation workflows, streamlining
+              user onboarding and increasing inquiry efficiency.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Project: Aermes -->
+        <div class="mb-5">
+          <div class="flex justify-between items-baseline">
+            <h4 class="font-bold text-gray-900 text-base">Aermes</h4>
+            <span class="text-xs font-semibold text-gray-500 uppercase"
+              >React Native | AI Integration</span
+            >
+          </div>
+          <p class="text-sm italic text-gray-600 mb-2">
+            Intelligent Travel Planning Application.
+          </p>
+          <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1.5">
+            <li>
+              Integrated an AI-powered chatbot for interactive travel
+              assistance, allowing users to customize itineraries based on
+              preferences.
+            </li>
+            <li>
+              Generated dynamic itineraries with map integration, displaying
+              marked destinations and detailed location insights.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Project: AskVinitasri -->
+        <div class="mb-5">
+          <div class="flex justify-between items-baseline">
+            <h4 class="font-bold text-gray-900 text-base">AskVinitasri</h4>
+            <span class="text-xs font-semibold text-gray-500 uppercase"
+              >Next.js | React | Web</span
+            >
+          </div>
+          <p class="text-sm italic text-gray-600 mb-2">
+            Spiritual guidance platform built for personalized user interaction.
+          </p>
+          <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1.5">
+            <li>
+              Developed a scalable spiritual guidance platform focusing on high
+              performance and seamless user experience.
+            </li>
+            <li>
+              Implemented an interactive chat module enabling users to explore
+              personalized spiritual insights.
+            </li>
+            <li>
+              Architected dynamic content and user interaction modules,
+              enhancing retention and overall platform usability.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Technical Skills Section -->
+      <section class="mb-8">
+        <h3
+          class="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-1 mb-4 uppercase tracking-wider"
+        >
+          Technical Skills
+        </h3>
+
+        <div class="text-sm text-gray-800 space-y-2">
+          <p>
+            <span class="font-bold w-32 inline-block">Languages</span
+            ><span class="mr-2">:</span> JavaScript, TypeScript, Python, Java,
+            HTML, CSS, SQL
+          </p>
+          <p>
+            <span class="font-bold w-32 inline-block">Frameworks</span
+            ><span class="mr-2">:</span> React Native, Expo, React.js, Next.js,
+            Redux Toolkit, Zustand, Node.js, Express.js
+          </p>
+          <p>
+            <span class="font-bold w-32 inline-block">Tools</span
+            ><span class="mr-2">:</span> Git, GitHub, Docker, VS Code, Android
+            Studio
+          </p>
+          <p>
+            <span class="font-bold w-32 inline-block">Cloud/Database</span
+            ><span class="mr-2">:</span> MongoDB, Vercel, REST APIs
+          </p>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section>
+        <h3
+          class="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-1 mb-4 uppercase tracking-wider"
+        >
+          Education
+        </h3>
+
+        <div class="mb-3">
+          <div class="flex justify-between items-baseline">
+            <h4 class="font-bold text-gray-900 text-base">
+              Master of Computer Applications (MCA)
+            </h4>
+            <span class="text-sm font-medium text-gray-600"
+              >Jul 2024 — Jun 2026</span
+            >
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex justify-between items-baseline mb-1">
+            <h4 class="font-bold text-gray-900 text-base">
+              Bachelor of Computer Applications (BCA)
+            </h4>
+            <span class="text-sm font-medium text-gray-600"
+              >Jan 2021 — Dec 2023</span
+            >
+          </div>
+          <div class="text-sm text-gray-700 mt-2">
+            <p class="font-bold text-gray-800 mb-1">Key Coursework:</p>
+            <div class="ml-2 space-y-0.5">
+              <p>
+                1) Cross-Platform Mobile App Development using React Native.
+              </p>
+              <p>2) Full Stack Development using MERN Stack.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
