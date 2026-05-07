@@ -5,9 +5,7 @@ import App from "./App.jsx";
 import ContextApi from "./context/Context.jsx";
 
 createRoot(document.getElementById("root")).render(
-  // <StrictMode>
-  // </StrictMode>,
   <ContextApi>
-    <App />,
+    <App />
   </ContextApi>,
 );

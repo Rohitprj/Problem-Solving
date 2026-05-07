@@ -43,7 +43,7 @@ import React, { useContext } from "react";
 import { Context } from "./context/Context";
 
 export default function App() {
-  const { theme, toggleTheme } = useContext(Context);
+  const { theme, toggleTheme, data } = useContext(Context);
   return (
     <div
       style={{
@@ -53,7 +53,13 @@ export default function App() {
       }}
     >
       <h1>current theme is {theme}</h1>
-      <button onClick={toggleTheme}>Change Theme</button>
+      <button
+        onClick={toggleTheme}
+        className="border-2 rounded-md px-4 hover:bg-gray-200 bg-gray-500"
+      >
+        Change Theme
+      </button>
+      <p>{data && data.title}</p>
     </div>
   );
 }
