@@ -62,18 +62,25 @@ myDisplayer("C");
 //   console.log("Loading products...");
 
 //   try {
-//     let res = await fetch("https://api.example.com/products");
+//     let res = await fetch("https://dummyjson.com/products");
 //     let data = await res.json();
 
 //     console.log("Products:", data);
 //     // yaha UI me products show karte hain
-
 //   } catch (err) {
 //     console.log("Failed to load products", err);
 //   }
 // }
 
 // getProducts();
+
+// const getFunction = () => {
+//   fetch("https://dummyjson.com/products")
+//     .then((res) => res.json())
+//     .then((data) => console.log(data))
+//     .catch((error) => console.log(error));
+// };
+// getFunction();
 
 // let a = 0;
 
@@ -123,40 +130,40 @@ myDisplayer("C");
 
 // getProd();
 
-let name1 = document.querySelector("#name");
-let password = document.querySelector("#btn");
+// let name1 = document.querySelector("#name").innerText;
+// let password = document.querySelector("#btn");
 
-selectedNode.addEventListener("click", async () => {
-  try {
-    let res = await fetch("https://dummyjson.com/posts/add", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title: name1,
-        userId: password,
-      }),
-    });
-    let data = await res.json();
-    console.log(data);
-  } catch (err) {
-    console.log(err);
-  }
-});
+// selectedNode.addEventListener("click", async () => {
+//   try {
+//     let res = await fetch("https://dummyjson.com/posts/add", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({
+//         title: name1,
+//         userId: password,
+//       }),
+//     });
+//     let data = await res.json();
+//     console.log(data);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// });
 
-async function sendSomeData() {
-  try {
-    let res = await fetch("https://dummyjson.com/posts/add", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title: "I am in love with someone.",
-        userId: 5,
-      }),
-    });
-    let data = await res.json();
-    console.log(data);
-  } catch (err) {
-    console.log(err);
-  }
-}
-sendSomeData();
+// async function sendSomeData() {
+//   try {
+//     let res = await fetch("https://dummyjson.com/posts/add", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({
+//         title: "I am in love with someone.",
+//         userId: 5,
+//       }),
+//     });
+//     let data = await res.json();
+//     console.log(data);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+// sendSomeData();
