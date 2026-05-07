@@ -1,12 +1,16 @@
-// import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 
-// export const Context = createContext();
+export const Context = createContext();
 
-// const Context = (props) => {
-//   return
-//     <Context.Provider value={}>
-//         {props.children}
-//     </Context.Provider>
-// };
+const ContextApi = ({ children }) => {
+  const [theme, setTheme] = useState("light");
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+  return;
+  <Context.Provider value={{ theme, toggleTheme }}>
+    {children}
+  </Context.Provider>;
+};
 
-// export default context;
+export default ContextApi;
