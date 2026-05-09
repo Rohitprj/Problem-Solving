@@ -6,7 +6,7 @@ import {
   setError,
   setLoading,
 } from "./authSlice";
-import { getApiErrorMessage } from "./authUtils";
+import { clearAuthState, getApiErrorMessage } from "./authUtils";
 
 export const initializeAuth = () => async (dispatch, getState) => {
   const { accessToken, refreshToken, user } = getState().auth;
@@ -36,9 +36,15 @@ export const logoutUser = () => async (dispatch) => {
   } catch {
     // Ignore network errors on logout and clear local state anyway.
   } finally {
-    mutation.unsubscribe();
+    if (typeof mutation?.unsubscribe === "function") {
+      mutation.unsubscribe();
+    }
+    if (typeof mutation?.reset === "function") {
+      mutation.reset();
+    }
   }
 
   dispatch(logout());
   dispatch(authApi.util.resetApiState());
+  clearAuthState();
 };

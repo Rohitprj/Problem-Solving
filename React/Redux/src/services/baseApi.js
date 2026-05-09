@@ -5,7 +5,6 @@ const BASE_URL = "https://api.freeapi.app/api/v1";
 
 const rawBaseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
-  credentials: "include",
   prepareHeaders: (headers, { getState }) => {
     const token = getState()?.auth?.accessToken;
     if (token) {
