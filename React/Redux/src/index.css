@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+  color: #1f2933;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #ffe9d6 0%, rgba(255, 233, 214, 0) 60%),
+    radial-gradient(900px 500px at 90% 10%, #dff7f2 0%, rgba(223, 247, 242, 0) 55%),
+    #f7f4ef;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Fraunces', serif;
+  }
+
+  .page-shell {
+    @apply mx-auto w-full max-w-5xl px-4 py-10;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-white/70 bg-white/80 shadow-xl backdrop-blur;
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: floatIn 0.6s ease-out both;
+}
