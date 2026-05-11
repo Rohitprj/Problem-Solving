@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import MyAbout from "./components/About";
-import { Adderss, Phone } from "./components/Footer";
+import Footer, { Adderss, Phone } from "./components/Footer";
 
 export default function App() {
   return (
@@ -10,6 +10,7 @@ export default function App() {
       <Header />
       <HeroSection />
       <MyAbout />
+      <Footer />
       <Phone />
       <Adderss />
     </div>

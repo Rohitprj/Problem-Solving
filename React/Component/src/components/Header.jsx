@@ -10,7 +10,7 @@ export default function Header() {
           padding: "20px",
         }}
       >
-        hi
+        Header
       </p>
     </div>
   );
