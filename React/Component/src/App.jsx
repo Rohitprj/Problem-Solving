@@ -3,12 +3,18 @@ import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import MyAbout from "./components/About";
 import Footer, { Adderss, Phone } from "./components/Footer";
+import Slider from "./components/Slider";
+import Slider2 from "./components/Slider2";
+import Slider3 from "./components/Slider3";
 
 export default function App() {
   return (
     <div>
       <Header />
       <HeroSection />
+      <Slider />
+      <Slider2 />
+      <Slider3 />
       <MyAbout />
       <Footer />
       <Phone />
