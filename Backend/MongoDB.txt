@@ -1,0 +1,6 @@
+Step 1: Install MongoDB - MongoDB community server
+        Install MongoDB Compass GUI
+        Install MongoSh CLI
+Step 2: Create a database
+        Create a collection
+        Create a document

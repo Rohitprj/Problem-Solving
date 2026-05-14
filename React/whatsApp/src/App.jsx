@@ -22,7 +22,6 @@ export default function App() {
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100 relative">
-      {/* FAB Button */}
       <button
         onClick={() => setShow(!show)}
         className="fixed bottom-6 right-6 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110 z-50"
