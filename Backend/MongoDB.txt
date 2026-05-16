@@ -4,3 +4,82 @@ Step 1: Install MongoDB - MongoDB community server
 Step 2: Create a database
         Create a collection
         Create a document
+
+
+---------------------------------------------------------------------------------------------------------------
+
+1. Show All Databases
+   show dbs
+
+   Example Output:-
+     admin
+     config
+     studentDB
+     local
+
+   Explain
+   This :- command shows all databases available in MongoDB.
+
+2. Create / Switch Database
+   use studentDB
+
+   Explain
+   If database exists → switches to it
+   If not exists → creates it when data is inserted
+
+3. Check Current Database
+   db
+
+   Explain
+   This :- command shows current database. 
+
+4. Create Collection
+   db.createCollection("collectionName")
+
+   Explain
+   This :- command creates a collection in current database.
+
+5. Insert One Document
+   db.collectionName.insertOne({})
+
+   Example Output:-
+     db.students.insertOne({
+     name: "Rohit",
+     age: 22,
+     course: "MERN"
+     })
+
+   Explain
+   This :- command inserts one document in current collection.
+
+6. Insert Multiple Documents
+   db.students.insertMany([
+    {
+     name: "Amit",
+     age: 21,
+     course: "React"
+    },
+    {
+    name: "Priya",
+    age: 23,
+    course: "Node"
+    }
+ ])
+
+   Explain
+   This :- command inserts multiple documents in current collection.
+
+ 7. Find All Documents
+    db.students.find()
+
+    Explain
+    This :- command finds all documents in current collection.
+
+ 8. Pretty Output
+    db.students.find().pretty()
+
+    Explain   
+    This :- command Formats data in readable style.
+
+
+
