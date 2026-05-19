@@ -84,3 +84,26 @@ Step 2: Create a database
 
 
 
+Task 1
+Create database schoolDB
+Create collection students
+Insert one student
+Display all students
+
+Task 2
+Create collection employees
+Insert 3 employee documents
+Show all employee records
+
+Task 3
+Create database libraryDB
+Create collection books
+Insert multiple books
+Display books using .pretty()
+
+Task 4
+Create your own database.
+Create 2 collections inside it.
+Insert at least 5 documents.
+Display all records.
+Use .pretty() for formatted output.
