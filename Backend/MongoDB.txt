@@ -82,8 +82,6 @@ Step 2: Create a database
     This :- command Formats data in readable style.
 
 
-
-
 Task 1
 Create database schoolDB
 Create collection students
@@ -107,3 +105,22 @@ Create 2 collections inside it.
 Insert at least 5 documents.
 Display all records.
 Use .pretty() for formatted output.
+
+--------------------------------------------------------------------------------------------------------
+
+9. Find One Document
+db.students.findOne({ name: "Rohit" })
+
+Explain
+Returns first matching document.
+
+10. Filter Documents
+Find by age
+db.students.find({ age: 22 })
+
+11. Comparison Operators
+Greater than
+db.students.find({ age: { $gt: 21 } })
+Meaning
+
+Find students whose age is greater than 21.
