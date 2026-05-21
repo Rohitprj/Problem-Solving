@@ -118,9 +118,84 @@ Returns first matching document.
 Find by age
 db.students.find({ age: 22 })
 
-11. Comparison Operators
+11. Comparison Operators--------------------------------------
 Greater than
 db.students.find({ age: { $gt: 21 } })
 Meaning
 
 Find students whose age is greater than 21.
+
+Less than
+db.students.find({ age: { $lt: 23 } })
+
+Meaning
+Find students whose age is less than 23.
+
+Greater than equal
+db.students.find({ age: { $gte: 22 } })
+
+Meaning
+Find students whose age is greater than or equal to 22.
+
+Less than equal
+db.students.find({ age: { $lte: 22 } })
+
+Meaning
+Find students whose age is less than or equal to 22.
+
+12. AND Condition
+db.students.find({
+  age: 22,
+  course: "MERN"
+})
+
+Explain
+Both conditions must match.
+
+13. OR Condition
+db.students.find({
+  $or: [
+    { course: "React" },
+    { age: 23 }
+  ]
+})
+
+Explain
+Either condition must match.
+
+14. Update One Document
+db.students.updateOne(
+  { name: "Rohit" },
+  {
+    $set: {
+      age: 25
+    }
+  }
+)
+Explain
+Updates only one matching document.
+
+15. Update Multiple Documents
+db.students.updateMany(
+  { course: "MERN" },
+  {
+    $set: {
+      status: "Active"
+    }
+  }
+)
+Explain
+Updates multiple matching documents.
+
+16. Increment Value
+db.students.updateOne(
+  { name: "Rohit" },
+  {
+    $inc: {
+      age: 1
+    }
+  }
+)
+Explain
+
+Increases age by 1.
