@@ -260,3 +260,32 @@ db.students.find().skip(0).limit(5)
 
 Page 2
 db.students.find().skip(5).limit(5)
+
+24. Select Specific Fields
+db.students.find(
+  {},
+  {
+    name: 1,
+    course: 1
+  }
+)
+
+Shows only:
+     name
+     course
+
+Explain
+db.collection.find(filter, projection)
+
+First Argument: {} → Filter - “Match all documents”
+
+Second Argument: Projection
+{
+  name: 1,
+  course: 1
+}
+
+This controls which fields are returned.
+
+1 means include
+0 means exclude
