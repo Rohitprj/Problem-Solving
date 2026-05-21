@@ -118,7 +118,7 @@ Returns first matching document.
 Find by age
 db.students.find({ age: 22 })
 
-11. Comparison Operators--------------------------------------
+11. Comparison Operators-------------------------------------- 
 Greater than
 db.students.find({ age: { $gt: 21 } })
 Meaning
@@ -150,7 +150,7 @@ db.students.find({
 })
 
 Explain
-Both conditions must match.
+Both conditions must match.   
 
 13. OR Condition
 db.students.find({
