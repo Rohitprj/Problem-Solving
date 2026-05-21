@@ -199,3 +199,64 @@ db.students.updateOne(
 Explain
 
 Increases age by 1.
+
+17. Delete One Document
+db.students.deleteOne({
+  name: "Amit"
+})
+
+Explain
+Deletes only one matching document.
+
+18. Delete Multiple Documents
+db.students.deleteMany({
+  course: "React"
+})
+
+Explain
+Deletes multiple matching documents.
+
+19. Count Documents
+db.students.countDocuments()
+
+Explain
+Returns total number of documents.
+
+Count with condition
+db.students.countDocuments({
+  course: "MERN"
+})
+
+Explain
+Returns total number of documents that match the condition.
+
+20. Sort Documents
+Ascending
+db.students.find().sort({ age: 1 })
+Explain
+
+1 = ascending
+
+Descending
+db.students.find().sort({ age: -1 })
+Explain
+
+-1 = descending
+
+21. Limit Results
+db.students.find().limit(2)
+
+Explain
+Returns only 2 documents.
+
+22. Skip Documents
+db.students.find().skip(2)
+Explain
+
+Skips first 2 documents.
+
+23. Pagination Example
+db.students.find().skip(0).limit(5)
+
+Page 2
+db.students.find().skip(5).limit(5)
