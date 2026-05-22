@@ -289,3 +289,26 @@ This controls which fields are returned.
 
 1 means include
 0 means exclude
+
+25. Remove Field
+db.students.updateOne(
+  { name: "Rohit" },
+  {
+    $unset: {
+      status: ""
+    }
+  }
+)
+
+Explain
+Removes status field.
+
+26. Create Nested Object
+db.students.insertOne({
+  name: "Rohit",
+  address: {
+    city: "Delhi",
+    pincode: 110001
+  }
+})
+
