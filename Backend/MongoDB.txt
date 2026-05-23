@@ -374,5 +374,28 @@ db.students.drop()
 Explain
 Deletes entire collection.
 
+33. Drop Database
+db.dropDatabase()
+
+Explain
+Deletes current database.
+
+
+Important Operators To Teach
+
+| Operator | Meaning            |
+| -------- | ------------------ |
+| `$gt`    | greater than       |
+| `$lt`    | less than          |
+| `$gte`   | greater than equal |
+| `$lte`   | less than equal    |
+| `$set`   | update field       |
+| `$inc`   | increment          |
+| `$unset` | remove field       |
+| `$push`  | add to array       |
+| `$pull`  | remove from array  |
+| `$or`    | OR condition       |
+
+
 
 
