@@ -175,7 +175,6 @@ db.students.updateOne(
 Explain
 Updates only one matching document.
 
-------------------------------------------------------------------------------------------------
 
 15. Update Multiple Documents
 db.students.updateMany(
@@ -188,6 +187,8 @@ db.students.updateMany(
 )
 Explain
 Updates multiple matching documents.
+
+------------------------------------------------------------------------------------------------
 
 16. Increment Value
 db.students.updateOne(
