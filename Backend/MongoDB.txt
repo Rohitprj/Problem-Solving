@@ -175,6 +175,8 @@ db.students.updateOne(
 Explain
 Updates only one matching document.
 
+------------------------------------------------------------------------------------------------
+
 15. Update Multiple Documents
 db.students.updateMany(
   { course: "MERN" },
@@ -311,4 +313,66 @@ db.students.insertOne({
     pincode: 110001
   }
 })
+
+Explain
+Creates a nested object.
+
+27. Query Nested Object
+db.students.find({
+  "address.city": "Delhi"
+})
+
+Explain
+Queries a nested object.
+
+28. Array Example
+db.students.insertOne({
+  name: "Rohit",
+  skills: ["React", "Node", "MongoDB"]
+})
+
+Explain
+Creates an array.
+
+29. Search in Array
+db.students.find({
+  skills: "React"
+})
+
+Explain
+Queries an array.
+
+30. Push Into Array
+db.students.updateOne(
+  { name: "Rohit" },
+  {
+    $push: {
+      skills: "Express"
+    }
+  }
+)
+
+Explain
+Pushes a value into an array.
+
+31. Pull From Array
+db.students.updateOne(
+  { name: "Rohit" },
+  {
+    $pull: {
+      skills: "Node"
+    }
+  }
+)
+
+Explain
+Pulls a value from an array.
+
+32. Drop Collection
+db.students.drop()
+
+Explain
+Deletes entire collection.
+
+
 
