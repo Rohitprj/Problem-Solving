@@ -293,14 +293,14 @@ This controls which fields are returned.
 1 means include
 0 means exclude
 
-25. Remove Field
-db.students.updateOne(
-  { name: "Rohit" },
-  {
-    $unset: {
-      status: ""
+  25. Remove Field
+  db.students.updateOne(
+    { name: "Rohit" },
+    {
+      $unset: {
+        status: ""
+      }
     }
-  }
 )
 
 Explain
@@ -397,6 +397,378 @@ Important Operators To Teach
 | `$pull`  | remove from array  |
 | `$or`    | OR condition       |
 
+
+db.students.insertMany([
+  {
+    name: "Rohit",
+    age: 22,
+    course: "MERN",
+    status: "Active",
+    address: {
+      city: "Delhi",
+      pincode: 110001
+    },
+    skills: ["React", "Node", "MongoDB"]
+  },
+  {
+    name: "Amit",
+    age: 21,
+    course: "Java",
+    status: "Inactive",
+    address: {
+      city: "Mumbai",
+      pincode: 400001
+    },
+    skills: ["Java", "Spring"]
+  },
+  {
+    name: "Priya",
+    age: 23,
+    course: "Python",
+    status: "Active",
+    address: {
+      city: "Delhi",
+      pincode: 110045
+    },
+    skills: ["Python", "Django"]
+  },
+  {
+    name: "Neha",
+    age: 24,
+    course: "Frontend",
+    status: "Active",
+    address: {
+      city: "Pune",
+      pincode: 411001
+    },
+    skills: ["HTML", "CSS", "React"]
+  }
+])
+
+
+PRACTICE QUESTIONS
+
+Topic 1 — Remove Field ($unset)
+Question 1
+
+Remove the status field from Rohit's document.
+
+Answer
+db.students.updateOne(
+  { name: "Rohit" },
+  {
+    $unset: {
+      status: ""
+    }
+  }
+)
+Question 2
+
+Remove the course field from Amit's document.
+
+Answer
+db.students.updateOne(
+  { name: "Amit" },
+  {
+    $unset: {
+      course: ""
+    }
+  }
+)
+Topic 2 — Nested Objects
+Question 3
+
+Insert a new student named Rahul who lives in Jaipur.
+
+Answer
+db.students.insertOne({
+  name: "Rahul",
+  age: 20,
+  address: {
+    city: "Jaipur",
+    pincode: 302001
+  }
+})
+Question 4
+
+Find all students who live in Delhi.
+
+Answer
+db.students.find({
+  "address.city": "Delhi"
+})
+Question 5
+
+Find students whose pincode is 400001.
+
+Answer
+db.students.find({
+  "address.pincode": 400001
+})
+  Question 6
+
+  Update Priya's city from Delhi to Noida.
+
+Answer
+db.students.updateOne(
+  { name: "Priya" },
+  {
+    $set: {
+      "address.city": "Noida"
+    }
+  }
+)
+Topic 3 — Arrays
+Question 7
+
+Insert a new student with skills array.
+
+Answer
+db.students.insertOne({
+  name: "Karan",
+  skills: ["React", "Express", "MongoDB"]
+})
+Question 8
+
+Find students who know React.
+
+Answer
+db.students.find({
+  skills: "React"
+})
+Question 9
+
+Find students who know MongoDB.
+
+Answer
+db.students.find({
+  skills: "MongoDB"
+})
+Topic 4 — Push Into Array ($push)
+Question 10
+
+Add "Express" skill to Rohit's skills array.
+
+Answer
+db.students.updateOne(
+  { name: "Rohit" },
+  {
+    $push: {
+      skills: "Express"
+    }
+  }
+)
+Question 11
+
+Add "JavaScript" skill to Neha's skills array.
+
+Answer
+db.students.updateOne(
+  { name: "Neha" },
+  {
+    $push: {
+      skills: "JavaScript"
+    }
+  }
+)
+Question 12
+
+Add "Node" skill to Priya's skills array.
+
+Answer
+db.students.updateOne(
+  { name: "Priya" },
+  {
+    $push: {
+      skills: "Node"
+    }
+  }
+)
+Topic 5 — Pull From Array ($pull)
+Question 13
+
+Remove "Node" skill from Rohit's skills array.
+
+Answer
+db.students.updateOne(
+  { name: "Rohit" },
+  {
+    $pull: {
+      skills: "Node"
+    }
+  }
+)
+Question 14
+
+Remove "CSS" from Neha's skills array.
+
+Answer
+db.students.updateOne(
+  { name: "Neha" },
+  {
+    $pull: {
+      skills: "CSS"
+    }
+  }
+)
+Question 15
+
+Remove "Spring" from Amit's skills array.
+
+Answer
+db.students.updateOne(
+  { name: "Amit" },
+  {
+    $pull: {
+      skills: "Spring"
+    }
+  }
+)
+Topic 6 — Mixed Practice
+Question 16
+
+Find students who live in Delhi and know React.
+
+Answer
+db.students.find({
+  "address.city": "Delhi",
+  skills: "React"
+})
+Question 17
+
+Add "Docker" skill to all students.
+
+Answer
+db.students.updateMany(
+  {},
+  {
+    $push: {
+      skills: "Docker"
+    }
+  }
+)
+Question 18
+
+Remove status field from all students.
+
+Answer
+db.students.updateMany(
+  {},
+  {
+    $unset: {
+      status: ""
+    }
+  }
+)
+Question 19
+
+Find students whose city is Pune.
+
+Answer
+db.students.find({
+  "address.city": "Pune"
+})
+Question 20
+
+Add "TypeScript" skill to students who know React.
+
+Answer
+db.students.updateMany(
+  { skills: "React" },
+  {
+    $push: {
+      skills: "TypeScript"
+    }
+  }
+)
+Topic 7 — Drop Collection & Database
+Question 21
+
+Delete the entire students collection.
+
+Answer
+db.students.drop()
+Question 22
+
+Delete the current database.
+
+Answer
+db.dropDatabase()
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Topic 1 — Remove Field ($unset)
+Question 1
+Remove the status field from Rohit's document.
+
+Question 2
+Remove the course field from Amit's document.
+
+Topic 2 — Nested Objects
+Question 3
+Insert a new student named Rahul who lives in Jaipur.
+
+Question 4
+Find all students who live in Delhi.
+
+Question 5
+Find students whose pincode is 400001.
+
+Question 6
+Update Priya's city from Delhi to Noida.
+
+Topic 3 — Arrays
+Question 7
+Insert a new student with skills array.
+
+Question 8
+Find students who know React.
+
+Question 9
+Find students who know MongoDB.
+
+Topic 4 — Push Into Array ($push)
+Question 10
+Add "Express" skill to Rohit's skills array.
+
+Question 11
+Add "JavaScript" skill to Neha's skills array.
+
+Question 12
+Add "Node" skill to Priya's skills array.
+
+Topic 5 — Pull From Array ($pull)
+Question 13
+Remove "Node" skill from Rohit's skills array.
+
+Question 14
+Remove "CSS" from Neha's skills array.
+
+Question 15
+Remove "Spring" from Amit's skills array.
+
+Topic 6 — Mixed Practice
+Question 16
+Find students who live in Delhi and know React.
+
+Question 17
+Add "Docker" skill to all students.
+
+Question 18
+Remove status field from all students.
+
+Question 19
+Find students whose city is Pune.
+
+Question 20
+Add "TypeScript" skill to students who know React.
+
+Topic 7 — Drop Collection & Database
+Question 21
+Delete the entire students collection.
+
+Question 22
+Delete the current database.
 
 
 
