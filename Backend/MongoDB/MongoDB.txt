@@ -816,5 +816,226 @@ db.students.insertMany([
   }
 ])
 
-Aggregation in MongoDB
+Aggregation in MongoDB -----------------------------------------------------------------------------------------------
 
+What is Aggregation?
+
+Aggregation is used to:
+
+process data
+filter data
+group data
+calculate values
+transform data
+
+--------
+
+Aggregation Syntax
+
+db.collection.aggregate([
+   { stage1 },
+   { stage2 },
+   { stage3 }
+])
+
+--------
+
+IMPORTANT CONCEPT — Pipeline
+
+db.students.aggregate([
+  { $match: { course: "MERN" } },
+  { $project: { name: 1, age: 1 } }
+])
+
+Pipeline Flow
+
+STEP 1:
+Filter MERN students
+
+STEP 2:
+Show only name and age
+
+---------
+
+Aggregation Stages
+
+1. $match
+
+Purpose
+Filters documents.
+
+Same as find().
+
+Example
+db.students.aggregate([
+  {
+    $match: {
+      course: "MERN"
+    }
+  }
+])
+Output
+
+Returns only MERN students.
+
+---------
+
+2. $project
+
+Purpose
+Show selected fields.
+
+Example
+db.students.aggregate([
+  {
+    $project: {
+      name: 1,
+      marks: 1
+    }
+  }
+])
+
+Output
+
+{
+  "name": "Rohit",
+  "marks": 85
+}
+
+---------
+
+3. $sort
+
+Purpose
+Sort data.
+
+Ascending
+db.students.aggregate([
+  {
+    $sort: {
+      marks: 1
+    }
+  }
+])
+Descending
+db.students.aggregate([
+  {
+    $sort: {
+      marks: -1
+    }
+  }
+])
+
+Explanation
+
+ 1 = ascending
+-1 = descending
+
+---------
+
+4. $limit
+
+Purpose
+Limit records.
+
+Example
+db.students.aggregate([
+  {
+    $limit: 2
+  }
+])
+Output
+
+Returns only 2 documents.
+
+--------- 
+
+5. $skip
+
+Purpose
+Skip documents.
+
+Example
+db.students.aggregate([
+  {
+    $skip: 2
+  }
+])
+Output
+
+Returns only 2 documents.
+
+---------
+
+6. $group (VERY IMPORTANT)
+   This is the HEART of aggregation.
+
+Purpose
+Group documents together.
+
+Example 1 — Group by Course
+db.students.aggregate([
+  {
+    $group: {
+      _id: "$course"
+    }
+  }
+])
+Output
+{ "_id": "MERN" }
+{ "_id": "Java" }
+{ "_id": "Python" }
+
+db.students.aggregate([
+  {
+    $group: {
+      _id: "$course",
+      totalStudents : { $sum : 1 }
+    }
+  }
+]);
+Output
+{ "_id": "MERN", "totalStudents": 2 }
+{ "_id": "Java", "totalStudents": 2 }
+{ "_id": "Python", "totalStudents": 1 }
+
+Aggregation Operators with $group
+
+---------
+
+7. $sum
+Purpose
+
+Total calculation.
+
+Example — Total Fees
+db.students.aggregate([
+  {
+    $group: {
+      _id: null,
+      totalFees: {
+        $sum: "$fees"
+      }
+    }
+  }
+])
+output
+
+{ "_id": null, "totalFees": 232000 }
+
+Group-wise Total
+db.students.aggregate([
+  {
+    $group: {
+      _id: "$course",
+      totalFees: {
+        $sum: "$fees"
+      }
+    }
+  }
+])
+output
+
+{ "_id": "Java", "totalFees": 82000 }
+{ "_id": "MERN", "totalFees": 105000 }
+{ "_id": "Python", "totalFees": 45000 }
