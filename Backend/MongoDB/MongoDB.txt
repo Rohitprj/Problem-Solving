@@ -771,4 +771,50 @@ Question 22
 Delete the current database.
 
 
+------------------------------------------------------------------------------------------------------------------------------
+
+db.students.insertMany([
+  {
+    name: "Rohit",
+    age: 22,
+    course: "MERN",
+    city: "Delhi",
+    fees: 50000,
+    marks: 85
+  },
+  {
+    name: "Amit",
+    age: 21,
+    course: "Java",
+    city: "Mumbai",
+    fees: 40000,
+    marks: 78
+  },
+  {
+    name: "Priya",
+    age: 23,
+    course: "MERN",
+    city: "Delhi",
+    fees: 55000,
+    marks: 92
+  },
+  {
+    name: "Neha",
+    age: 24,
+    course: "Python",
+    city: "Pune",
+    fees: 45000,
+    marks: 88
+  },
+  {
+    name: "Rahul",
+    age: 22,
+    course: "Java",
+    city: "Mumbai",
+    fees: 42000,
+    marks: 81
+  }
+])
+
+Aggregation in MongoDB
 
