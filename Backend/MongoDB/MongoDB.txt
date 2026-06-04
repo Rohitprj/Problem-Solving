@@ -1101,6 +1101,8 @@ db.orders.insertMany([
   }
 ])
 
+---------
+
 1. Multi-Stage Pipeline Thinking
 
 Example
@@ -1121,6 +1123,116 @@ db.orders.aggregate([
   {
     $sort: {
       totalSales: -1
+    }
+  }
+])
+
+VERY IMPORTANT CONCEPT
+
+Aggregation ALWAYS works step by step.
+
+Each stage takes previous stage output.
+ 
+output :-
+{
+  _id: 'Electronics',
+  totalSales: 12000
+}
+{
+  _id: 'Fashion',
+  totalSales: 4500
+}
+
+---------
+
+2. $cond (Condition / IF ELSE)
+Purpose
+
+Conditional logic inside aggregation.
+
+Example
+db.orders.aggregate([
+  {
+    $project: {
+      customer: 1,
+      amount: 1,
+      orderType: {
+        $cond: {
+          if: { $gte: ["$amount", 5000] },
+          then: "Premium",
+          else: "Normal"
+        }
+      }
+    }
+  }
+])
+
+Output
+{
+  "customer": "Rohit",
+  "orderType": "Premium"
+}
+
+---------
+
+3. $sum with Condition
+Example
+
+Count completed orders only.
+
+db.orders.aggregate([
+  {
+    $group: {
+      _id: null,
+      completedOrders: {
+        $sum: {
+          $cond: [
+            { $eq: ["$status", "completed"] },
+            1,
+            0
+          ]
+        }
+      }
+    }
+  }
+])
+
+output
+{
+  "_id": null,
+  "completedOrders": 3
+}
+
+---------
+
+4. $multiply
+Purpose
+
+Multiply values.
+
+Example
+db.orders.aggregate([
+  {
+    $project: {
+      customer: 1,
+      totalPrice: {
+        $multiply: ["$amount", "$quantity"]
+      }
+    }
+  }
+])
+
+---------
+
+5. $add
+Example
+db.orders.aggregate([
+  {
+    $project: {
+      customer: 1,
+      finalAmount: {
+        $add: ["$amount", 500]
+      }
     }
   }
 ])
