@@ -1039,3 +1039,88 @@ output
 { "_id": "Java", "totalFees": 82000 }
 { "_id": "MERN", "totalFees": 105000 }
 { "_id": "Python", "totalFees": 45000 }
+
+---------
+
+ADVANCED AGGREGATION CONCEPTS
+
+| App Type        | Example              |
+| --------------- | -------------------- |
+| E-commerce      | total sales          |
+| Finance         | monthly expenses     |
+| Admin Dashboard | active users         |
+| Social Media    | likes/comments stats |
+| Education       | average marks        |
+| Food Delivery   | top restaurants      |
+
+db.orders.insertMany([
+  {
+    customer: "Rohit",
+    city: "Delhi",
+    amount: 5000,
+    status: "completed",
+    category: "Electronics",
+    quantity: 2,
+    orderDate: new Date("2025-01-10")
+  },
+  {
+    customer: "Amit",
+    city: "Mumbai",
+    amount: 3000,
+    status: "pending",
+    category: "Fashion",
+    quantity: 1,
+    orderDate: new Date("2025-02-15")
+  },
+  {
+    customer: "Priya",
+    city: "Delhi",
+    amount: 7000,
+    status: "completed",
+    category: "Electronics",
+    quantity: 3,
+    orderDate: new Date("2025-03-12")
+  },
+  {
+    customer: "Neha",
+    city: "Pune",
+    amount: 2000,
+    status: "cancelled",
+    category: "Books",
+    quantity: 1,
+    orderDate: new Date("2025-04-05")
+  },
+  {
+    customer: "Rahul",
+    city: "Mumbai",
+    amount: 4500,
+    status: "completed",
+    category: "Fashion",
+    quantity: 2,
+    orderDate: new Date("2025-05-20")
+  }
+])
+
+1. Multi-Stage Pipeline Thinking
+
+Example
+db.orders.aggregate([
+  {
+    $match: {
+      status: "completed"
+    }
+  },
+  {
+    $group: {
+      _id: "$category",
+      totalSales: {
+        $sum: "$amount"
+      }
+    }
+  },
+  {
+    $sort: {
+      totalSales: -1
+    }
+  }
+])
