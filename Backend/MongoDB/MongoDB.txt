@@ -1222,6 +1222,8 @@ db.orders.aggregate([
   }
 ])
 
+you can do $divide, $subtract too
+
 ---------
 
 5. $add
@@ -1232,6 +1234,52 @@ db.orders.aggregate([
       customer: 1,
       finalAmount: {
         $add: ["$amount", 500]
+      }
+    }
+  }
+])
+
+
+---------
+
+6. $facet (VERY IMPORTANT ADVANCED)
+
+Purpose
+Run multiple pipelines together.
+
+Example
+
+db.orders.aggregate([
+  {
+    $facet: {
+      completedOrders: [
+        { $match: { status: "completed" } }
+      ],
+      pendingOrders: [
+        { $match: { status: "pending" } }
+      ]
+    }
+  }
+])
+
+7. $size
+Purpose
+
+Count array items.
+
+Dataset
+db.users.insertOne({
+  name: "Rohit",
+  skills: ["React", "Node", "MongoDB"]
+})
+
+Example
+db.users.aggregate([
+  {
+    $project: {
+      name: 1,
+      totalSkills: {
+        $size: "$skills"
       }
     }
   }
