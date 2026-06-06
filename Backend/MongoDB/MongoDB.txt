@@ -1294,8 +1294,6 @@ Purpose
 
 Join collections.
 
-MongoDB ka JOIN.
-
 Dataset
 Students
 {
@@ -1307,6 +1305,7 @@ Courses
   "studentId": 1,
   "course": "MERN"
 }
+
 Example
 db.students.aggregate([
   {
@@ -1316,5 +1315,26 @@ db.students.aggregate([
       foreignField: "studentId",
       as: "courseDetails"
     }
+  }
+])
+
+---------
+
+9. $lookup + $unwind
+
+VERY IMPORTANT combination.
+
+Example
+db.students.aggregate([
+  {
+    $lookup: {
+      from: "courses",
+      localField: "_id",
+      foreignField: "studentId",
+      as: "courseDetails"
+    }
+  },
+  {
+    $unwind: "$courseDetails"
   }
 ])
