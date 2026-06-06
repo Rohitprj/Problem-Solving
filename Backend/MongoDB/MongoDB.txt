@@ -1262,6 +1262,8 @@ db.orders.aggregate([
   }
 ])
 
+---------
+
 7. $size
 Purpose
 
@@ -1281,6 +1283,38 @@ db.users.aggregate([
       totalSkills: {
         $size: "$skills"
       }
+    }
+  }
+])
+
+---------
+
+8. $lookup (Intermediate Level)
+Purpose
+
+Join collections.
+
+MongoDB ka JOIN.
+
+Dataset
+Students
+{
+  "_id": 1,
+  "name": "Rohit"
+}
+Courses
+{
+  "studentId": 1,
+  "course": "MERN"
+}
+Example
+db.students.aggregate([
+  {
+    $lookup: {
+      from: "courses",
+      localField: "_id",
+      foreignField: "studentId",
+      as: "courseDetails"
     }
   }
 ])
