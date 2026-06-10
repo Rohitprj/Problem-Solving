@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_THREEJS_START:ANIMATION_13 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_13" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_13');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  (function() {
+  const container = document.getElementById('threejs-container-ANIMATION_4');
+  if (!container) return;
+  
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+  
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(window.devicePixelRatio || 1);
+  container.appendChild(renderer.domElement);
+
+  // Lighting - Soft luxury studio lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+  scene.add(ambientLight);
+  
+  const keyLight = new THREE.DirectionalLight(0xffffff, 0.8);
+  keyLight.position.set(5, 5, 5);
+  scene.add(keyLight);
+  
+  const fillLight = new THREE.DirectionalLight(0xffffff, 0.3);
+  fillLight.position.set(-5, 2, -5);
+  scene.add(fillLight);
+
+  // Aurelius Lounge Chair Model
+  const chairGroup = new THREE.Group();
+
+  // Materials
+  const charcoalVelvet = new THREE.MeshPhongMaterial({ 
+    color: 0x1a1a1a, 
+    shininess: 10,
+    specular: 0x222222
+  });
+  const brushedBrass = new THREE.MeshPhongMaterial({ 
+    color: 0xc5a059, 
+    shininess: 80,
+    specular: 0xffffff
+  });
+
+  // Main Seat Body (Sculptural monolithic form)
+  const seatGeom = new THREE.BoxGeometry(2.2, 0.8, 2.0);
+  // Soften the edges (pseudo-sculptural)
+  const seat = new THREE.Mesh(seatGeom, charcoalVelvet);
+  seat.position.y = 0.4;
+  chairGroup.add(seat);
+
+  // Backrest/Wrap
+  const backGeom = new THREE.BoxGeometry(0.4, 1.8, 2.0);
+  const backrest = new THREE.Mesh(backGeom, charcoalVelvet);
+  backrest.position.set(-1, 1.2, 0);
+  chairGroup.add(backrest);
+
+  // Side Arms
+  const armGeom = new THREE.BoxGeometry(2.2, 1.0, 0.4);
+  const leftArm = new THREE.Mesh(armGeom, charcoalVelvet);
+  leftArm.position.set(0, 0.9, 0.8);
+  chairGroup.add(leftArm);
+  
+  const rightArm = new THREE.Mesh(armGeom, charcoalVelvet);
+  rightArm.position.set(0, 0.9, -0.8);
+  chairGroup.add(rightArm);
+
+  // Cushion
+  const cushionGeom = new THREE.BoxGeometry(1.6, 0.3, 1.6);
+  const cushion = new THREE.Mesh(cushionGeom, charcoalVelvet);
+  cushion.position.set(0.2, 0.6, 0);
+  chairGroup.add(cushion);
+
+  // Tapered Legs (Brushed Brass)
+  const legGeom = new THREE.CylinderGeometry(0.04, 0.02, 0.6);
+  const legPos = [[0.8, -0.1, 0.7], [0.8, -0.1, -0.7], [-0.8, -0.1, 0.7], [-0.8, -0.1, -0.7]];
+  legPos.forEach(pos => {
+    const leg = new THREE.Mesh(legGeom, brushedBrass);
+    leg.position.set(pos[0], pos[1], pos[2]);
+    chairGroup.add(leg);
+  });
+
+  scene.add(chairGroup);
+  camera.position.set(4, 3, 5);
+  camera.lookAt(0, 0.8, 0);
+
+  // Interaction Logic
+  let isDragging = false;
+  let previousMouseX = 0;
+  let previousMouseY = 0;
+
+  container.addEventListener('mousedown', (e) => { isDragging = true; });
+  window.addEventListener('mouseup', () => { isDragging = false; });
+  
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - previousMouseX;
+    const deltaY = e.clientY - previousMouseY;
+    
+    chairGroup.rotation.y += deltaX * 0.01;
+    chairGroup.rotation.x += deltaY * 0.01;
+    
+    previousMouseX = e.clientX;
+    previousMouseY = e.clientY;
+  });
+
+  container.addEventListener('touchstart', (e) => { 
+    isDragging = true; 
+    previousMouseX = e.touches[0].clientX;
+    previousMouseY = e.touches[0].clientY;
+  }, { passive: true });
+  
+  window.addEventListener('touchend', () => { isDragging = false; });
+  
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const deltaX = e.touches[0].clientX - previousMouseX;
+    const deltaY = e.touches[0].clientY - previousMouseY;
+    
+    chairGroup.rotation.y += deltaX * 0.01;
+    chairGroup.rotation.x += deltaY * 0.01;
+    
+    previousMouseX = e.touches[0].clientX;
+    previousMouseY = e.touches[0].clientY;
+  }, { passive: true });
+
+  // Animation Loop
+  function animate() {
+    requestAnimationFrame(animate);
+    if (!isDragging) {
+      chairGroup.rotation.y += 0.002; // Gentle auto-rotation
+    }
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  // Resize Handler
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  });
+})();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_13 -->
+
+
+</body></html>

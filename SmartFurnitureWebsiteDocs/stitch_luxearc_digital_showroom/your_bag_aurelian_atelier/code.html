@@ -1,0 +1,401 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Shopping Cart - AURELIAN</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c4c7c7",
+                    "on-tertiary-fixed-variant": "#454744",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#e5e2e1",
+                    "on-primary-fixed-variant": "#474746",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-secondary-container": "#785a1a",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#efeded",
+                    "on-surface": "#1b1c1c",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#ffdea5",
+                    "surface-variant": "#e4e2e2",
+                    "tertiary-container": "#1a1c19",
+                    "inverse-on-surface": "#f2f0f0",
+                    "surface-container-high": "#e9e8e7",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#dbdad9",
+                    "on-background": "#1b1c1c",
+                    "outline": "#747878",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#1c1b1b",
+                    "primary": "#000000",
+                    "surface-bright": "#fbf9f9",
+                    "on-tertiary-container": "#838480",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "tertiary": "#000000",
+                    "secondary-container": "#fed488",
+                    "inverse-primary": "#c8c6c5",
+                    "inverse-surface": "#303031",
+                    "surface-tint": "#5f5e5e",
+                    "on-primary-container": "#858383",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-secondary-fixed": "#261900",
+                    "surface-container-highest": "#e4e2e2",
+                    "on-surface-variant": "#444748",
+                    "background": "#fbf9f9",
+                    "surface-container-low": "#f5f3f3",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#e3e3de",
+                    "secondary": "#775a19",
+                    "tertiary-fixed-dim": "#c6c7c2",
+                    "secondary-fixed-dim": "#e9c176",
+                    "on-tertiary-fixed": "#1a1c19",
+                    "surface": "#fbf9f9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "section-gap": "120px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-sm": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "display-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ]
+            },
+            "fontSize": {
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "40px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 300,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .fill-icon {
+          font-variation-settings: 'FILL' 1;
+        }
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar (Nav suppressed as this is a transactional flow, but keeping simplified header for brand anchor) -->
+<header class="fixed top-0 w-full bg-surface/60 backdrop-blur-xl border-b-[0.5px] border-secondary-container/30 shadow-sm shadow-primary/5 flex justify-between items-center px-margin-desktop py-6 z-50 transition-all duration-500 ease-in-out">
+<a class="font-headline-md text-headline-md tracking-tighter text-primary" href="#">AURELIAN</a>
+<a class="text-on-surface font-label-caps text-label-caps hover:text-secondary transition-colors duration-300 flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">close</span>
+            Continue Shopping
+        </a>
+</header>
+<main class="flex-grow pt-[120px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="mb-12">
+<h1 class="font-headline-md text-headline-md text-primary mb-2">Shopping Cart</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">3 Items in your selection.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter relative">
+<!-- Cart Items (Left Column) -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Item 1 -->
+<div class="flex flex-col sm:flex-row gap-6 border-b-[0.5px] border-outline-variant/30 pb-8 relative group">
+<div class="w-full sm:w-[240px] aspect-[4/3] sm:aspect-square bg-surface-container overflow-hidden rounded-sm relative">
+<img alt="Product Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A highly detailed close-up shot of a minimalist, modern lounge chair with dark charcoal grey upholstery and a sleek brushed steel frame. The chair is placed in a bright, airy showroom setting with soft natural light streaming in, highlighting the premium texture of the fabric. The aesthetic is clean, luxurious, and quiet, fitting a high-end architectural studio style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO29t_JKo1qx9B0xXEdvNPfwQoS0hVmLROjnp2zPQmV0yWTNucsIriDb9FFlWLt-DnFFE7rBlnQgDkRM4CCDrmZ3g0-r25vH6jsvZQ17F3jHRfsZ50GcntYva1DzZkJMmcj9McQR20ExmuOmmSc9Q4Lgzr0D2_TdFZicrjr9FRSWalE2kuXflHqU5yCkyes2MbarYgmBOuh-P9R2UsS6HUORwlPPCZ-fprc3jNi7h8XbVunn2UJFAxzi5BaQbIOvSe1n_2JSOV">
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-sm text-headline-sm text-primary">The Obsidian Lounge</h3>
+<button aria-label="Remove item" class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Charcoal Wool / Brushed Steel</p>
+<p class="font-body-md text-body-md text-primary">$3,450.00</p>
+</div>
+<div class="flex items-center gap-4 mt-6 sm:mt-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant">QTY</span>
+<div class="flex items-center border-[0.5px] border-outline-variant rounded-sm overflow-hidden h-10 w-28 bg-surface">
+<button aria-label="Decrease quantity" class="w-8 h-full flex items-center justify-center text-secondary hover:bg-secondary-container/20 transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<input class="w-full h-full text-center border-none bg-transparent font-body-md text-body-md text-primary focus:ring-0 p-0" min="1" readonly="" type="number" value="1">
+<button aria-label="Increase quantity" class="w-8 h-full flex items-center justify-center text-secondary hover:bg-secondary-container/20 transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col sm:flex-row gap-6 border-b-[0.5px] border-outline-variant/30 pb-8 relative group">
+<div class="w-full sm:w-[240px] aspect-[4/3] sm:aspect-square bg-surface-container overflow-hidden rounded-sm relative">
+<img alt="Product Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist dining table made of rich, dark walnut wood, featuring clean geometric lines and a smooth matte finish. It sits in a gallery-like room with white walls and a polished concrete floor. The lighting is diffused and serene, emphasizing the artisanal craftsmanship and natural grain of the wood. The overall mood is sophisticated and quiet luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwuFJX_2EYgjQgvmZN05GlL7kB9JN6NeMDd_Ta8VkBY7x21NgfoGdH__AArSmyGC1npSw0xRihsICgPRz3A98y5f4Q58eu8ghBiPd9QGoqKLsd7fi6kYxNHUBAF-1OFLdPSuEgyXHY35SyG-PgGj_07jhouVUHbAJEbaMcAFTBl76otPtPacCWQe1ZF7irnT_pCJANJF70hulvbraGMZvCxarKjzYjahVLH5wGqKaJmZBKFWISV-yQ8aLhE4cdb_RC1V1dhwRn">
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-sm text-headline-sm text-primary">Artisan Dining Table</h3>
+<button aria-label="Remove item" class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Dark Walnut / 8-Seater</p>
+<p class="font-body-md text-body-md text-primary">$5,200.00</p>
+</div>
+<div class="flex items-center gap-4 mt-6 sm:mt-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant">QTY</span>
+<div class="flex items-center border-[0.5px] border-outline-variant rounded-sm overflow-hidden h-10 w-28 bg-surface">
+<button aria-label="Decrease quantity" class="w-8 h-full flex items-center justify-center text-secondary hover:bg-secondary-container/20 transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<input class="w-full h-full text-center border-none bg-transparent font-body-md text-body-md text-primary focus:ring-0 p-0" min="1" readonly="" type="number" value="1">
+<button aria-label="Increase quantity" class="w-8 h-full flex items-center justify-center text-secondary hover:bg-secondary-container/20 transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col sm:flex-row gap-6 border-b-[0.5px] border-outline-variant/30 pb-8 relative group">
+<div class="w-full sm:w-[240px] aspect-[4/3] sm:aspect-square bg-surface-container overflow-hidden rounded-sm relative">
+<img alt="Product Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sleek, modern floor lamp constructed from brushed brass and frosted glass, standing elegantly against a textured neutral wall. The light emitted is warm and ambient, casting soft shadows that highlight the lamp's minimalist form. The environment feels high-end, curated, and peaceful, aligning with a premium interior design aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnkngKXtDsjLe5URbbgnsJu0H79haNR7QDVMf8EZIx87YBKXNv-ukfxL-wYtTEG31Oo9MFYP7MhndjOLv5UiDNbtpNC-VT7C7BfhidoCUYn57C6EtvaXWciJps_DZvAQNGGJEQHhKNEOlBoPrpX0mqufbzaS2L6G-j4VjFuyuz0jBzhO33lX6yAXeQ2b2gcUgsVaUGKTcHtS93OS1Dl3O-ZYoEkCNlyLwAdSuJQyun-vQ_9OBvy8LMTDQZgI30DTJH09ExI9Wl">
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-sm text-headline-sm text-primary">Lumina Floor Lamp</h3>
+<button aria-label="Remove item" class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Brushed Brass / Frosted Glass</p>
+<p class="font-body-md text-body-md text-primary">$1,150.00</p>
+</div>
+<div class="flex items-center gap-4 mt-6 sm:mt-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant">QTY</span>
+<div class="flex items-center border-[0.5px] border-outline-variant rounded-sm overflow-hidden h-10 w-28 bg-surface">
+<button aria-label="Decrease quantity" class="w-8 h-full flex items-center justify-center text-secondary hover:bg-secondary-container/20 transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<input class="w-full h-full text-center border-none bg-transparent font-body-md text-body-md text-primary focus:ring-0 p-0" min="1" readonly="" type="number" value="2">
+<button aria-label="Increase quantity" class="w-8 h-full flex items-center justify-center text-secondary hover:bg-secondary-container/20 transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Summary (Right Column - Sticky) -->
+<div class="lg:col-span-4 mt-12 lg:mt-0">
+<div class="bg-surface-container-low p-8 rounded-sm sticky top-32">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-6">Order Summary</h2>
+<div class="flex flex-col gap-4 border-b-[0.5px] border-outline-variant/30 pb-6 mb-6">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Subtotal</span>
+<span class="font-body-md text-body-md text-primary">$10,950.00</span>
+</div>
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface-variant">Shipping</span>
+<span class="font-label-caps text-label-caps text-secondary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+                                    White Glove Delivery
+                                </span>
+</div>
+<span class="font-body-md text-body-md text-primary">Calculated at checkout</span>
+</div>
+</div>
+<!-- Coupon Code -->
+<div class="mb-6">
+<label class="sr-only" for="promo-code">Promo Code</label>
+<div class="flex">
+<input class="w-full bg-transparent border-b-[0.5px] border-outline-variant focus:border-secondary focus:ring-0 font-body-md text-body-md text-primary placeholder-on-surface-variant px-0 py-2" id="promo-code" placeholder="Enter code" type="text">
+<button class="font-label-caps text-label-caps text-secondary ml-4 hover:text-primary transition-colors border-b-[0.5px] border-transparent hover:border-primary">APPLY</button>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2">Manifesto Members: Apply your curated tier code.</p>
+</div>
+<div class="flex justify-between items-center mb-8">
+<span class="font-headline-sm text-headline-sm text-primary">Total</span>
+<span class="font-headline-sm text-headline-sm text-primary">$10,950.00</span>
+</div>
+<button class="w-full bg-primary text-secondary-fixed font-label-caps text-label-caps py-4 rounded-sm hover:bg-surface-tint hover:text-on-secondary transition-all duration-300 mb-4 flex justify-center items-center gap-2 group">
+                        PROCEED TO CHECKOUT
+                        <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="text-center">
+<p class="font-label-caps text-label-caps text-on-surface-variant flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">payments</span>
+                            EMI Options Available at Checkout
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Curated Bundle Section -->
+<div class="mt-section-gap pt-section-gap border-t-[0.5px] border-outline-variant/30">
+<div class="text-center mb-12">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Curated Additions</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Pieces selected to complement your aesthetic.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Suggestion 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-sm relative mb-4">
+<img alt="Curated Item" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist, abstract ceramic vase with a matte white finish, placed on a dark marble surface. The vase has an organic, asymmetric shape. The lighting is soft and directional, highlighting the texture of the ceramic against a dark, moody background. The scene exudes quiet luxury and contemporary artistic design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsDu97byIUbarhDVTBHezm3pm5KnxlfEW7g5Tr6CCrVbWy6LmizJZF1I7LHvN0IAfO-RXtZ1SNlbHNglMO1RG1uxbcTeFpx2fk81qlpGZ95L2dm7cKi8quJVSOL-KiW3V7NkHw6GRmAKDVrIzdFjCvOA01dxwaez_tZ5K6OWPl2Jza3IjU3mSNRTm9HUzUTM0wWJbGXQz4PaXbcScI2FeXOg-gBfLy0lhMMMWMlhbyCILTqSGAhI9FUuQ0Toe9nWzBw9j9-NqG">
+<div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-opacity duration-300 flex items-center justify-center">
+<span class="bg-primary text-secondary-fixed font-label-caps text-label-caps px-6 py-3 rounded-sm border border-secondary-fixed/20 hover:bg-secondary hover:text-on-secondary transition-colors">QUICK ADD</span>
+</div>
+</div>
+<h3 class="font-body-md text-body-md text-primary mb-1">Abstract Ceramic Vessel</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$320.00</p>
+</div>
+<!-- Suggestion 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-sm relative mb-4">
+<img alt="Curated Item" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious, textured throw blanket in deep charcoal grey casually draped over the edge of a sleek leather sofa. The fabric shows fine weaving details, suggesting high-quality artisanal craftsmanship. The setting is a bright, modern living room with soft, diffuse lighting that creates a cozy yet elegant and minimalist atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBxMvpwPL5IEmdwLs60fceeMhG3Q1zfrqDyScvvEJI2V38xCLhGQ0CGUR_tSIQXQoAPNg5ljcmAEi_MKFmiRyYzJf5PeVpuEIk5k7k_pqHU2zETQyl8NkXsbBM8iVeWdRYjWZrQoMjVFhpLSXgRhv90_6UzTueMfR7_V5KCIdtezeSk634cKodH504rauBtiJH77rYfiRxedx7B09A62hAM-jrw7DyGw1B3F7r0jpV0TY7p54A_Sh5ZNkL6qpYkbfahhx0t3YK">
+<div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-opacity duration-300 flex items-center justify-center">
+<span class="bg-primary text-secondary-fixed font-label-caps text-label-caps px-6 py-3 rounded-sm border border-secondary-fixed/20 hover:bg-secondary hover:text-on-secondary transition-colors">QUICK ADD</span>
+</div>
+</div>
+<h3 class="font-body-md text-body-md text-primary mb-1">Cashmere Blend Throw</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$450.00</p>
+</div>
+<!-- Suggestion 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-sm relative mb-4">
+<img alt="Curated Item" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sculptural, metallic side table finished in brushed bronze, placed next to a minimalist armchair in a brightly lit, modern architectural space. The table catches the light, showing off its clean lines and premium finish. The overall mood is sophisticated, emphasizing high-end design and quiet luxury within a pristine environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBts3jpxOvFbUhyMKXfrwn8EJL0HPsGw7xdDp9pyeOSkvZgwAakjTxAWlEduYvwIAmTMxQCgRsOlFuD6q5MkH2N0M64irQmG4l1bulCOdDXimQvudlFo9XtQDwOOr5K3bD0wK7qkX1nbfH6rT4VEibdA2lwNOiMKrr35XBvha1GT2zIIcT-EIaWXal4GkzAmVoZTKdkuCyHqmIog8MUpZgqf29NLvyU5BQR3uHCKVKcOeRpD-W877w0ZEtkmheU6Ez2Im3YAYgC">
+<div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-opacity duration-300 flex items-center justify-center">
+<span class="bg-primary text-secondary-fixed font-label-caps text-label-caps px-6 py-3 rounded-sm border border-secondary-fixed/20 hover:bg-secondary hover:text-on-secondary transition-colors">QUICK ADD</span>
+</div>
+</div>
+<h3 class="font-body-md text-body-md text-primary mb-1">Bronze Side Pedestal</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$890.00</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-tertiary-container w-full">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop py-section-gap w-full border-t-[0.5px] border-secondary/20">
+<div class="md:col-span-4 mb-8 md:mb-0">
+<span class="font-headline-md text-headline-md text-secondary-fixed-dim block mb-6">AURELIAN</span>
+<p class="font-body-md text-body-md text-on-primary/60 max-w-xs">Elevating spaces through curated architectural design and artisanal craftsmanship.</p>
+</div>
+<div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">The Manifesto</a>
+<a class="font-body-md text-body-md text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">Heritage</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">Bespoke Services</a>
+<a class="font-body-md text-body-md text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">Sustainability</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">Press</a>
+<a class="font-body-md text-body-md text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">Contact</a>
+</div>
+</div>
+<div class="md:col-span-12 mt-16 pt-8 border-t-[0.5px] border-secondary/20 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
+<p class="font-body-md text-body-md text-on-primary/60">© 2024 AURELIAN ARCHITECTURAL ATELIER. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-4 mt-4 md:mt-0">
+<a class="text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

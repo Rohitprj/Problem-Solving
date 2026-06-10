@@ -1,0 +1,620 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Aurelius Lounge Chair - AURELIAN</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c4c7c7",
+                        "on-tertiary-fixed-variant": "#454744",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary-fixed-variant": "#474746",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-secondary-container": "#785a1a",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#efeded",
+                        "on-surface": "#1b1c1c",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdea5",
+                        "surface-variant": "#e4e2e2",
+                        "tertiary-container": "#1a1c19",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-container-high": "#e9e8e7",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dbdad9",
+                        "on-background": "#1b1c1c",
+                        "outline": "#747878",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#1c1b1b",
+                        "primary": "#000000",
+                        "surface-bright": "#fbf9f9",
+                        "on-tertiary-container": "#838480",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "tertiary": "#000000",
+                        "secondary-container": "#fed488",
+                        "inverse-primary": "#c8c6c5",
+                        "inverse-surface": "#303031",
+                        "surface-tint": "#5f5e5e",
+                        "on-primary-container": "#858383",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-secondary-fixed": "#261900",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-surface-variant": "#444748",
+                        "background": "#fbf9f9",
+                        "surface-container-low": "#f5f3f3",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e3e3de",
+                        "secondary": "#775a19",
+                        "tertiary-fixed-dim": "#c6c7c2",
+                        "secondary-fixed-dim": "#e9c176",
+                        "on-tertiary-fixed": "#1a1c19",
+                        "surface": "#fbf9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Playfair Display", "serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "headline-md": ["Playfair Display", "serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "display-lg-mobile": ["Playfair Display", "serif"],
+                        "label-caps": ["Inter", "sans-serif"],
+                        "display-lg": ["Playfair Display", "serif"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for gallery */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+    </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="bg-surface/60 backdrop-blur-xl fixed top-0 w-full border-b-[0.5px] border-secondary-container/30 shadow-sm shadow-primary/5 backdrop-blur-2xl transition-all duration-500 ease-in-out flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 z-50">
+<!-- Mobile Menu Icon (Left) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+<!-- Brand Logo (Center on Mobile, Left on Desktop) -->
+<a class="font-headline-md text-headline-md tracking-tighter text-primary" href="#">AURELIAN</a>
+<!-- Desktop Navigation Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">Collections</a>
+<a class="font-label-caps text-label-caps text-secondary border-b border-secondary hover:text-secondary transition-colors duration-300 pb-1" href="#">Living</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">Bedroom</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">Dining</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">Artisans</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">Showrooms</a>
+</div>
+<!-- Trailing Icons (Right) -->
+<div class="flex items-center gap-4 text-primary">
+<button class="hover:text-secondary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hover:text-secondary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="hover:text-secondary transition-colors duration-300 relative group" id="cart-toggle">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-on-secondary text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</nav>
+<!-- SideNavBar (Hidden by default, triggered by cart) -->
+<aside class="bg-surface/80 backdrop-blur-2xl fixed right-0 h-full w-[400px] z-[60] border-l-[0.5px] border-outline-variant/20 shadow-2xl shadow-primary/20 translate-x-full transition-transform duration-500 flex flex-col h-full p-8 hidden" id="side-nav">
+<!-- This is just a shell for demonstration, real implementation would populate cart items -->
+<div class="flex justify-between items-center mb-8">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Your Selection</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Exquisite choices for your home</p>
+</div>
+<button class="text-primary hover:text-secondary transition-colors" id="close-side-nav">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto">
+<!-- Cart items would go here -->
+<p class="text-on-surface-variant italic">Your cart is currently viewing.</p>
+</div>
+<div class="mt-8 border-t-[0.5px] border-outline-variant/20 pt-6">
+<div class="flex justify-between items-center mb-6">
+<span class="font-body-lg text-body-lg text-on-surface">Subtotal</span>
+<span class="font-headline-sm text-headline-sm text-primary">$4,200</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 font-label-caps text-label-caps hover:bg-secondary hover:text-on-secondary transition-colors duration-300 tracking-widest">
+                Checkout Now
+            </button>
+</div>
+</aside>
+<!-- Main Product Content -->
+<main class="pt-[100px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 text-sm text-on-surface-variant mb-8 fade-in">
+<a class="hover:text-primary transition-colors" href="#">Living</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Seating</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-medium">Aurelius Lounge Chair</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Product Imagery (Left Side - 7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-6 fade-in stagger-1">
+<!-- Main 360 Viewer -->
+<div class="relative w-full aspect-square md:aspect-[4/3] bg-surface-container-low overflow-hidden group">
+<!-- STITCH_THREEJS_START:ANIMATION_13 class="block w-full h-full aspect-square md:aspect-[4/3] bg-transparent cursor-grab active:cursor-grabbing" -->
+<div class="block w-full h-full aspect-square md:aspect-[4/3] bg-transparent cursor-grab active:cursor-grabbing" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_13" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_13');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  (function() {
+  const container = document.getElementById('threejs-container-ANIMATION_4');
+  if (!container) return;
+  
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+  
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(window.devicePixelRatio || 1);
+  container.appendChild(renderer.domElement);
+
+  // Lighting - Soft luxury studio lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+  scene.add(ambientLight);
+  
+  const keyLight = new THREE.DirectionalLight(0xffffff, 0.8);
+  keyLight.position.set(5, 5, 5);
+  scene.add(keyLight);
+  
+  const fillLight = new THREE.DirectionalLight(0xffffff, 0.3);
+  fillLight.position.set(-5, 2, -5);
+  scene.add(fillLight);
+
+  // Aurelius Lounge Chair Model
+  const chairGroup = new THREE.Group();
+
+  // Materials
+  const charcoalVelvet = new THREE.MeshPhongMaterial({ 
+    color: 0x1a1a1a, 
+    shininess: 10,
+    specular: 0x222222
+  });
+  const brushedBrass = new THREE.MeshPhongMaterial({ 
+    color: 0xc5a059, 
+    shininess: 80,
+    specular: 0xffffff
+  });
+
+  // Main Seat Body (Sculptural monolithic form)
+  const seatGeom = new THREE.BoxGeometry(2.2, 0.8, 2.0);
+  // Soften the edges (pseudo-sculptural)
+  const seat = new THREE.Mesh(seatGeom, charcoalVelvet);
+  seat.position.y = 0.4;
+  chairGroup.add(seat);
+
+  // Backrest/Wrap
+  const backGeom = new THREE.BoxGeometry(0.4, 1.8, 2.0);
+  const backrest = new THREE.Mesh(backGeom, charcoalVelvet);
+  backrest.position.set(-1, 1.2, 0);
+  chairGroup.add(backrest);
+
+  // Side Arms
+  const armGeom = new THREE.BoxGeometry(2.2, 1.0, 0.4);
+  const leftArm = new THREE.Mesh(armGeom, charcoalVelvet);
+  leftArm.position.set(0, 0.9, 0.8);
+  chairGroup.add(leftArm);
+  
+  const rightArm = new THREE.Mesh(armGeom, charcoalVelvet);
+  rightArm.position.set(0, 0.9, -0.8);
+  chairGroup.add(rightArm);
+
+  // Cushion
+  const cushionGeom = new THREE.BoxGeometry(1.6, 0.3, 1.6);
+  const cushion = new THREE.Mesh(cushionGeom, charcoalVelvet);
+  cushion.position.set(0.2, 0.6, 0);
+  chairGroup.add(cushion);
+
+  // Tapered Legs (Brushed Brass)
+  const legGeom = new THREE.CylinderGeometry(0.04, 0.02, 0.6);
+  const legPos = [[0.8, -0.1, 0.7], [0.8, -0.1, -0.7], [-0.8, -0.1, 0.7], [-0.8, -0.1, -0.7]];
+  legPos.forEach(pos => {
+    const leg = new THREE.Mesh(legGeom, brushedBrass);
+    leg.position.set(pos[0], pos[1], pos[2]);
+    chairGroup.add(leg);
+  });
+
+  scene.add(chairGroup);
+  camera.position.set(4, 3, 5);
+  camera.lookAt(0, 0.8, 0);
+
+  // Interaction Logic
+  let isDragging = false;
+  let previousMouseX = 0;
+  let previousMouseY = 0;
+
+  container.addEventListener('mousedown', (e) => { isDragging = true; });
+  window.addEventListener('mouseup', () => { isDragging = false; });
+  
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - previousMouseX;
+    const deltaY = e.clientY - previousMouseY;
+    
+    chairGroup.rotation.y += deltaX * 0.01;
+    chairGroup.rotation.x += deltaY * 0.01;
+    
+    previousMouseX = e.clientX;
+    previousMouseY = e.clientY;
+  });
+
+  container.addEventListener('touchstart', (e) => { 
+    isDragging = true; 
+    previousMouseX = e.touches[0].clientX;
+    previousMouseY = e.touches[0].clientY;
+  }, { passive: true });
+  
+  window.addEventListener('touchend', () => { isDragging = false; });
+  
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const deltaX = e.touches[0].clientX - previousMouseX;
+    const deltaY = e.touches[0].clientY - previousMouseY;
+    
+    chairGroup.rotation.y += deltaX * 0.01;
+    chairGroup.rotation.x += deltaY * 0.01;
+    
+    previousMouseX = e.touches[0].clientX;
+    previousMouseY = e.touches[0].clientY;
+  }, { passive: true });
+
+  // Animation Loop
+  function animate() {
+    requestAnimationFrame(animate);
+    if (!isDragging) {
+      chairGroup.rotation.y += 0.002; // Gentle auto-rotation
+    }
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  // Resize Handler
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  });
+})();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_13 -->
+<!-- 360 Indicator Overlay -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-surface/80 backdrop-blur-md px-4 py-2 rounded-full border-[0.5px] border-outline-variant/30 flex items-center gap-2 shadow-sm shadow-primary/5 pointer-events-none transition-opacity duration-500" id="viewer-hint">
+<span class="material-symbols-outlined text-primary text-[18px]">360</span>
+<span class="font-label-caps text-label-caps text-primary">Click and Drag to Rotate</span>
+</div>
+<!-- Ambient inner shadow for depth -->
+<div class="absolute inset-0 ring-1 ring-inset ring-primary/5 pointer-events-none"></div>
+</div>
+<!-- Thumbnails Gallery -->
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+<button class="flex-shrink-0 w-24 h-24 bg-surface-container-low border border-primary relative overflow-hidden group">
+<img alt="Detail shot of the Aurelius Lounge Chair." class="object-cover w-full h-full opacity-100 transition-opacity" data-alt="Detail shot of the Aurelius Lounge Chair, focusing on the intricate stitching of the charcoal velvet and the brushed gold metal joint where the leg meets the seat. Soft, high-key lighting highlights the material textures against a clean, light-mode background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALH0F-4d3qKnPhGcZd0h_wVmqILpn6MbI8oSqWsOoyrU7shzGx5wSgd8qmi3x-NUkOA2I95oT714XY0dNgEmLnvL6wWlm4_oB_lVxdNTEgFZJbTYjs3fCPuv2EX14hg7v7RU_xsBzc9LUL99qnCwlvc31oJeMhAt-6C1uAnc9xM04ke1TALfOByf0gFjf9RBFb4asJUUdXiPi0YV1ObSpCuwLAArkV7u4MWSvfYs7StctzvUnhtFSKf1AbMMuYo7cElcz_xWDt">
+</button>
+<button class="flex-shrink-0 w-24 h-24 bg-surface-container-low border border-transparent hover:border-outline-variant transition-colors relative overflow-hidden group">
+<img alt="Aurelius chair angled view." class="object-cover w-full h-full opacity-70 group-hover:opacity-100 transition-opacity" data-alt="Angled profile view of the Aurelius Lounge Chair, showcasing its sweeping geometric backrest and slim profile. Upholstered in charcoal velvet with brushed gold accents, sitting in a minimalist gallery space bathed in soft, diffused white light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9t3H3IJjORTlpqDLdUzGXQtGJ0HL_0LPUOwT7Bq3IIvwAykNASsMCOi-yoxCwzO2WY6d0IP1EB1q6-b41UtnaLT30iZQVdlSD6eUDWDmY2NbbufiwH_ogHXk-Azk_joT9qkS18hQHry07h5qUIUqgxBUEDztKIDxd71KyNVCJkcsNG2axjyLEKCkuz6-vM0NVy8riueuKu54-RQkG53_whz569QqwlAfljX8ixVXmxhHbpvFHvgGOzTrVx7d33tMY8YXCHCYb">
+</button>
+<button class="flex-shrink-0 w-24 h-24 bg-surface-container-low border border-transparent hover:border-outline-variant transition-colors relative overflow-hidden group">
+<img alt="Aurelius chair back view." class="object-cover w-full h-full opacity-70 group-hover:opacity-100 transition-opacity" data-alt="Rear view of the Aurelius Lounge Chair, highlighting the flawless tailoring of the velvet upholstery and the elegant structural support of the gold frame. The minimalist setting provides a bright, pristine backdrop that accentuates the chair's sculptural quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP46yMGvi0Y2voW1Xa8YhY9VvJoNkXuGm0HavqmgNn61ZeYlUIOSZW9toJ5zXhPIBp9Zv1etXGs7bOu6DRe7snuoMp9_62wOINenjkwXoZBS3Abg0YERVf4_O2I6yXMADwCEYKMj3EgWRc-OzuN2TQj0_lTNTu-CVt3RnqgkdMDaJGXWkapWvs6wZ3PMRNLODAw6gNjjsopkJeuVKqgtjBVTXw8gSy90LNSJ8CVi5itIrk1Vf4ukEJ7cp3sXohjRA6I7jZypUP">
+</button>
+<button class="flex-shrink-0 w-24 h-24 bg-surface-container-low border border-transparent hover:border-outline-variant transition-colors flex items-center justify-center text-on-surface-variant hover:text-primary group">
+<div class="text-center">
+<span class="material-symbols-outlined block mb-1 group-hover:scale-110 transition-transform">play_circle</span>
+<span class="font-label-caps text-label-caps text-[10px]">Video</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Product Info (Right Side - 5 cols) -->
+<div class="lg:col-span-5 flex flex-col pt-4 lg:pl-8 fade-in stagger-2 relative">
+<div class="mb-8">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter mb-2">Aurelius</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Sculptural Lounge Chair</p>
+<div class="font-headline-md text-headline-md text-primary">$4,200</div>
+</div>
+<hr class="border-t-[0.5px] border-outline-variant/30 mb-8">
+<!-- Material Selection -->
+<div class="mb-8">
+<div class="flex justify-between items-end mb-4">
+<span class="font-label-caps text-label-caps text-on-surface">Material</span>
+<span class="text-sm text-on-surface-variant">Velvet</span>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-3 border border-primary text-primary font-label-caps text-label-caps hover:bg-surface-container transition-colors">Velvet</button>
+<button class="px-6 py-3 border border-outline-variant text-on-surface-variant font-label-caps text-label-caps hover:border-primary hover:text-primary transition-colors">Leather</button>
+<button class="px-6 py-3 border border-outline-variant text-on-surface-variant font-label-caps text-label-caps hover:border-primary hover:text-primary transition-colors">Linen</button>
+</div>
+</div>
+<!-- Color Selection -->
+<div class="mb-10">
+<div class="flex justify-between items-end mb-4">
+<span class="font-label-caps text-label-caps text-on-surface">Color</span>
+<span class="text-sm text-on-surface-variant">Charcoal</span>
+</div>
+<div class="flex gap-4">
+<!-- Charcoal (Active) -->
+<button aria-label="Select Charcoal" class="w-10 h-10 rounded-full border-[1.5px] border-primary p-[2px] relative group">
+<div class="w-full h-full rounded-full bg-[#333333] border-[0.5px] border-white/20"></div>
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary font-label-caps text-[10px] px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">Charcoal</span>
+</button>
+<!-- Forest -->
+<button aria-label="Select Forest" class="w-10 h-10 rounded-full border border-outline-variant p-[2px] hover:border-primary relative group transition-colors">
+<div class="w-full h-full rounded-full bg-[#2c4c3b] border-[0.5px] border-white/20"></div>
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary font-label-caps text-[10px] px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">Forest</span>
+</button>
+<!-- Ochre -->
+<button aria-label="Select Ochre" class="w-10 h-10 rounded-full border border-outline-variant p-[2px] hover:border-primary relative group transition-colors">
+<div class="w-full h-full rounded-full bg-[#cda434] border-[0.5px] border-white/20"></div>
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary font-label-caps text-[10px] px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">Ochre</span>
+</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-4 mb-12">
+<button class="w-full bg-primary text-on-primary py-5 font-label-caps text-label-caps hover:bg-secondary-container hover:text-on-secondary-container transition-all duration-300 tracking-widest flex items-center justify-center gap-2 group">
+<span>Add to Cart</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="w-full bg-transparent border border-outline-variant text-primary py-4 font-label-caps text-label-caps hover:border-primary transition-colors duration-300 tracking-widest flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">favorite_border</span>
+<span>Save to Wishlist</span>
+</button>
+</div>
+<!-- Accordion/Tabs for Details -->
+<div class="border-t-[0.5px] border-outline-variant/30 flex flex-col">
+<!-- Specifications Tab (Open) -->
+<div class="border-b-[0.5px] border-outline-variant/30 py-6">
+<button class="w-full flex justify-between items-center text-left group">
+<span class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">Specifications</span>
+<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors">remove</span>
+</button>
+<div class="pt-4 font-body-md text-body-md text-on-surface-variant">
+<p class="mb-4">The Aurelius commands space with quiet authority. Its monolithic silhouette is softened by the plush texture of performance velvet, while the architectural brushed gold frame provides structural tension.</p>
+<ul class="space-y-2 list-none p-0">
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></span><span>Frame: Kiln-dried hardwood with brushed brass finish legs.</span></li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></span><span>Suspension: Sinuous steel springs.</span></li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></span><span>Cushion: High-resiliency foam wrapped in down-blend.</span></li>
+</ul>
+</div>
+</div>
+<!-- Material Heritage Tab (Closed) -->
+<div class="border-b-[0.5px] border-outline-variant/30 py-6">
+<button class="w-full flex justify-between items-center text-left group">
+<span class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">Material Heritage</span>
+<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors">add</span>
+</button>
+</div>
+<!-- Dimensions Tab (Closed) -->
+<div class="border-b-[0.5px] border-outline-variant/30 py-6">
+<button class="w-full flex justify-between items-center text-left group">
+<span class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">Dimensions</span>
+<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Frequently Bought Together Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low/50 relative">
+<div class="max-w-container-max mx-auto fade-in stagger-3">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">Curated Companions</h2>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary border-b border-secondary hover:border-primary transition-colors pb-1" href="#">View All Sets</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Related Product 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container mb-6">
+<img alt="The geometric brass side table." class="object-cover w-full h-full transition-transform duration-[1.5s] ease-out group-hover:scale-105" data-alt="A striking geometric side table featuring a brushed brass base and a sleek, circular black marble top. It sits in a minimalist, light-mode setting with soft, diffused lighting that catches the golden highlights of the metal frame, embodying quiet luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATLSsZG5YmaD5Lwn2AHS2w2hyEluzkZ4meuCPNOg1wqeCSQu5B3nlCbjXF0hLNHyslx1uKVZSGnYvgY_95OelmmjAclB-3JJqGMGaGpqtqjXefTF8WnfaBuvkCXD2YEFBbNZthmrXdNALv61Mqx7j1rUn8jB9TwNHgAOr3DDrswxf3cNTZxK4JvIVz4kW3wo6MzTUgv4ie483elA-I-APiGtklHcZh_ac80vf7rmbopFRJJ8cx0D8dBO27RZqLRlcTOB9UKTMO">
+<!-- Quick View Overlay -->
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="w-full bg-surface/80 backdrop-blur-md text-primary py-3 font-label-caps text-label-caps border-[0.5px] border-outline-variant/30 hover:bg-primary hover:text-on-primary transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-body-lg text-body-lg text-primary mb-1">Crescent Side Table</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Brushed Brass &amp; Nero Marquina</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary">$1,250</span>
+</div>
+</div>
+<!-- Related Product 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container mb-6">
+<img alt="The minimalist floor lamp." class="object-cover w-full h-full transition-transform duration-[1.5s] ease-out group-hover:scale-105" data-alt="A minimalist, sculptural floor lamp with a slender brushed gold stem and an opaque white glass globe diffuser. It stands gracefully in a high-key, pristine architectural space. The lighting emphasizes clean lines and a serene, premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKA3QfmqX5J0btwg-NBL_YjsaTAQU_vziNrsJmA3qAELyyEwPhxxCTh5RRuTdntsSJR8TSq29HXmO83tzLuoTVORXIalue6NxftXGVB3-LcUdWwcFC_vHj73-OTLPBMIWdRVfsa16Rur5eno4FJzmKKp9majpVzWL3TjqJPDZBGjZ2j5002DxIhqNvA5jf7DPhnxr29k_UzMToZ3ZoHZNzdkVXmHsLkLpFlhJIabiERVLCeNnUhiQP4sYqdf_H0QQTFVnMmXbf">
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="w-full bg-surface/80 backdrop-blur-md text-primary py-3 font-label-caps text-label-caps border-[0.5px] border-outline-variant/30 hover:bg-primary hover:text-on-primary transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-body-lg text-body-lg text-primary mb-1">Solstice Floor Lamp</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Aged Gold &amp; Opal Glass</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary">$890</span>
+</div>
+</div>
+<!-- Collection Feature -->
+<div class="group cursor-pointer relative aspect-[4/5] bg-tertiary-container flex items-center justify-center p-8 text-center overflow-hidden">
+<div class="absolute inset-0 opacity-40 mix-blend-overlay">
+<img alt="Abstract architectural background." class="object-cover w-full h-full" data-alt="Abstract architectural detail of softly lit, textured plaster walls and dramatic geometric shadows. The aesthetic is extremely minimal, moody, and serene, serving as a subtle textural background layer in a light-mode UI context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjKC2DKnJvu2FJKohlI1H-3p3ViclfeEaJ-vIreFSZnET-opY4CKdbIYpCoenos6icL2IsueiL6jtW_gjRBDjFAv1LMPrRgL5PrUsRhBCFUxWb-yBKxt5Dym7lgw_MwuOZrnqHuZrxwvHiyTJzr2xhyyz_DIsM9Rew4g47TbD6c0esitT5oomQcDfA_1cy60BsblJGUNhjB6kuYc9iT2622Jv9F78SXLrAt9O-OU2pSy3f2LQ5u0mKBbZGfqsaUY4NV8NCgaVT">
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-secondary-fixed mb-4">Complete The Room</span>
+<h3 class="font-headline-md text-headline-md text-on-tertiary-container mb-6">The Aurelius Collection</h3>
+<button class="border-[0.5px] border-secondary-fixed text-secondary-fixed px-8 py-3 font-label-caps text-label-caps hover:bg-secondary-fixed hover:text-tertiary-container transition-colors">Explore Suite</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Floating 'Add to Cart' Bar (Visible on scroll) -->
+<div class="fixed bottom-0 inset-x-0 bg-surface/80 backdrop-blur-xl border-t-[0.5px] border-outline-variant/30 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] transform translate-y-full transition-transform duration-500 z-40" id="floating-bar">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-4 flex justify-between items-center">
+<div class="hidden md:flex items-center gap-4">
+<img alt="Small thumbnail." class="w-12 h-12 object-cover border border-outline-variant/30" data-alt="Miniature thumbnail of the Aurelius Lounge Chair in charcoal velvet, brightly lit against a stark white background for clear identification in a minimal UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVfr7iKPfsk3ZyxYuCPRinL_6tN3UNiu42tMplBG8406tK4oMZdUC3QGz0njnDxnxTS497jGrVqu_pzv2f1lesO1yi1f9F5KJfSWxL9UI2iTMtJc1yWc3VnMus44z3RQyoxINtWhYKH7SS66PgnTqnNEobALNu3FUoWwlsUReVpKXZYh1_vpQnoGcgPPJChaqb9Tvy5XOdaR3-3VbQZ6apqxwIjN4WmCyOwALP4IpwnVb2QtQcCVnrBinEAonAPYPNTO4bD0An">
+<div>
+<div class="font-body-md text-body-md text-primary font-medium">Aurelius Lounge Chair</div>
+<div class="font-body-sm text-sm text-on-surface-variant">Velvet, Charcoal</div>
+</div>
+</div>
+<div class="flex items-center gap-6 w-full md:w-auto">
+<span class="font-headline-sm text-headline-sm text-primary hidden md:block">$4,200</span>
+<button class="flex-1 md:flex-none md:w-48 bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-secondary-container hover:text-on-secondary-container transition-all duration-300 tracking-widest text-center">
+                    Add to Cart
+                </button>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-tertiary-container w-full grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop py-section-gap w-full border-t-[0.5px] border-secondary/20 text-on-primary dark:text-on-tertiary-container font-body-md text-body-md">
+<div class="md:col-span-4 flex flex-col justify-between mb-12 md:mb-0">
+<a class="font-headline-md text-headline-md text-secondary-fixed-dim tracking-tighter mb-8 block" href="#">AURELIAN</a>
+<p class="text-on-primary/60 text-sm max-w-xs">Elevating spaces through structural integrity and artisanal devotion. A sanctuary for the discerning eye.</p>
+</div>
+<div class="md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col gap-4">
+<a class="text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">The Manifesto</a>
+<a class="text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">Heritage</a>
+<a class="text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">Bespoke Services</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">Sustainability</a>
+<a class="text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">Press</a>
+<a class="text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">Contact</a>
+</div>
+<div class="col-span-2 flex flex-col justify-end items-start md:items-end mt-12 md:mt-0">
+<p class="font-label-caps text-label-caps text-secondary-fixed mb-4">Newsletter</p>
+<div class="flex w-full max-w-xs border-b-[0.5px] border-secondary-fixed/50 pb-2">
+<input class="bg-transparent border-none focus:ring-0 text-on-primary placeholder:text-on-primary/30 text-sm w-full p-0" placeholder="Enter your email" type="email">
+<button class="text-secondary-fixed hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="md:col-span-12 mt-section-gap pt-8 border-t-[0.5px] border-secondary-fixed/20 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-primary/40 text-xs">© 2024 AURELIAN ARCHITECTURAL ATELIER. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-4 text-on-primary/40 text-xs">
+<a class="hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll logic for floating bar
+        window.addEventListener('scroll', () => {
+            const floatingBar = document.getElementById('floating-bar');
+            // Show bar after scrolling past the main add to cart button (roughly 600px for demo)
+            if (window.scrollY > 600) {
+                floatingBar.classList.remove('translate-y-full');
+            } else {
+                floatingBar.classList.add('translate-y-full');
+            }
+        });
+
+        // Toggle side nav demo
+        const cartToggle = document.getElementById('cart-toggle');
+        const sideNav = document.getElementById('side-nav');
+        const closeSideNav = document.getElementById('close-side-nav');
+
+        if(cartToggle && sideNav && closeSideNav) {
+            cartToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                sideNav.classList.remove('hidden');
+                // small delay to allow display:block to apply before animating transform
+                setTimeout(() => {
+                    sideNav.classList.remove('translate-x-full');
+                }, 10);
+            });
+
+            closeSideNav.addEventListener('click', () => {
+                sideNav.classList.add('translate-x-full');
+                setTimeout(() => {
+                    sideNav.classList.add('hidden');
+                }, 500); // match transition duration
+            });
+        }
+    </script>
+</body></html>
