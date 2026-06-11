@@ -1343,3 +1343,33 @@ db.students.aggregate([
 
 1. Sample Data
 orders Collection:
+
+
+EdTech Architecture
+
+Authentication
+ Collection users
+  Email, password = 10 users
+
+
+User Management
+
+My Courses = 1
+My Cart = 5
+My Wishlist = 10
+My Profile - 1
+
+My Courses = 4
+My Cart = 2
+My Wishlist = 1
+My Profile - 1
+
+My Courses = 1
+My Cart = 1
+My Wishlist = 1
+My Profile - 1
+
+My Courses = 1
+My Cart = 1
+My Wishlist = 1
+My Profile - 1
