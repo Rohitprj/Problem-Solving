@@ -1338,3 +1338,8 @@ db.students.aggregate([
     $unwind: "$courseDetails"
   }
 ])
+
+-------------------------------------------------------------------------------------
+
+1. Sample Data
+orders Collection:
