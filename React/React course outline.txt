@@ -1,0 +1,34 @@
+1) Introduction and React overview
+2) JSX basics
+3) Functional components
+4) Props and component reuse
+5) State and lifecycle
+6) Event handling and form handling
+7) Conditional rendering
+8) Lists and keys
+9) Styling and layout
+10) Data fetching and error handling
+11) Routing and navigation
+12) Hooks and custom hooks
+13) Testing and deployment
+14) Advanced topics
+15) Final project
+
+
+1) Introduction and React overview
+2) Import and export
+3) Real dom vs virtual dom
+4) React vite setup
+5) Components 
+6) props
+7) Tailwind css
+8) Working with functions
+9) Understanding Hooks and useState
+10) Form Handling in React
+11) Two way Data binding
+12) Local Storage
+13) Api calling
+14) useEffect hook and fetching data
+15) React Router Dom basics
+16) React Router Dom advanced
+17) Context Api
