@@ -1,0 +1,465 @@
+db.students.insertMany([
+  {
+    name: "Rohit",
+    course: "MERN",
+    marks: 85,
+    fees: 50000
+  },
+  {
+    name: "Priya",
+    course: "MERN",
+    marks: 92,
+    fees: 55000
+  },
+  {
+    name: "Amit",
+    course: "Java",
+    marks: 78,
+    fees: 40000
+  },
+  {
+    name: "Rahul",
+    course: "Java",
+    marks: 81,
+    fees: 42000
+  },
+  {
+    name: "Neha",
+    course: "Python",
+    marks: 88,
+    fees: 45000
+  }
+]);
+
+------------------------------------------------------------------------
+
+Topic 1 — $match
+
+Find all MERN students.
+Find all Java students.
+Find students whose marks are greater than 80.
+
+Topic 2 — $project
+
+Show only name and marks.
+Show only course and fees.
+Show only name and course, hide _id.
+
+Topic 3 — $sort
+
+Sort students by marks in ascending order.
+Sort students by marks in descending order.
+Sort students by fees from highest to lowest.
+
+Topic 4 — $limit
+
+Show only first 3 students.
+
+Topic 5 — $skip
+
+Skip first 2 students.
+
+Topic 6 — $group
+
+Show unique courses.
+Count students in each course.
+Count total students.
+
+Topic 7 — $sum
+Find total fees of all students.
+Find total fees collected from each course.
+Find total marks of students in each course.
+
+
+Find MERN students and show only name and marks.
+Find Java students and sort them by marks descending.
+Show top 3 students based on marks.
+Skip first student and show next 2 students.
+Find total fees of MERN students only.
+Count students whose marks are greater than 80.
+
+------------------------------------------------------------------------
+
+Topic 1 — $match
+Question 1
+
+Find all MERN students.
+
+Answer
+db.students.aggregate([
+  {
+    $match: {
+      course: "MERN"
+    }
+  }
+]);
+
+Question 2
+
+Find all Java students.
+
+Answer
+db.students.aggregate([
+  {
+    $match: {
+      course: "Java"
+    }
+  }
+]);
+
+Question 3
+
+Find students whose marks are greater than 80.
+
+Answer
+db.students.aggregate([
+  {
+    $match: {
+      marks: { $gt: 80 }
+    }
+  }
+]);
+
+Topic 2 — $project
+Question 4
+
+Show only name and marks.
+
+Answer
+db.students.aggregate([
+  {
+    $project: {
+      name: 1,
+      marks: 1
+    }
+  }
+]);
+
+Question 5
+
+Show only course and fees.
+
+Answer
+db.students.aggregate([
+  {
+    $project: {
+      course: 1,
+      fees: 1
+    }
+  }
+]);
+
+Question 6
+
+Show only name and course, hide _id.
+
+Answer
+db.students.aggregate([
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      course: 1
+    }
+  }
+]);
+
+Topic 3 — $sort
+Question 7
+
+Sort students by marks in ascending order.
+
+Answer
+db.students.aggregate([
+  {
+    $sort: {
+      marks: 1
+    }
+  }
+]);
+
+Question 8
+
+Sort students by marks in descending order.
+
+Answer
+db.students.aggregate([
+  {
+    $sort: {
+      marks: -1
+    }
+  }
+]);
+
+Question 9
+
+Sort students by fees from highest to lowest.
+
+Answer
+db.students.aggregate([
+  {
+    $sort: {
+      fees: -1
+    }
+  }
+]);
+
+Topic 4 — $limit
+Question 10
+
+Show only first 2 students.
+
+Answer
+db.students.aggregate([
+  {
+    $limit: 2
+  }
+]);
+
+Question 11
+
+Show only first 3 students.
+
+Answer
+db.students.aggregate([
+  {
+    $limit: 3
+  }
+]);
+
+Topic 5 — $skip
+Question 12
+
+Skip first 2 students.
+
+Answer
+db.students.aggregate([
+  {
+    $skip: 2
+  }
+]);
+
+Question 13
+
+Skip first 3 students.
+
+Answer
+db.students.aggregate([
+  {
+    $skip: 3
+  }
+]);
+
+Topic 6 — $group
+Question 14
+
+Show unique courses.
+
+Answer
+db.students.aggregate([
+  {
+    $group: {
+      _id: "$course"
+    }
+  }
+]);
+
+Question 15
+
+Count students in each course.
+
+Answer
+db.students.aggregate([
+  {
+    $group: {
+      _id: "$course",
+      totalStudents: {
+        $sum: 1
+      }
+    }
+  }
+]);
+Output
+{ "_id": "MERN", "totalStudents": 2 }
+{ "_id": "Java", "totalStudents": 2 }
+{ "_id": "Python", "totalStudents": 1 }
+
+Question 16
+
+Count total students.
+
+Answer
+db.students.aggregate([
+  {
+    $group: {
+      _id: null,
+      totalStudents: {
+        $sum: 1
+      }
+    }
+  }
+]);
+
+Topic 7 — $sum
+Question 17
+
+Find total fees of all students.
+
+Answer
+db.students.aggregate([
+  {
+    $group: {
+      _id: null,
+      totalFees: {
+        $sum: "$fees"
+      }
+    }
+  }
+]);
+Output
+{
+  "_id": null,
+  "totalFees": 232000
+}
+
+Question 18
+
+Find total fees collected from each course.
+
+Answer
+db.students.aggregate([
+  {
+    $group: {
+      _id: "$course",
+      totalFees: {
+        $sum: "$fees"
+      }
+    }
+  }
+]);
+Question 19
+
+Find total marks of students in each course.
+
+Answer
+db.students.aggregate([
+  {
+    $group: {
+      _id: "$course",
+      totalMarks: {
+        $sum: "$marks"
+      }
+    }
+  }
+]);
+
+Mixed Practice Questions
+Question 20
+
+Find MERN students and show only name and marks.
+
+Answer
+db.students.aggregate([
+  {
+    $match: {
+      course: "MERN"
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      marks: 1
+    }
+  }
+]);
+
+Question 21
+
+Find Java students and sort them by marks descending.
+
+Answer
+db.students.aggregate([
+  {
+    $match: {
+      course: "Java"
+    }
+  },
+  {
+    $sort: {
+      marks: -1
+    }
+  }
+]);
+
+Question 22
+
+Show top 3 students based on marks.
+
+Answer
+db.students.aggregate([
+  {
+    $sort: {
+      marks: -1
+    }
+  },
+  {
+    $limit: 3
+  }
+]);
+
+Question 23
+
+Skip first student and show next 2 students.
+
+Answer
+db.students.aggregate([
+  {
+    $skip: 1
+  },
+  {
+    $limit: 2
+  }
+]);
+
+Question 24
+
+Find total fees of MERN students only.
+
+Answer
+db.students.aggregate([
+  {
+    $match: {
+      course: "MERN"
+    }
+  },
+  {
+    $group: {
+      _id: "$course",
+      totalFees: {
+        $sum: "$fees"
+      }
+    }
+  }
+]);
+
+Question 25
+
+Count students whose marks are greater than 80.
+
+Answer
+db.students.aggregate([
+  {
+    $match: {
+      marks: { $gt: 80 }
+    }
+  },
+  {
+    $group: {
+      _id: null,
+      totalStudents: {
+        $sum: 1
+      }
+    }
+  }
+]);
