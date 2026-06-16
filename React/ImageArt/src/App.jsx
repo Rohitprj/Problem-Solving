@@ -24,19 +24,19 @@ export default function App() {
             key={index}
             src={image.download_url}
             alt={image.author}
-            className="p-2 h-46 w-1/6"
+            className="p-2 h-46 w-1/6 object-cover cursor-pointer hover:opacity-50 transition-opacity duration-300 ease-in-out transform hover:scale-105"
           />
         ))}
       </div>
       <div className="flex flex-row justify-center gap-6 mt-4">
         <button
-          className="bg-orange-500 p-2 rounded-md"
+          className="hover:bg-orange-600 bg-orange-500 p-2 rounded-md cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-400 text-white"
           onClick={() => setCount(count - 1)}
         >
           Prev
         </button>
         <button
-          className="bg-orange-500 p-2 rounded-md"
+          className="hover:bg-orange-600 bg-orange-500 p-2 rounded-md cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-400 text-white"
           onClick={() => setCount(count + 1)}
         >
           Next
