@@ -34,7 +34,7 @@ export default function App() {
 // }
 
 // Importing
-// import Button from './Button';
+// import Button from 'src/Button';
 
 // You can rename it anything:
 // import MyButton from './Button';

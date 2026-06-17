@@ -32,3 +32,22 @@
 15) React Router Dom basics
 16) React Router Dom advanced
 17) Context Api
+
+
+step 1 :- Tailwind instalation 
+
+step 2 :- 
+Create a vite project
+npm install tailwindcss @tailwindcss/vite
+
+step 3 :- 
+vite.config.ts ( Inside this file add these )
+import tailwindcss from '@tailwindcss/vite'
+tailwindcss(),
+
+step 4 :- 
+Inside index.css add this
+@import "tailwindcss";
+
+step 5 :- 
+start your server :- npm run dev
