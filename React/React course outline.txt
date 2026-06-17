@@ -14,6 +14,7 @@
 14) Advanced topics
 15) Final project
 
+-------------------------------------------------------
 
 1) Introduction and React overview
 2) Import and export
