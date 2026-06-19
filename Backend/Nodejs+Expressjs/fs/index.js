@@ -1,4 +1,4 @@
-const fs = require("fs");
+// const fs = require("fs");
 
 // console.log(fs);
 
@@ -18,3 +18,18 @@ const fs = require("fs");
 // console.log(data);
 
 // fs.appendFileSync("new.txt", "\n and i am a java developer");
+
+// const { createServer } = require("node:http");
+
+// const hostname = "127.0.0.1";
+// const port = 3001;
+
+// const server = createServer((req, res) => {
+//   res.statusCode = 200;
+//   res.setHeader("Content-Type", "text/plain");
+//   res.end("Hello World");
+// });
+
+// server.listen(port, hostname, () => {
+//   console.log(`Server running at http://${hostname}:${port}/`);
+// });
