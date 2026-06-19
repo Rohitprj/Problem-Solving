@@ -1,0 +1,68 @@
+Node.js File System (FS Module)
+
+What is File System?
+The File System module allows Node.js to interact with files and folders on your computer.
+
+Importing File System Module
+
+const fs = require("fs");
+
+----------
+
+1. Create a File :- writeFileSync()
+
+const fs = require("fs");
+
+fs.writeFileSync("notes.txt", "Hello Students");
+
+Output
+Creates :- notes.txt
+
+----------
+
+2. Create a File with Callback :- writeFile()
+
+const fs = require("fs");
+
+fs.writeFile("notes.txt", "Hello Students");
+
+Output
+Creates :- notes.txt
+
+----------
+
+3. Read a File :- readFileSync()
+
+const fs = require("fs");
+
+const data = fs.readFileSync("notes.txt", "utf8");
+
+console.log(data);
+
+Output :- Hello Students
+
+----------
+
+4. Append Data to a File :- appendFileSync()
+
+const fs = require("fs");
+
+fs.appendFileSync(
+  "notes.txt",
+  "\nNode.js is awesome"
+);
+
+Output :-
+Hello Students
+Node.js is awesome
+
+----------
+
+5. Rename a File :- renameSync()
+
+const fs = require("fs");
+
+fs.renameSync(
+  "notes.txt",
+  "myNotes.txt"
+);
