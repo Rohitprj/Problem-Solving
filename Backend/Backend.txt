@@ -3,8 +3,9 @@ Node.js Core Foundations :-
 1) Asynchronous JavaScript primitives: Callbacks and Promises
 2) Control flow handling using async/await
 3) Error handling patterns with try/catch and .catch() blocks
-4) File System manipulations using the native fs and fs/promises modules
+4) File System manipulations using the native fs module
 
 Express.js & HTTP Web Servers :-
+
 1) Folder structure
 2) Creating and starting the server using express.js
