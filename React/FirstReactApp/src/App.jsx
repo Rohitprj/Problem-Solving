@@ -120,23 +120,27 @@
 
 // export default App;
 
-// import React from "react";
-// import "./App.css";
-// import { FirstComp, SecondComp } from "./components/FirstComp";
+import React from "react";
+import "./App.css";
+import { FirstComp, SecondComp } from "./components/FirstComp";
 
-// export default function App() {
-//   return (
-//     <div>
-//       <h1 className="bg-amber-300 font text-red-700">Hello</h1>
-//       <FirstComp name="Rohit" />
-//       <SecondComp />
-//       <p className="bg-blue-700 font-extrabold">This is a paragraph</p>
-//       <p>This is a paragraph</p>
-//       <p>This is a paragraph</p>
-//       <p>This is a paragraph</p>
-//     </div>
-//   );
-// }
+export default function App() {
+  const yes = "Rohit";
+
+  return (
+    <div>
+      <h1 className="bg-amber-300 font text-red-700">Hello</h1>
+      <FirstComp name="Rohit" />
+
+      <SecondComp name="Rohit kumar" course="BCA" />
+
+      <p className="bg-blue-700 font-extrabold">This is a paragraph</p>
+      <p>This is a paragraph</p>
+      <p>This is a paragraph</p>
+      <p>This is a paragraph</p>
+    </div>
+  );
+}
 
 // import { useEffect, useState } from "react";
 // import WhoITrain from "./components/WhoITrain";
@@ -190,18 +194,18 @@
 //   );
 // }
 
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+// import React from "react";
+// import { Route, Routes } from "react-router-dom";
+// import Home from "./pages/Home";
+// import About from "./pages/About";
+// import Contact from "./pages/Contact";
 
-export default function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
-  );
-}
+// export default function App() {
+//   return (
+//     <Routes>
+//       <Route path="/" element={<Home />} />
+//       <Route path="/about" element={<About />} />
+//       <Route path="/contact" element={<Contact />} />
+//     </Routes>
+//   );
+// }

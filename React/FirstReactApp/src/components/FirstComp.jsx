@@ -9,13 +9,12 @@ export function FirstComp({ name }) {
   );
 }
 
-export function SecondComp() {
+export function SecondComp({ name, course }) {
+  console.log(name);
   return (
     <div>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-        debitis voluptas porro perferendis? Nihil praesentium a sunt, nam nisi
-        delectus.
+        Hello i am prop  and my course is {name, course}
       </p>
     </div>
   );
