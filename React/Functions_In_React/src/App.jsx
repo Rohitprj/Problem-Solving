@@ -177,37 +177,70 @@
 //   );
 // }
 
+// import React from "react";
+
+// export default function App() {
+//   // function btn() {
+//   //   console.log("hiiii")
+//   // }
+
+//   function text() {
+//     console.log("User is typing");
+//   }
+
+//   return (
+//     <div onWheel={(e) => console.log(e.deltaY)} className="h-2000">
+//       <p>hi</p>
+//       <button onClick={() => console.log("hello")}>Click</button>
+//       <br />
+//       <button onDoubleClick={() => console.log("wow")}>wowow</button>
+//       <br />
+//       <button onMouseOver={() => console.log("momoomomo")}>mouse</button>
+//       <br />
+//       <input onChange={text} type="text" placeholder="Enter here..." />
+//       <br />
+//       <input
+//         onChange={(e) => console.log(e.target.value)}
+//         type="text"
+//         placeholder="Enter here..."
+//       />
+//       <div
+//         className="bg-slate-900 h-80 w-80"
+//         onMouseMove={(elem) => console.log(elem.clientX)}
+//       ></div>
+//     </div>
+//   );
+// }
+
 import React from "react";
 
 export default function App() {
-  // function btn() {
-  //   console.log("hiiii")
-  // }
-
-  function text() {
-    console.log("User is typing");
+  function btn(e) {
+    console.log("hiiii", e);
   }
-
   return (
-    <div onWheel={(e) => console.log(e.deltaY)} className="h-2000">
-      <p>hi</p>
-      <button onClick={() => console.log("hello")}>Click</button>
+    <div>
+      <button onClick={(e) => btn(e.target)}>Click me</button>
       <br />
-      <button onDoubleClick={() => console.log("wow")}>wowow</button>
+      <h4>Login</h4>
+
       <br />
-      <button onMouseOver={() => console.log("momoomomo")}>mouse</button>
-      <br />
-      <input onChange={text} type="text" placeholder="Enter here..." />
+      <label htmlFor="">Email</label>
       <br />
       <input
         onChange={(e) => console.log(e.target.value)}
         type="text"
-        placeholder="Enter here..."
+        placeholder="enter email"
       />
-      <div
-        className="bg-slate-900 h-80 w-80"
-        onMouseMove={(elem) => console.log(elem.clientX)}
-      ></div>
+      <br />
+      <br />
+      <label htmlFor="">Password</label>
+      <br />
+      <input
+        onChange={(e) => console.log(e.target.value)}
+        type="text"
+        placeholder="enter password"
+      />
     </div>
   );
 }
