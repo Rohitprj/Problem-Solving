@@ -128,25 +128,25 @@
 //   );
 // }
 
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
+// import React from "react";
+// import { Routes, Route } from "react-router-dom";
+// import About from "./pages/About";
+// import Home from "./pages/Home";
+// import Contact from "./pages/Contact";
 
-const App = () => {
-  return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-      </Routes>
-    </div>
-  );
-};
+// const App = () => {
+//   return (
+//     <div>
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/about" element={<About />} />
+//         <Route path="/Contact" element={<Contact />} />
+//       </Routes>
+//     </div>
+//   );
+// };
 
-export default App;
+// export default App;
 
 // import React from "react";
 // import { AiFillAmazonCircle } from "react-icons/ai";
@@ -176,3 +176,38 @@ export default App;
 //     </div>
 //   );
 // }
+
+import React from "react";
+
+export default function App() {
+  // function btn() {
+  //   console.log("hiiii")
+  // }
+
+  function text() {
+    console.log("User is typing");
+  }
+
+  return (
+    <div onWheel={(e) => console.log(e.deltaY)} className="h-2000">
+      <p>hi</p>
+      <button onClick={() => console.log("hello")}>Click</button>
+      <br />
+      <button onDoubleClick={() => console.log("wow")}>wowow</button>
+      <br />
+      <button onMouseOver={() => console.log("momoomomo")}>mouse</button>
+      <br />
+      <input onChange={text} type="text" placeholder="Enter here..." />
+      <br />
+      <input
+        onChange={(e) => console.log(e.target.value)}
+        type="text"
+        placeholder="Enter here..."
+      />
+      <div
+        className="bg-slate-900 h-80 w-80"
+        onMouseMove={(elem) => console.log(elem.clientX)}
+      ></div>
+    </div>
+  );
+}
