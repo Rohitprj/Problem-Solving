@@ -1,0 +1,15 @@
+{
+  "name": "first",
+  "version": "0.0.0",
+  "description": "Started learning backend",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cat-me": "^1.0.3"
+  }
+}
