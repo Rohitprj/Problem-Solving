@@ -1,12 +1,28 @@
 const express = require("express");
 
 const app = express();
+app.use(express.json());
 
 const PORT = 3000;
 
 app.get("/health", (req, res) => {
   res.send("hello world");
 });
+
+const notes = [];
+
+app.post("/notes", (req, res) => {
+  const note = req.body;
+  console.log(note);
+  notes.push(note);
+  res.status(200).json({ message: "note created successfully" });
+});
+
+app.get("/notes", (req, res) => {
+  res.json(notes);
+});
+
+console.log(notes);
 
 app.listen(PORT, () => {
   console.log(`server is running on http://localhost:${PORT}`);
