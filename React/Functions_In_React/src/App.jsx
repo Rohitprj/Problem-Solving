@@ -225,7 +225,7 @@ export default function App() {
       <h4>Login</h4>
 
       <br />
-      <label htmlFor="">Email</label>
+      <label>Email</label>
       <br />
       <input
         onChange={(e) => console.log(e.target.value)}
