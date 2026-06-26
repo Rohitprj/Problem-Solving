@@ -131,8 +131,8 @@
 // }
 
 import { useState } from "react";
-import Home from "./Home";
-import About from "./About";
+import Home from "./component/Home";
+import About from "./component/About";
 
 function App() {
   const [activePage, setActivePage] = useState("home");
