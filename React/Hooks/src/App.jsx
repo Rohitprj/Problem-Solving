@@ -139,7 +139,7 @@ export default function App() {
   const [activePage, setActivePage] = useState("home");
 
   return (
-    <div className="bg-red h-screen">
+    <div style={{ padding: "5px" }}>
       <button onClick={() => setActivePage("home")}>Home</button>
 
       <button
