@@ -133,12 +133,13 @@
 import { useState } from "react";
 import Home from "./component/Home";
 import About from "./component/About";
+import Contact from "./component/Contact";
 
-function App() {
+export default function App() {
   const [activePage, setActivePage] = useState("home");
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="bg-red h-screen">
       <button onClick={() => setActivePage("home")}>Home</button>
 
       <button
@@ -147,12 +148,19 @@ function App() {
       >
         About
       </button>
+      <button
+        onClick={() => setActivePage("contact")}
+        style={{ marginLeft: "10px" }}
+      >
+        Contact
+      </button>
 
       <hr />
 
-      {activePage === "home" ? <Home /> : <About />}
+      {/* {activePage === "home" ? <Home /> : <About />} */}
+      {activePage === "home" && <Home />}
+      {activePage === "about" && <About />}
+      {activePage === "contact" && <Contact />}
     </div>
   );
 }
-
-export default App;

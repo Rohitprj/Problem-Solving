@@ -219,7 +219,7 @@ export default function App() {
     console.log("hiiii", e);
   }
   return (
-    <div>
+    <div onWheel={(e) => console.log(e)} className="bg-gray-500 h-600 w-500">
       <button onClick={(e) => btn(e.target)}>Click me</button>
       <br />
       <h4>Login</h4>
