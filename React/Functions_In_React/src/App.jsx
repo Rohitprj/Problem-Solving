@@ -69,7 +69,6 @@
 //   // prevName(name);
 //   // const store = [...name, prev];
 //   // console.log("storeee", store);
-
 //   const submit = (value) => {
 //     value.preventDefault();
 //     // console.log(value);
