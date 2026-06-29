@@ -1,4 +1,5 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
+import type { AxiosResponse } from "axios";
 
 interface Todo {
   userId: number;
@@ -23,6 +24,8 @@ const getData = async () => {
     }
   }
 };
+
+// Common way
 
 // axios.get<Todo>("https://jsonplaceholder.typicode.com/todos/1").then((res) => {
 //   console.log(res.data);
