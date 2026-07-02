@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-const PORT = 3000;
+const PORT = 3001;
 
 app.get("/health", (req, res) => {
   res.send("hello world");
@@ -22,7 +22,21 @@ app.get("/notes", (req, res) => {
   res.json(notes);
 });
 
-console.log(notes);
+// get note by id
+
+app.delete("/notes/:id", (req, res) => {
+  const id = req.params.id;
+  console.log(id);
+  delete notes[id];
+  res.status(200).json({ message: "note deleted successfully", data: notes });
+});
+
+app.patch("/notes/:id", (req, res) => {
+  const id = req.params.id;
+  const note = req.body;
+  notes[id] = note;
+  res.status(200).json({ message: "note updated successfully", data: notes });
+});
 
 app.listen(PORT, () => {
   console.log(`server is running on http://localhost:${PORT}`);
