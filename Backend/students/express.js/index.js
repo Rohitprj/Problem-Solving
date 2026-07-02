@@ -16,7 +16,7 @@ app.post("/notes", (req, res) => {
   const data = req.body;
   getNotes.push(data);
   console.log(data);
-  res.status(200).send("Note Created Successfully");
+  res.status(200).json({ message: "Note Created Successfully" });
 });
 
 app.get("/notes", (req, res) => {
@@ -31,6 +31,15 @@ app.delete("/notes/:id", (req, res) => {
   res
     .status(200)
     .send({ message: "Note Deleted Successfully", data: getNotes });
+});
+
+app.patch("/notes/:id", (req, res) => {
+  const id = req.params.id;
+  const data = req.body.desc;
+  getNotes[id].desc = data;
+  res
+    .status(200)
+    .send({ message: "Note Updated Successfully", data: getNotes });
 });
 
 app.listen(PORT, () => {
