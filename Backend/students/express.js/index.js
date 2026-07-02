@@ -20,7 +20,17 @@ app.post("/notes", (req, res) => {
 });
 
 app.get("/notes", (req, res) => {
-  res.send(getNotes);
+  res
+    .status(200)
+    .json({ message: "Notes Fetched Successfully", data: getNotes });
+});
+
+app.delete("/notes/:id", (req, res) => {
+  const id = req.params.id;
+  delete getNotes[id];
+  res
+    .status(200)
+    .send({ message: "Note Deleted Successfully", data: getNotes });
 });
 
 app.listen(PORT, () => {
