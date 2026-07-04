@@ -1,7 +1,11 @@
 const express = require("express");
+const Notes = require("./schema/notes");
+const connectDB = require("./db/connectDB");
 
 const app = express();
 app.use(express.json());
+
+connectDB();
 
 const PORT = 3001;
 
@@ -9,17 +13,19 @@ app.get("/health", (req, res) => {
   res.send("hello world");
 });
 
-const notes = [];
-
-app.post("/notes", (req, res) => {
+app.post("/notes", async (req, res) => {
   const note = req.body;
-  console.log(note);
-  notes.push(note);
+  const result = await Notes.create({
+    title: note.title,
+    desc: note.desc,
+  });
+  console.log("DATA", result);
   res.status(200).json({ message: "note created successfully" });
 });
 
-app.get("/notes", (req, res) => {
-  res.json(notes);
+app.get("/notes", async (req, res) => {
+  const notes = await Notes.find();
+  res.status(200).json(notes);
 });
 
 // get note by id
