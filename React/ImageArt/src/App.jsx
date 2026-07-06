@@ -49,26 +49,36 @@ export default function App() {
 // import React, { useEffect, useState } from "react";
 
 // export default function App() {
-//   const [value, setValue] = useState(0);
+//   const [note, setNote] = useState();
+//   const [count, setCount] = useState(0);
 
-//   function increment() {
-//     setValue(value + 1);
-//     console.log("incrementing");
+//   async function data() {
+//     try {
+//       const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+//       const data = await res.json();
+//       console.log(data);
+//       setNote(data);
+//     } catch (error) {
+//       console.log(error);
+//     }
 //   }
 
+//   console.log(count);
+
 //   useEffect(() => {
-//     console.log("useEffect");
-//   }, [value]);
+//     data();
+//   }, [count]);
 
 //   return (
 //     <div className="h-screen p-10">
-//       <button
-//         className="bg-orange-500 p-2 rounded-md"
-//         onClick={() => increment()}
-//       >
-//         click me here
-//       </button>
-//       <p className="mt-4 text-2xl">{value}</p>
+//       <button onClick={() => setCount(count + 1)}>Click</button>
+//       <p>Hello</p>
+//       <p>{note?.title}</p>
 //     </div>
 //   );
 // }
+
+// fetch("https://jsonplaceholder.typicode.com/todos/1")
+//   .then((res) => res.json())
+//   .then((data) => setNote(data))
+//   .catch((error) => console.log(error));
