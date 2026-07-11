@@ -1,6 +1,7 @@
 const express = require("express");
 const Notes = require("./schema/notes");
 const connectDB = require("./db/connectDB");
+require("dotenv").config();
 
 const app = express();
 app.use(express.json());
