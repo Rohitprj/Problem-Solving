@@ -31,18 +31,18 @@ app.get("/notes", async (req, res) => {
 
 // get note by id
 
-app.delete("/notes/:id", (req, res) => {
+app.delete("/notes/:id", async (req, res) => {
   const id = req.params.id;
   console.log(id);
-  delete notes[id];
-  res.status(200).json({ message: "note deleted successfully", data: notes });
+  const deletedNote = await Notes.findByIdAndDelete(id);
+  res.status(200).json({ message: "note deleted successfully", data: deletedNote });
 });
 
-app.patch("/notes/:id", (req, res) => {
+app.patch("/notes/:id", async (req, res) => {
   const id = req.params.id;
   const note = req.body;
-  notes[id] = note;
-  res.status(200).json({ message: "note updated successfully", data: notes });
+  const updatedNote = await Notes.findByIdAndUpdate(id, note);
+  res.status(200).json({ message: "note updated successfully", data: updatedNote });
 });
 
 app.listen(PORT, () => {
