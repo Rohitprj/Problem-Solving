@@ -25,7 +25,7 @@
 //   useEffect(() => {
 //     data();
 //   }, []);
-  
+
 //   return (
 //     <main className="flex min-h-screen items-center justify-center px-6">
 //       <h1 className="mt-4 text-5xl font-black tracking-tight text-slate-900">
@@ -36,7 +36,6 @@
 // }
 
 // export default App;
-
 
 // import { useEffect, useState } from "react";
 
@@ -199,27 +198,39 @@
 
 // export default Products;
 
-import React from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
-import Home from './component/home'
-import About from './component/about'
-import NotFound from './component/not-found'
+import React from "react";
+import { Link, Route, Routes } from "react-router-dom";
+import Home from "./component/home";
+import About from "./component/about";
+import NotFound from "./component/not-found";
+import Header from "./component/header";
+import Footer from "./component/footer";
+import Products from "./pages/products";
+import Mens from "./pages/mens";
+import Womens from "./pages/womens";
+import Courses from "./component/courses";
+import CourseDetails from "./component/courseDetails";
 
 export default function App() {
   return (
     <>
-    <nav className='flex gap-4 bg-gray-200 p-4 '>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-    </nav>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path='*' element={<NotFound />} />
-    </Routes>
-    <footer className='bg-gray-200 p-4 text-center bottom-0 w-full  '>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
-    </footer>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/courses/:id" element={<CourseDetails />} />
+
+      <Route path="/products/mens" element={<Mens />} />
+      <Route path="/products/womens" element={<Womens />} />
+        {/* <Route path="/products" element={<Products />}>
+          <Route path="mens" element={<Mens />} />
+          <Route path="womens" element={<Womens />} />
+        </Route> */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
     </>
-  )
+  );
 }
