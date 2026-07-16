@@ -218,16 +218,16 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} />
+        {/* <Route path="/products" element={<Products />} /> */}
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:id" element={<CourseDetails />} />
 
-      <Route path="/products/mens" element={<Mens />} />
-      <Route path="/products/womens" element={<Womens />} />
-        {/* <Route path="/products" element={<Products />}>
+      {/* <Route path="/products/mens" element={<Mens />} />
+      <Route path="/products/womens" element={<Womens />} /> */}
+        <Route path="/products" element={<Products />}>
           <Route path="mens" element={<Mens />} />
           <Route path="womens" element={<Womens />} />
-        </Route> */}
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
