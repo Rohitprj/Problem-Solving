@@ -12,10 +12,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/upload", upload.single("Image"), (req, res) => {
-console.log(req.files);
-console.log(req.body);
-res.json({ message: "File uploaded successfully!" });
-})
+  console.log("1",req.file);
+  console.log("2",req.body);
+  res.json({ message: "File uploaded successfully!" });
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
