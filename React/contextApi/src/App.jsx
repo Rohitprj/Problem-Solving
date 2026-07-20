@@ -50,6 +50,7 @@ export default function App() {
         background: theme === "light" ? "white" : "black",
         color: theme === "light" ? "black" : "white",
         padding: "20px",
+        height: "100vh",
       }}
     >
       <h1>current theme is {theme}</h1>
