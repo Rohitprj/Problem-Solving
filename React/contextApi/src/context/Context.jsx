@@ -16,7 +16,9 @@ const ContextApi = ({ children }) => {
       .then((data) => setData(data))
       .catch((error) => console.log(error));
   }
-  getData();
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <Context.Provider value={{ theme, toggleTheme, data }}>
       {children}

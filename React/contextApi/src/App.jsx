@@ -41,6 +41,7 @@
 
 import React, { useContext } from "react";
 import { Context } from "./context/Context";
+import Hero from "./Hero";
 
 export default function App() {
   const { theme, toggleTheme, data } = useContext(Context);
@@ -61,6 +62,7 @@ export default function App() {
         Change Theme
       </button>
       <p>{data && data.title}</p>
+      <Hero name="Asha learnology" forSubHero="Sub Hero" />
     </div>
   );
 }
