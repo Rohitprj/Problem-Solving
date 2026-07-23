@@ -167,3 +167,24 @@ myDisplayer("C");
 //   }
 // }
 // sendSomeData();
+
+// "https://jsonplaceholder.typicode.com/posts"
+
+// async function getData() {
+//   try {
+//     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+//     const data = await res.json();
+//     console.log("Data", data);
+//   } catch (error) {
+//     console.log("Error", error);
+//   }
+// }
+// getData();
+
+function getData() {
+fetch("https://jsonplaceholder.typicode.com/posts").
+then((res) => res.json()).
+then((data) => console.log("Data", data)). // for fullfilled case
+catch((err) => console.log("Error", err)); // for reject case
+}
+getData();
