@@ -164,7 +164,7 @@ Explain
 Either condition must match.
 
 14. Update One Document
-db.students.updateOne(
+db.students.updateOne(       // filter , projection
   { name: "Rohit" },
   {
     $set: {
@@ -385,7 +385,7 @@ Deletes current database.
 Important Operators To Teach
 
 | Operator | Meaning            |
-| -------- | ------------------ |
+| -------- | ------------------ | 
 | `$gt`    | greater than       |
 | `$lt`    | less than          |
 | `$gte`   | greater than equal |
