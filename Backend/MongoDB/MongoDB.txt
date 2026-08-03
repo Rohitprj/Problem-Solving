@@ -293,14 +293,14 @@ This controls which fields are returned.
 1 means include
 0 means exclude
 
-  25. Remove Field
-  db.students.updateOne(
-    { name: "Rohit" },
-    {
-      $unset: {
-        status: ""
-      }
+25. Remove Field
+db.students.updateOne(
+  { name: "Rohit" },
+  {
+    $unset: {
+      status: ""
     }
+  }
 )
 
 Explain
