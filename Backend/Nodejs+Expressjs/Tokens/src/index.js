@@ -1,6 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import multer from "multer";
+import morgan from "morgan";
+import cookieParser from "cookie-parser";
 import connectDB from "./config/connectDB.js";
 import userRoutes from "./routes/user.routes.js";
 import uploadFile from "./services/storage.js";
@@ -16,6 +18,8 @@ const PORT = process.env.PORT || 3020;
 connectDB();
 
 app.use(express.json());
+app.use(cookieParser());
+app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to the Token API" });
