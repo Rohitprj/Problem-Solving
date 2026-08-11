@@ -12,13 +12,13 @@ export const createProfile = async (req, res) => {
       return res.status(400).json({ message: 'Profile already exists' });
     }
 
-    const uploadedProfilePicture =  await uploadFile(profilePicture.buffer);
+    const uploadedProfilePicture = profilePicture ? await uploadFile(profilePicture.buffer) : null;
 
     const profile = new Profile({
       user: userId,
       userName,
       bio,
-      profilePicture,
+      profilePicture: uploadedProfilePicture?.url || "",
       age,
       gender,
     });
@@ -48,12 +48,23 @@ export const getProfile = async (req, res) => {
 export const updateProfile = async (req, res) => {
   try {
     const userId = req.user.id;
-    const { userName, bio, age, gender } = req.body;
+    const { userName, bio, age, gender } = req.body || {};
     const profilePicture = req.file;
+
+    let uploadedProfilePicture = null;
+    if (profilePicture) {
+      uploadedProfilePicture = await uploadFile(profilePicture.buffer);
+    }
 
     const updatedProfile = await Profile.findOneAndUpdate(
       { user: userId },
-      { userName, bio, profilePicture, age, gender },
+      {
+        userName,
+        bio,
+        profilePicture: uploadedProfilePicture?.url,
+        age,
+        gender,
+      },
       { new: true, runValidators: true }
     );
     if (!updatedProfile) {
