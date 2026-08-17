@@ -840,6 +840,8 @@ db.collection.aggregate([
 
 --------
 
+frontend - server/backend - database
+
 IMPORTANT CONCEPT — Pipeline
 
 db.students.aggregate([
