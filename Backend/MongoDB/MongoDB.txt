@@ -833,9 +833,9 @@ transform data
 Aggregation Syntax
 
 db.collection.aggregate([
-   { stage1 },
-   { stage2 },
-   { stage3 }
+   { stage1 },  // find student greater than roll no 10 
+   { stage2 },  // update there marks to +10
+   { stage3 }   // -1
 ])
 
 --------
