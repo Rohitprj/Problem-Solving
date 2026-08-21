@@ -1172,6 +1172,7 @@ db.orders.aggregate([
 Output
 {
   "customer": "Rohit",
+  "amount" : 5000,
   "orderType": "Premium"
 }
 
@@ -1262,6 +1263,14 @@ db.orders.aggregate([
       ]
     }
   }
+])
+
+aggregate([
+  { 
+    {},{}
+  },
+  {},
+  {}
 ])
 
 ---------
