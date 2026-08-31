@@ -23,3 +23,15 @@ app.post("/register", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
 });
+
+/*
+
+Make 2 apis 
+1) GET get-notes
+2) POST create-notes {title, description}
+
+// const notes = [{},{},{}];
+
+// notes.push(data);
+
+*/
