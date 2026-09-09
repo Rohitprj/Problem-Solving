@@ -4,7 +4,7 @@
 //   console.log("Data", JSON.stringify(data, null, 2));
 // }
 // apiHandling();
-
+// --------------------------------------------------------
 async function apiHandling() {
   await fetch("https://jsonplaceholder.typicode.com/todos/1")
     .then((res) => res.json())
