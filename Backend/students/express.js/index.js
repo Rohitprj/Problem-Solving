@@ -4,7 +4,7 @@ import connectDB from "./connectDB/db.js";
 
 dotenv.config();
 
-connectDB();
+// connectDB();
 
 const app = express();
 
@@ -31,22 +31,42 @@ app.get("/notes", (req, res) => {
     .json({ message: "Notes Fetched Successfully", data: getNotes });
 });
 
+app.patch("/notes/:id", (req, res) => {
+  const id = req.params.id; // title id
+  console.log("ID", id);
+  const updatedData = req.body.description;
+  console.log("DATA", updatedData);
+  getNotes[id].description = updatedData;
+  res
+    .status(200)
+    .json({ message: "Note Updated Successfully", data: getNotes });
+});
+
 app.delete("/notes/:id", (req, res) => {
   const id = req.params.id;
+  console.log("ID", id);
   delete getNotes[id];
   res
     .status(200)
-    .send({ message: "Note Deleted Successfully", data: getNotes });
+    .json({ message: "Note Deleted Successfully", data: getNotes });
 });
 
-app.patch("/notes/:id", (req, res) => {
-  const id = req.params.id;
-  const data = req.body.desc;
-  getNotes[id].desc = data;
-  res
-    .status(200)
-    .send({ message: "Note Updated Successfully", data: getNotes });
-});
+// app.delete("/notes/:id", (req, res) => {
+//   const id = req.params.id;
+//   delete getNotes[id];
+//   res
+//     .status(200)
+//     .send({ message: "Note Deleted Successfully", data: getNotes });
+// });
+
+// app.patch("/notes/:id", (req, res) => {
+//   const id = req.params.id;
+//   const data = req.body.desc;
+//   getNotes[id].desc = data;
+//   res
+//     .status(200)
+//     .send({ message: "Note Updated Successfully", data: getNotes });
+// });
 
 app.listen(PORT, () => {
   console.log(`server is running on http://localhost:${PORT}`);
