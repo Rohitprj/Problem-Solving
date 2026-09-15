@@ -79,3 +79,20 @@ export const loginUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+/**
+ * Take request from body
+ * Make an if condition to check wheather user if passing data or not
+ * Check email if user already exists in DB
+ * Hash a password before saving into DB
+ * Save data into DB
+ * Make token and pass it into cookie
+ */
+
+/**
+ * Take request from body
+ * Make an if condition to check wheather user if passing data or not
+ * Check email if user already exists in DB
+ * Compare the provided password with the password in the DB
+ * If the passwords match, make user logged in
+ */
