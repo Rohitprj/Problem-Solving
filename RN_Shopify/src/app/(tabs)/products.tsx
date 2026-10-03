@@ -12,6 +12,9 @@ import { getProducts, Product } from "../../lib/shopify";
 
 export default function Products() {
   const [products, setProducts] = useState<Product[]>([]);
+  console.log("====================================");
+  console.log("PROD", products);
+  console.log("====================================");
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
