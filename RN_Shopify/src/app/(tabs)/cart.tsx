@@ -8,6 +8,7 @@ import {
   View,
 } from "react-native";
 import { useCart } from "../../context/CartContext";
+import { formatPrice } from "../../lib/shopify";
 
 export default function Cart() {
   const { items, total, setQty, remove } = useCart();
@@ -36,7 +37,11 @@ export default function Cart() {
               </Text>
               <Text style={{ color: "#666" }}>{item.variant.title}</Text>
               <Text style={{ color: "#6d28d9", fontWeight: "700" }}>
-                ${(Number(item.variant.price.amount) * item.qty).toFixed(2)}
+                {/* ${(Number(item.variant.price.amount) * item.qty).toFixed(2)} */}
+                {formatPrice({
+                  ...item.variant.price,
+                  amount: String(Number(item.variant.price.amount) * item.qty),
+                })}
               </Text>
               <View style={styles.qtyRow}>
                 <Pressable
@@ -66,7 +71,12 @@ export default function Cart() {
       {items.length > 0 && (
         <View style={styles.footer}>
           <Text style={{ fontSize: 18, fontWeight: "800" }}>
-            Subtotal: ${total.toFixed(2)}
+            {/* Subtotal: ${total.toFixed(2)} */}
+            Subtotal:{" "}
+            {formatPrice({
+              amount: String(total),
+              currencyCode: items[0].variant.price.currencyCode,
+            })}
           </Text>
           <Pressable
             style={styles.btn}

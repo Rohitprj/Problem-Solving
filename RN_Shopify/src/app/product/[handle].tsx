@@ -79,14 +79,18 @@ export default function ProductDetail() {
         </View>
 
         <Pressable
-          style={styles.addBtn}
+          disabled={variant.availableForSale === false}
+          style={[
+            styles.addBtn,
+            variant.availableForSale === false && { opacity: 0.4 },
+          ]}
           onPress={() => {
             add(product, variant, qty);
             Alert.alert("Added to cart", `${qty} × ${product.title}`);
           }}
         >
           <Text style={{ color: "#fff", fontWeight: "700", fontSize: 16 }}>
-            Add to Cart
+            {variant.availableForSale === false ? "Sold out" : "Add to Cart"}
           </Text>
         </Pressable>
       </View>
