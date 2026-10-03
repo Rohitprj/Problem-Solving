@@ -18,19 +18,38 @@ export type Collection = {
   image?: { url: string } | null;
 };
 
+// async function shopifyFetch<T>(
+//   query: string,
+//   variables: Record<string, unknown> = {},
+// ): Promise<T> {
+//   const res = await fetch(ENDPOINT, {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({ query, variables }),
+//   });
+//   if (!res.ok) throw new Error(`HTTP ${res.status}`);
+//   const json = await res.json();
+//   if (json.errors) throw new Error(json.errors[0]?.message ?? "GraphQL error");
+//   return json.data as T;
+// }
+
+import { createStorefrontApiClient } from "@shopify/storefront-api-client";
+
+const client = createStorefrontApiClient({
+  storeDomain: "https://mock.shop",
+  apiVersion: "2025-01",
+  publicAccessToken: "not-needed", // mock.shop ignores it, but the client requires a value
+  // Send every request to mock.shop's real endpoint
+  customFetchApi: (_url, options) => fetch("https://mock.shop/api", options),
+});
+
 async function shopifyFetch<T>(
   query: string,
   variables: Record<string, unknown> = {},
 ): Promise<T> {
-  const res = await fetch(ENDPOINT, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query, variables }),
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const json = await res.json();
-  if (json.errors) throw new Error(json.errors[0]?.message ?? "GraphQL error");
-  return json.data as T;
+  const { data, errors } = await client.request(query, { variables });
+  if (errors) throw new Error(errors.message ?? "GraphQL error");
+  return data as T;
 }
 
 const PRODUCT_FIELDS = `

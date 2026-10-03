@@ -6,6 +6,7 @@
     "@expo/metro-runtime": "~57.0.16",
     "@expo/ui": "~57.0.21",
     "@expo/vector-icons": "^15.0.2",
+    "@shopify/storefront-api-client": "^2.0.0",
     "expo": "~57.0.26",
     "expo-constants": "~57.0.20",
     "expo-device": "~57.0.2",
